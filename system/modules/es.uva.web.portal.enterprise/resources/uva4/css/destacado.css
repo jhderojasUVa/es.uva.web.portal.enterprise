@@ -1,0 +1,68 @@
+/* Destacado style */
+
+.destacado .header {
+  border-bottom: 1px solid #121212;
+  margin-right: 15px; }
+  .destacado .header h1 {
+    font-size: 26px;
+    padding-right: 20px;
+    padding-bottom: 7px;
+    text-transform: uppercase;
+    margin-right: 15px; 
+	font-family: "Montserrat", sans-serif; }
+.destacado .bloque_raya {
+  margin-left: 0;
+  padding-left: 0;
+  border-bottom: 1px solid #121212; }
+  .destacado .bloque_raya .masinformacion {
+    font-size: 10px;
+    padding: 18px 20px;
+    border: 1px solid #121212;
+    text-transform: uppercase; }
+    .destacado .bloque_raya .masinformacion a {
+      color: #121212; }
+      .destacado .bloque_raya .masinformacion a:hover {
+        color: #121212;
+        text-decoration: none; }
+
+/* Normales */
+.destacado .destadocontent a {
+	/*color: #5af0ff;*/
+	color: rgba(12, 12, 12, 0.9);
+	font-size: 1.1em;
+	box-shadow: inset 0 -5px 0 #5af0ff;
+	transition: .2s ease-in-out 0s;
+}
+
+.destacado .destadocontent a:hover {
+	background: #5af0ff;
+	text-decoration: none;
+}
+
+/* A blank */
+/*.destacado .destadocontent a[taget='_blank'], .destacado .destadocontent a[href*='%uva.es%'] {
+	box-shadow: inset 0 -5px 0 #5af0ff;
+	transition: .2s ease-in-out 0s;
+}*/
+
+.destacado .destadocontent a[taget='_blank']::after,.destacado .destadocontent a:not([href*='.uva.es']):not([href*='/sites'])::after {
+	/* Importante o no funciona, no quitar */
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	content: '   \f35d';
+	box-shadow: none;
+	box-shadow: inset 0 -5px 0 white;
+	background: white;
+	border: 2px solid white;
+}
+
+.destacado .destadocontent a[taget='_blank']:hover::after,.destacado .destadocontent a:not([href*='.uva.es']):not([href*='/sites']):hover::after {
+	background: white;
+	border: 2px solid white;
+}
+
+/*.destacado .destadocontent a[taget='_blank']:hover {
+	background: #5af0ff;
+	color: white;
+	text-decoration: none;
+}*/

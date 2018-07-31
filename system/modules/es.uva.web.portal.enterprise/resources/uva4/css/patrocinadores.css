@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+
+.patrocinadores .header {
+  border-bottom: 1px solid #121212;
+  margin-right: 15px; }
+  .patrocinadores .header h1 {
+    font-size: 26px;
+    padding-right: 20px;
+    padding-bottom: 7px;
+    text-transform: uppercase;
+    margin-right: 15px; 
+	font-family: "Montserrat", sans-serif; }
+	
+@media only screen and (max-width: 999px) {
+	.patrocinadores .header h1 {
+    font-size: 22px;
+    padding-right: 20px;
+    padding-bottom: 7px;
+    text-transform: uppercase;
+    margin-right: 5px; }
+}
+	
+.patrocinadores .bloque_raya {
+  margin-left: 0;
+  padding-left: 0;
+  border-bottom: 1px solid #121212; }
+  .patrocinadores .bloque_raya .masinformacion {
+    font-size: 10px;
+    padding: 19px 20px;
+    border: 1px solid #121212;
+    text-transform: uppercase; }
+	
+@media only screen and (max-width: 999px) {
+	.patrocinadores .bloque_raya .masinformacion {
+		padding: 13px 20px;
+	}
+}
+	
+	
+	.patrocinadores .bloque_raya .masinformacion:hover {
+		background-color: rgba(90, 240, 255, 0.6);
+	}
+    .patrocinadores .bloque_raya .masinformacion a {
+      color: #121212; }
+      .patrocinadores .bloque_raya .masinformacion a:hover, {
+        color: #121212;
+        text-decoration: none; }

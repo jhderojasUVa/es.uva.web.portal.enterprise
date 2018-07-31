@@ -1,0 +1,33 @@
+/* Movil patch */
+
+.movil .masinformacion {
+	font-size: 10px;
+	padding: 18px 20px;
+	border: 1px solid #121212;
+	text-transform: uppercase; 
+	transition: all 0.2s;
+	display: inline-block;
+}
+
+.movil .masinformacion .flecha {
+	transition: all 0.5s;
+}
+
+.movil .masinformacion:hover {
+	background-color: rgba(90, 240, 255, 0.6);
+}
+
+.movil .masinformacion:hover .flecha {
+	transform: translate(5px, 0px);
+	display: inline-block;
+}
+
+.movil .masinformacion a {
+	color: #121212; 
+	font-size: 16px; 
+}
+
+.movil .masinformacion a:hover {
+	color: #121212;
+	text-decoration: none; 
+}

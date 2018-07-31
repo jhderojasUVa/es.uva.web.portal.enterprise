@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<NewFormatters xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="opencms://system/modules/org.opencms.ade.config/schemas/formatters/new_formatter.xsd">
+  <NewFormatter language="en">
+    <NiceName><![CDATA[SlideShow para Portada UVa]]></NiceName>
+    <Type><![CDATA[slideshows]]></Type>
+    <Jsp>
+      <link type="WEAK">
+        <target><![CDATA[/system/modules/es.uva.web.portal.enterprise/formatters/slideshows-formatter.jsp]]></target>
+        <uuid>2704b496-7abc-11e8-9993-0242ac11002b</uuid>
+      </link>
+    </Jsp>
+    <Rank><![CDATA[1000]]></Rank>
+    <Match>
+      <Types>
+        <ContainerType><![CDATA[contenedor]]></ContainerType>
+      </Types>
+    </Match>
+    <Preview>false</Preview>
+    <SearchContent>false</SearchContent>
+    <AutoEnabled>true</AutoEnabled>
+    <Detail>false</Detail>
+    <NestedContainers>false</NestedContainers>
+    <StrictContainers>false</StrictContainers>
+    <HeadIncludeCss>
+      <CssLink>
+        <link type="WEAK">
+          <target><![CDATA[/system/modules/es.uva.web.portal.enterprise/resources/uva4/css/slideshow.css]]></target>
+          <uuid>332936ea-7aad-11e8-9993-0242ac11002b</uuid>
+        </link>
+      </CssLink>
+    </HeadIncludeCss>
+    <HeadIncludeJs>
+      <JavascriptLink>
+        <link type="WEAK">
+          <target><![CDATA[/system/modules/es.uva.web.portal.enterprise/resources/uva4/js/slideshow.js]]></target>
+          <uuid>2a9663e6-7aad-11e8-9993-0242ac11002b</uuid>
+        </link>
+      </JavascriptLink>
+      <JavascriptLink>
+        <link type="WEAK">
+          <target><![CDATA[/system/modules/es.uva.web.portal.enterprise/resources/uva4/js/slideshow-conf.js]]></target>
+          <uuid>f39c5399-7f5b-11e8-bc66-0242ac11002b</uuid>
+        </link>
+      </JavascriptLink>
+    </HeadIncludeJs>
+  </NewFormatter>
+</NewFormatters>

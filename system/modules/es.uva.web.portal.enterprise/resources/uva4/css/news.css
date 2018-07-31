@@ -1,0 +1,271 @@
+@charset "UTF-8";
+/*
+  Definición de colores segun su A
+
+  v0.1
+*/
+/* ==== Negro ==== */
+/* ==== Azul ==== */
+/* ==== Blanco ==== */
+/* === Generico === */
+
+@import url("https://fonts.googleapis.com/css?family=Alegreya:300, 400, 500|Arvo:300, 400, 500|IM+Fell+English+SC:300, 400, 500|Lato:300, 400, 500|Libre+Franklin:300, 400, 500|Montserrat:300, 400, 500|Open+Sans:300, 400, 500|Raleway:300, 400, 500");
+h1, h2, h3 {
+  /*font-family: "Libre Franklin", sans-serif;*/
+  font-family: "Montserrat", sans-serif}
+
+h4, h5, h5 .opensans, p .pie_foto, li .pie_foto {
+  font-family: "Open Sans", sans-serif; }
+
+h5 .arvo {
+  font-family: "Arvo", serif; }
+
+p, li {
+  font-family: "Lato", sans-serif; }
+
+h1 .titulos_cortos {
+  font-family: "Montserrat", sans-serif; }
+
+blockquote {
+  font-family: "Raleway", sans-serif; }
+
+.script {
+  font-family: "IM Fell English", serif; }
+
+h1 {
+  color: rgba(55, 55, 55, 0.9);
+  font-weight: 300;
+  font-size: 2.8em;
+  line-height: 1.0em;
+  margin-bottom: .1em;
+  margin-top: .1em; }
+  h1 .titulos_cortos {
+    font-weight: 400; }
+
+h2 {
+  color: rgba(55, 55, 55, 0.8);
+  font-weight: 300;
+  font-size: 2.5em;
+  line-height: 1.0em;
+  margin-top: .2em;
+  margin-bottom: .0em; }
+
+h3 {
+  color: rgba(55, 55, 55, 0.8);
+  font-weight: 300;
+  font-size: 1.3em;
+  line-height: 1.4em;
+  margin-top: .5em;
+  margin-bottom: .5em; }
+
+h4 {
+  color: rgba(55, 55, 55, 0.8);
+  font-weight: 400;
+  font-size: .8em;
+  line-height: 1.4em;
+  margin-top: .5em;
+  margin-bottom: .5em; }
+
+h5 {
+  font-weight: 400;
+  color: rgba(55, 55, 55, 0.8);
+  font-size: .65em;
+  line-height: 1.4em;
+  margin-top: .5em;
+  margin-bottom: .5em; }
+
+p, li {
+  font-weight: 300;
+  font-size: 1.15em;
+  line-height: 1.4em;
+  margin-top: .5em;
+  margin-bottom: .5em;
+  color: rgba(55, 55, 55, 0.8); }
+  p .pie_foto, li .pie_foto {
+    font-size: .65em;
+    font-weight: 400;
+    color: #373737;
+    line-height: 1.4em;
+    margin-top: .5em;
+    margin-bottom: .5em; }
+
+blockquote {
+  font-size: 2em;
+  line-height: 1.0;
+  color: rgba(227, 5, 74, 0.75); }
+
+@media screen and (max-width: 480px) {
+  h1 {
+    color: rgba(55, 55, 55, 0.9);
+    font-weight: 300;
+    font-size: 1.8em;
+    line-height: 1.0em;
+    margin-bottom: 0.1em;
+    margin-top: 0.1em; }
+
+  h2 {
+    color: rgba(55, 55, 55, 0.8);
+    font-weight: 300;
+    font-size: 1.4em;
+    line-height: 1.0em;
+    margin-top: .5em;
+    margin-bottom: .5em; }
+
+  h3 {
+    font-size: 1.2em;
+    line-height: 1.4em;
+    margin-top: .9em;
+    margin-bottom: .5em; }
+
+  h4 {
+    font-size: 1em;
+    line-height: 1.4em;
+    margin-top: .5em;
+    margin-bottom: .5em; }
+
+  h5 {
+    font-size: .8em;
+    line-height: 1.4em;
+    margin-top: .5em;
+    margin-bottom: .5em; }
+
+  h6 {
+    font-size: .65em;
+    line-height: 1.4em;
+    margin-top: .5em;
+    margin-bottom: .5em; }
+
+  p, li {
+    font-weight: 300;
+    font-size: 1.6em;
+    line-height: 1.2em;
+    margin-top: .6em;
+    margin-bottom: 1.5em; }
+
+  .footer p {
+    font-weight: 300;
+    font-size: 1em;
+    line-height: 1.4em;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    color: rgba(55, 55, 55, 0.8); }
+
+  blockquote {
+    font-size: 2em;
+    line-height: 1.0; } }
+h2 p {
+  font-size: 1.4em;
+  line-height: 1.25em; }
+
+h2 p {
+  margin: 0; }
+
+.noticias .header {
+  border-bottom: 1px solid #121212;
+  margin-right: 15px; }
+  
+  .noticias .header h1 {
+    font-size: 26px;
+    padding-right: 20px;
+    padding-bottom: 7px;
+    text-transform: uppercase;
+    margin-right: 15px; 
+	font-family: "Montserrat", sans-serif; }
+	
+@media only screen and (max-width: 999px) {
+	.noticias .header h1 {
+    font-size: 22px;
+    padding-right: 20px;
+    padding-bottom: 7px;
+    text-transform: uppercase;
+    margin-right: 5px; }
+}
+	
+	
+.noticias .bloque_raya {
+  margin-left: 0;
+  padding-left: 0;
+  border-bottom: 1px solid #121212; }
+  .noticias .bloque_raya .masinformacion {
+    font-size: 10px;
+    padding: 18px 20px;
+	/*padding: 25px 20px;*/
+    border: 1px solid #121212;
+    text-transform: uppercase; 
+	transition: all 0.2s;
+	}
+	
+	.noticias .bloque_raya .masinformacion .flecha {
+		transition: all 0.5s;
+	}
+	
+	.noticias .bloque_raya .masinformacion:hover {
+		background-color: rgba(90, 240, 255, 0.6);
+	}
+	
+	.noticias .bloque_raya .masinformacion:hover .flecha {
+		transform: translate(5px, 0px);
+		display: inline-block;
+	}
+	
+    .noticias .bloque_raya .masinformacion a {
+      color: #121212; 
+	  font-size: 16px; }
+      .noticias .bloque_raya .masinformacion a:hover {
+        color: #121212;
+        text-decoration: none; }
+		
+		
+@media only screen and (max-width: 999px) {
+	.noticias .bloque_raya .masinformacion {
+		padding: 13px 20px;
+	}
+}
+		
+.noticias .bloque_noticias {
+  margin-top: 10px; 
+  min-height: 150px;
+  transition: all 0.3s;
+  }
+  /*.noticias .bloque_noticias .noticia_texto:hover {
+  cursor: pointer;
+  }
+  .noticias .bloque_noticias .noticia_texto:hover h1 {
+  color: rgba(0, 0, 0, 0.7);
+  }
+  .noticias .bloque_noticias .noticia_texto:hover p {
+  color: rgba(0, 0, 0, 0.5);
+  }
+  .noticias .bloque_noticias .noticia_texto h1 {
+    font-size: 18px;
+    font-weight: bold; 
+	color: rgba(0, 0, 0, 0.9);}
+  .noticias .bloque_noticias .noticia_texto p {
+    font-size: 12px;
+	color: rgba(0, 0, 0, 0.8);}
+	*/
+  .noticias .bloque_noticias .noticia_imagen .card {
+    border: none;
+    background-color: #e5e5e5; }
+    .noticias .bloque_noticias .noticia_imagen .card h1 {
+      font-size: 26px;
+      margin: 30px 20px; }
+  .noticias .bloque_noticias .noticia_bloque {
+    position: relative;
+    border-radius: 4px;
+    background-color: #0e3675; }
+    .noticias .bloque_noticias .noticia_bloque h1 {
+      margin-top: 20px;
+      color: white;
+      font-size: 20px; }
+    .noticias .bloque_noticias .noticia_bloque table {
+      margin-bottom: 20px;
+      position: absolute;
+      bottom: 0;
+      color: white;
+      font-size: 12px; }
+      .noticias .bloque_noticias .noticia_bloque table td.info {
+        vertical-align: top;
+        text-transform: uppercase; }
+
+/*# sourceMappingURL=news.css.map */

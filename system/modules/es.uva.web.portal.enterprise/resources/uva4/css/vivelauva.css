@@ -1,0 +1,66 @@
+/* Vive la UVa */
+
+.vivelauva .header {
+	border-bottom: 1px solid #121212;
+	margin-right: 15px; }
+.vivelauva .header h1 {
+	font-size: 26px;
+	padding-right: 20px;
+	padding-bottom: 7px;
+	text-transform: uppercase;
+	margin-right: 15px; 
+	font-family: "Montserrat", sans-serif; }
+.vivelauva .bloque_raya {
+	margin-left: 0;
+	padding-left: 0;
+	border-bottom: 1px solid #121212; }
+.vivelauva .bloque_raya .masinformacion {
+	font-size: 10px;
+	padding: 18px 20px;
+	border: 1px solid #121212;
+	text-transform: uppercase;
+	transition: all 0.2s;
+}
+.vivelauva .bloque_raya .masinformacion .flecha {
+	transition: all 0.5s;
+}
+.vivelauva .bloque_raya .masinformacion a {
+	color: #121212; 
+	font-size: 16px; }
+.vivelauva .bloque_raya .masinformacion:hover {
+	background-color: rgba(90, 240, 255, 0.6);
+}
+.vivelauva .bloque_raya .masinformacion:hover .flecha {
+	transform: translate(5px, 0px);
+	display: inline-block;
+}
+.vivelauva .bloque_raya .masinformacion a:hover {
+	color: #121212;
+	text-decoration: none;}
+	
+.vivelauva .card:hover {
+	border-color: #5af0ff;
+}
+
+.vivelauva .card h1.card-title {
+	text-transform: uppercase;
+	font-size: 20px;
+	margin-top: -1px;
+	margin-bottom: 5px;
+	padding-top: 20px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	padding-right: 10px; }
+.vivelauva .card .card-body {
+	padding: 10px; }
+.vivelauva .card .card-body a {
+	color: rgba(12, 12, 12, 0.9); }
+
+.vivelauva .card .card-body a:hover, .vivelauva .card a img:hover ~ .car-body a {
+	color: rgba(12, 12, 12, 0.7);
+	text-decoration: none;}
+
+.vivelauva .card .card-date {
+	font-size: 12px;
+	text-align: right;
+	line-height: 1; }

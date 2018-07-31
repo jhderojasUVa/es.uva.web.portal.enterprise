@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<NewFormatters xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="opencms://system/modules/org.opencms.ade.config/schemas/formatters/new_formatter.xsd">
+  <NewFormatter language="en">
+    <NiceName><![CDATA[Sample formatter for en-destacado]]></NiceName>
+    <Type><![CDATA[en-destacado]]></Type>
+    <Jsp>
+      <link type="WEAK">
+        <target><![CDATA[/system/modules/es.uva.web.portal.enterprise/formatters/en-destacado-formatter.jsp]]></target>
+        <uuid>76c2bcbb-8fe0-11e8-9372-0050568213af</uuid>
+      </link>
+    </Jsp>
+    <Rank><![CDATA[1000]]></Rank>
+    <Match>
+      <Types>
+        <ContainerType><![CDATA[contenedor]]></ContainerType>
+      </Types>
+    </Match>
+    <Preview>false</Preview>
+    <SearchContent>true</SearchContent>
+    <AutoEnabled>true</AutoEnabled>
+    <Detail>true</Detail>
+    <NestedContainers>false</NestedContainers>
+    <HeadIncludeCss>
+      <CssLink>
+        <link type="WEAK">
+          <target><![CDATA[/system/modules/es.uva.web.portal.enterprise/resources/uva4/css/destacado.css]]></target>
+          <uuid>e951f3fb-8ffd-11e8-9372-0050568213af</uuid>
+        </link>
+      </CssLink>
+    </HeadIncludeCss>
+    <Setting>
+      <PropertyName><![CDATA[hidetitle]]></PropertyName>
+      <Widget><![CDATA[checkbox]]></Widget>
+      <Default><![CDATA[false]]></Default>
+    </Setting>
+    <Setting>
+      <PropertyName><![CDATA[destacado]]></PropertyName>
+      <DisplayName><![CDATA[destacado]]></DisplayName>
+      <Description><![CDATA[Para distinguir entre 4 tipos de destacados]]></Description>
+      <Widget><![CDATA[select]]></Widget>
+      <Default><![CDATA[1]]></Default>
+      <WidgetConfig><![CDATA[1:destacado1|2:destacado2]]></WidgetConfig>
+    </Setting>
+  </NewFormatter>
+</NewFormatters>
