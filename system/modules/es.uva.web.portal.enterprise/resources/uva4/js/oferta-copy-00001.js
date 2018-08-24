@@ -6,21 +6,12 @@ var filtroEstudios = {
   tipo: 0,
 };
 
-const listadoCampus = [
-	{"id":"0","desc": "Todos los campus"},
-	{"id":"47","desc": 'Valladolid'},
-	{"id":"34","desc": "Palencia"},
-	{"id":"40","desc": "Segovia"},
-	{"id":"42","desc": "Soria"},
-];
-
 // Creamos el contenedor de los estudios
 var estudios = Array();
 
-async function estudios_jsonp(url) {
+function estudios_jsonp(url) {
   // Funcion para traerse el json, crear la funcion y meterla
-  // Obviamente la hacemos con async await para que no haya problemas de red
-  return await new Promise(function(resolve, reject) {
+  return new Promise(function(resolve, reject) {
       let script = document.createElement('script')
       const name = "_jsonp_" + Math.round(100000 * Math.random());
       //url formatting
@@ -90,22 +81,17 @@ class Estudio extends HTMLElement {
 
   set doc(val) {
   	// Seteamos el valor del elemento
-    if (val) {;
+    if (val) {
 	  // Si hay valor en el .doc del elemento...
       let html='';
-	  if ((val["campo.tipo_prop"]==1)||(val["campo.tipo_prop"]==2)) {
-		// El campus, el campus
-		// Bueno ya no porque esta ordenado
-		let campus = dimeCampus(val["ficha.campus_prop"]);
-		// Creamos el elemento en si por dentro con toda su maraña
-		// Con campus
-		//html+='<p id="'+val.id+'"><a href="http://www.uva.es' + val.link + '" target="_blank" role="link">' + val.Title_prop + '</a> (' + campus + ')</p>';
-		html+='<p id="'+val.id+'"><a href="http://www.uva.es' + val.link + '" target="_blank" role="link">' + val.Title_prop.replace('(PA)', '').replace('(SG)', '').replace('(SO)', '') + '</a></p>';  
-	  } else if (val["campo.tipo_prop"]==3) {
-	  	html+='<p id="'+val.COD_PROGRAMA+'"><a href="#" target="_blank" role="link">' + val.DENOMINACION + '</a></p>';  
-	  } else if (val["campo.tipo_prop"]==4) {
-	  	html+='<p id="'+val.IdCurso+'"><a href="#" target="_blank" role="link">' + val.DesCur + '</a></p>';  
-	  }
+	  // El campus, el campus
+	  // Bueno ya no porque esta ordenado
+	  let campus = dimeCampus(val["ficha.campus_prop"]);
+	  
+	  // Creamos el elemento en si por dentro con toda su maraña
+	  // Con campus
+      //html+='<p id="'+val.id+'"><a href="http://www.uva.es' + val.link + '" target="_blank" role="link">' + val.Title_prop + '</a> (' + campus + ')</p>';
+	  html+='<p id="'+val.id+'"><a href="http://www.uva.es' + val.link + '" target="_blank" role="link">' + val.Title_prop.replace('(PA)', '').replace('(SG)', '').replace('(SO)', '') + '</a></p>';
 	  // Esto es una chapuza para los CSS, lo ideal es hacer un @import pero eso al final
 	  let thecss = '<style>:host { }:host p { font-size: 0.9rem; line-height: 1; margin-left: 0.5em; }:host p a { text-decoration: none; color: rgba(55, 55, 55, 0.8);}:host p a:hover { text-decoration: underline; }</style>';
 	  // Fin de la chapuza que ahora la hago mas gorda metiendo a mala leche
@@ -161,68 +147,52 @@ function estudios_filtro_element(elemento) {
 function estudios_filtro() {
   // Crea los estudios (los elementos) y les asigna el contenido filtrado (o no)
   let elementos = estudios.filter(estudios_filtro_element);
-  // Ordenamos
-  elementos.sort((a,b) => {
-  	if (a.DesCur < b.DesCur || a.DENOMINACION < b.DENOMINACION) {
-		return -1;
-	}
-	if (a.DesCur > b.DesCur || a.DENOMINACION > b.DENOMINACION) {
-		return 1;
-	}
-	return 0;
-  });
   // Primero limpiamos
   estudios_clear();
-
+  //Añadimos los elementos
+  // Vamos a filtrar para eso necesito el viejo siempre
+  var theOldCampus;
+  var campus = '';
+  
   var divElementCampus;
-  let numCampus=[]; //Almacena los campus con más de un elemento
-  listadoCampus.forEach(campus => {
-  	let elementos_campus = elementos.filter(elemento => (elemento["ficha.campus_prop"] == campus.id));
-	if (elementos_campus.length > 0) {
-		numCampus.push(campus.id);
+  
+  elementos.forEach(doc => {
+  	// Aqui hay que poner el filtro por campus
+	let theCampus = doc["ficha.campus_prop"];
+	
+	if (theOldCampus != theCampus) {
+		campus = dimeCampus(theCampus);
 		let titleCampus = document.createElement('h2');
-		//titleCampus.innerHTML = '<a onclick="showHide(\''+"oferta_campus_"+campus.id+'\')">'+campus.desc+'</a> <i class="fas fa-arrow-up"></i>';
-		if (campus.id == 0) {
-			titleCampus.innerHTML = campus.desc +' <i class="fas fa-arrow-up"></i>';
-		} else {
-			titleCampus.innerHTML = '<a onclick="showHide(\''+"oferta_campus_"+ campus.id +'\')">' +campus.desc +'</a> <i class="fas fa-arrow-up"></i>';
-		}
+		titleCampus.innerHTML = '<a onclick="showHide('+theCampus+')">'+campus+'</a> <i class="fas fa-arrow-down"></i>';
 		titleCampus.setAttribute('class', 'campus');
 		document.getElementById('estudios_contenido').appendChild(titleCampus);
-
+		
 		divElementCampus = document.createElement('div');
-		divElementCampus.setAttribute('id', 'oferta_campus_'+campus.id);
+		divElementCampus.setAttribute('id', theCampus);
 		divElementCampus.setAttribute('class', 'hideElement');
 		document.getElementById('estudios_contenido').appendChild(divElementCampus);
-
-		let elementos_campus = elementos.filter(elemento => (elemento["ficha.campus_prop"] == campus.id));
-		elementos_campus.forEach(doc => {
-			let element = new Estudio();
-			element.doc = doc;
-			// Ya nop!
-			//document.getElementById('estudios_contenido').appendChild(element);
-
-			// Metemos el contenido en el div que tiene como id el campus!
-			document.getElementById('oferta_campus_'+campus.id).appendChild(element);
-		});
 	}
+    let element = new Estudio();
+    element.doc = doc;
+	// Ya nop!
+    //document.getElementById('estudios_contenido').appendChild(element);
+
+	// Metemos el contenido en el div que tiene como id el campus!
+	document.getElementById(theCampus).appendChild(element);
+	
+	theOldCampus = doc["ficha.campus_prop"];
+
   });
-  
-  if (numCampus.length==1) {
-  	showHide("oferta_campus_"+numCampus[0],false);
-  }
-  
 
   if (filtroEstudios.clase == 1 || filtroEstudios.clase == 2 ) {
     //Mostramos los filtros
     estudios_show("filtro");
-  } else {
-  	estudios_hide("filtro");
   }
 }
 
 function estudios_estilos() {
   //Modificamos los estilos de los botones
+  
   // Primero se limpian de active los filtros
   //let elements = document.getElementsByClassName('btn azul_blanco active');
   // Cambiamos a un queryselectorall para que seleccione todo
@@ -247,12 +217,6 @@ function estudios_estilos() {
     case 2:
       document.getElementById("btnMasteres").className = "nav-link tab azul_blanco active";
       break;
-	case 3:
-	  document.getElementById("btnDoctorado").className = "nav-link tab azul_blanco active";
-	  break;
-	case 4:
-	  document.getElementById("btnTitulos").className = "nav-link tab azul_blanco active";
-	  break;
   }
   
   /*
@@ -338,32 +302,24 @@ function dimeCampus(idcampus) {
 	 return campus;
 }
 
-function showHide(elementId, changearrow = true) {
+function showHide(elementId) {
 	// Funcion que muestra oculta un div y modifica el selector
 	
 	var element = document.getElementById(elementId);
 	
-	/*console.log("SHOW HIDE ");
-	console.log(element);
-	console.log(this.event.target);
-	console.log(this.event.target.nextElementSibling);*/
 	if (element.classList.contains('showElement')) {
 		// Ocultamos
 		// Mostramos la flecha gorda
-		if (changearrow) {
-			this.event.target.nextElementSibling.className = 'fas fa-arrow-up';
-			this.event.target.nextElementSibling.style = 'color: rgba(55, 55, 55, 0.8);';
-		}
+		this.event.target.nextElementSibling.className = 'fas fa-arrow-down';
+		this.event.target.nextElementSibling.style = 'color: rgba(55, 55, 55, 0.8);';
 		// Ocultamos la capa
 		element.classList.remove('showElement');
 		element.classList.add('hideElement');
 	} else {
 		// Mostramos
 		// Cambiamos la flecha
-		if (changearrow) {
-			this.event.target.nextElementSibling.className = 'fas fa-arrow-down';
-			this.event.target.nextElementSibling.style = 'color: rgba(0, 0, 0, 0.3);';
-		}
+		this.event.target.nextElementSibling.className = 'fas fa-arrow-up';
+		this.event.target.nextElementSibling.style = 'color: rgba(0, 0, 0, 0.3);';
 		// Mostamos la capa
 		element.classList.remove('hideElement');
 		element.classList.add('showElement');
@@ -373,16 +329,6 @@ function showHide(elementId, changearrow = true) {
 document.addEventListener("DOMContentLoaded",function(){
   //index=Solr%20Offline
   var data = estudios_jsonp("http://www.uva.es/opencms/handleSolrSelect?rows=2000&fq=type:estudios&wt=json&json.wrf=estudios_respuesta");
-  data.then((res) => {
-    estudios_respuesta(res) 
-  });
-  
-  data = estudios_jsonp("http://ediciond.uva.es/system/modules/es.uva.web.portal.enterprise/elements/doctorado/doctorado.jsp");
-  data.then((res) => {
-    estudios_respuesta(res) 
-  });
-  
-  data = estudios_jsonp("http://ediciond.uva.es/system/modules/es.uva.web.portal.enterprise/elements/titulos/titulos.jsp");
   data.then((res) => {
     estudios_respuesta(res) 
   });
@@ -399,18 +345,6 @@ document.addEventListener("DOMContentLoaded",function(){
 
   document.getElementById('btnMasteres').onclick = function(){
     filtroEstudios.clase = 2;
-    estudios_filtro();
-    estudios_estilos();
-  };
-  
-  document.getElementById('btnDoctorado').onclick = function(){
-    filtroEstudios.clase = 3;
-    estudios_filtro();
-    estudios_estilos();
-  };
-  
-  document.getElementById('btnTitulos').onclick = function(){
-    filtroEstudios.clase = 4;
     estudios_filtro();
     estudios_estilos();
   };
@@ -495,28 +429,22 @@ document.addEventListener("DOMContentLoaded",function(){
     estudios_estilos();
   };
   
-  if (document.getElementById('btnTipoPresencial')) {
-	  document.getElementById('btnTipoPresencial').onclick = function(){
-		filtroEstudios.tipo = 1;
-		estudios_filtro();
-		estudios_estilos();
-	  };
-  }
+  document.getElementById('btnTipoPresencial').onclick = function(){
+    filtroEstudios.tipo = 1;
+    estudios_filtro();
+    estudios_estilos();
+  };
 
-  if (document.getElementById('btnTipoSemipresencial')) {
   document.getElementById('btnTipoSemipresencial').onclick = function(){
     filtroEstudios.tipo = 2;
     estudios_filtro();
     estudios_estilos();
   };
-  }
 
-  if (document.getElementById('btnTipoVirtual')) {
-	  document.getElementById('btnTipoVirtual').onclick = function(){
-		filtroEstudios.tipo = 3;
-		estudios_filtro();
-		estudios_estilos();
-	  };
-  }
+  document.getElementById('btnTipoVirtual').onclick = function(){
+    filtroEstudios.tipo = 3;
+    estudios_filtro();
+    estudios_estilos();
+  };
 
 });

@@ -2,12 +2,12 @@
 
 <NewFormatters xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="opencms://system/modules/org.opencms.ade.config/schemas/formatters/new_formatter.xsd">
   <NewFormatter language="en">
-    <NiceName><![CDATA[Accesos directos desde la nueva portada UVa enterprise]]></NiceName>
+    <NiceName><![CDATA[Accesos directos desde Mi Portal]]></NiceName>
     <Type><![CDATA[en-directlink]]></Type>
     <Jsp>
       <link type="WEAK">
-        <target><![CDATA[/system/modules/es.uva.web.portal.enterprise/formatters/en-directlink-formatter.jsp]]></target>
-        <uuid>d9e241b1-8fe0-11e8-9372-0050568213af</uuid>
+        <target><![CDATA[/system/modules/es.uva.web.portal.enterprise/formatters/en-directlink-formatter-miportal.jsp]]></target>
+        <uuid>04d183c2-a772-11e8-8403-0050568213af</uuid>
       </link>
     </Jsp>
     <Rank><![CDATA[1000]]></Rank>
@@ -21,14 +21,6 @@
     <AutoEnabled>true</AutoEnabled>
     <Detail>true</Detail>
     <NestedContainers>false</NestedContainers>
-    <HeadIncludeCss>
-      <CssLink>
-        <link type="WEAK">
-          <target><![CDATA[/system/modules/es.uva.web.portal.enterprise/resources/uva4/css/vivelauva.css]]></target>
-          <uuid>19cae6e2-8ff4-11e8-9372-0050568213af</uuid>
-        </link>
-      </CssLink>
-    </HeadIncludeCss>
     <Setting>
       <PropertyName><![CDATA[hidetitle]]></PropertyName>
       <DisplayName><![CDATA[Ocultar Título]]></DisplayName>

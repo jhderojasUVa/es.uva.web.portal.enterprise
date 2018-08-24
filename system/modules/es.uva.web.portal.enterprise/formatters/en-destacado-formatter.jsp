@@ -10,7 +10,6 @@
 	<div class="container destacado" style="margin-top: 70px; margin-bottom: 70px;">
 		<div class="row">
 			<div class="col-12 col-md-3 header">
-			  <!--<h1 data-i18n="noticias:noticias.title">¡noticias!</h1>-->
 			  <h1 data-i18n-es="${content.value.Title}" data-i18n-en="Links">${content.value.Title}</h1>
 			</div>
 			<div class="col bloque_raya d-none d-md-block">
@@ -21,7 +20,7 @@
 		<c:forEach var="item" items="${content.valueList.Item}">
 			<div ${item.rdfa["Link|Image"]} class="${cms:lookup(cms:getListSize(content.valueList.Item), '1:col-xs-12|2:col-sm-6|3:col-sm-4|4:col-md-3 col-sm-6|5:col-md-2 col-sm-6|6:col-md-2 col-sm-4')}">
 				<div class="text-center">
-					<c:if test="${item.value.Link.isSet}"><a class="" href="<cms:link>${item.value.Link}</cms:link>" role="link"></c:if>
+					<c:if test="${item.value.Link.isSet}"><a class="" href="<cms:link>${item.value.Link}</cms:link>" role="link" alt="${item.value.Headline}" aria-label="${item.value.Headline}"></c:if>
 						${item.value.Headline}
 					<c:if test="${item.value.Link.isSet}"></a></c:if>
 				</div>

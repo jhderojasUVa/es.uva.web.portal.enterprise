@@ -77,7 +77,7 @@ class NoticiaTexto extends Noticia {
 		h1:hover p, p:hover { color: rgba (0, 0, 0, 0.5);}
         </style>`;
       if (val.Title_prop) {
-        html+=' <h1><a href="http://comunicacion.uva.es'+val.link+'" target="_blank" role="link">'+val.Title_prop+'</a></h1>';
+        html+=' <h1><a href="http://comunicacion.uva.es'+val.link+'" target="_blank" role="link" rel="noopener noreferrer">'+val.Title_prop+'</a></h1>';
       }
       if (val.Subtitle_prop) {
         html+=' <p>'+val.Subtitle_prop+'</p>';

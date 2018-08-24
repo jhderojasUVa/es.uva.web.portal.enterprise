@@ -10,3 +10,7 @@ title.en-destacado=destacado
 desc.en-directlink=link directo
 title.en-directlink=directlink
 fileicon.en-directlink=en-directlink
+
+fileicon.en-aviso=Aviso
+desc.en-aviso=Elemento aviso
+title.en-aviso=Crear un aviso

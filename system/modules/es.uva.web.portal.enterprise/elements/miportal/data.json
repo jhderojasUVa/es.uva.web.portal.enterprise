@@ -1,0 +1,89 @@
+{
+	"rows": [{
+		"color": "red",
+		"id": "boton1",
+		"params": {
+			"data-size": "medium",
+			"data-role": "tile",
+			"data-role-tile": "true"
+		},
+		"rows": [{
+			"id": "boton2_1",
+			"params": {
+				"data-size": "small",
+				"data-role": "tile",
+				"data-role-tile": "true"
+			},
+			"class": "bg-red tile-small"
+		}, {
+			"id": "boton2_2",
+			"params": {
+				"data-size": "small",
+				"data-role": "tile",
+				"data-role-tile": "true"
+			},
+			"class": "bg-amber tile-small"
+		}, {
+			"id": "boton2_3",
+			"params": {
+				"data-size": "small",
+				"data-role": "tile",
+				"data-role-tile": "true"
+			},
+			"class": "bg-green tile-small"
+		}, {
+			"id": "boton2_4",
+			"params": {
+				"data-size": "small",
+				"data-role": "tile",
+				"data-role-tile": "true"
+			},
+			"class": "bg-pink tile-small"
+		}, {
+			"id": "boton2_5",
+			"params": {
+				"data-size": "medium",
+				"data-role": "tile",
+				"data-role-tile": "true"
+			},
+			"class": "bg-orange tile-medium"
+		}, {
+			"id": "boton2_6",
+			"params": {
+				"data-size": "wide",
+				"data-role": "tile",
+				"data-role-tile": "true"
+			},
+			"class": "bg-green tile-wide"
+		}],
+		"class": "",
+		"content": "<span class=\"badge-top\">10<\/span>"
+	}, {
+		"id": "boton2",
+		"params": {
+			"data-size": "medium",
+			"data-role": "tile",
+			"data-role-tile": "true"
+		},
+		"class": "bg-green ",
+		"content": "<span class=\"badge-top\">10<\/span>"
+	}, {
+		"id": "boton3",
+		"params": {
+			"data-size": "medium",
+			"data-role": "tile",
+			"data-role-tile": "true"
+		},
+		"class": " tile-medium",
+		"content": "<span class=\"mif-facebook icon\"><\/span><span class=\"branding-bar\">Facebook<\/span><span class=\"badge-bottom\">10<\/span>"
+	}, {
+		"id": "boton4",
+		"params": {
+			"data-size": "medium",
+			"data-role": "tile",
+			"data-role-tile": "true"
+		},
+		"class": "bg-pink tile-medium",
+		"content": "<span class=\"mif-cart icon\"><\/span><span class=\"branding-bar\">Store<\/span><span class=\"badge-top\">10<\/span>"
+	}]
+}

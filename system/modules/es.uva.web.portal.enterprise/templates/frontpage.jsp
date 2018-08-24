@@ -32,12 +32,17 @@
 	
 	<cms:enable-ade/>
     <title data-i18n-es="Universidad de Valladolid" data-i18n-en="University of Valladolid Website">Universidad de Valladolid</title>
+	<link rel="manifest" href="/manifest.json">
     <!-- Bootstrap -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js" integrity="sha384-u/bQvRA/1bobcXlcEYpsEdFVK/vJs3+T+nXLsBYJthmdBuavHvAW6UsmqO2Gd/F9" crossorigin="anonymous"></script>-->
-    <!-- Prueba -->
+    
+	<!-- Polyfill -->
 	<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+	<!-- Web components bundle -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.0.2/webcomponents-bundle.js"></script>
+	<!-- Custom elements -->
+	<script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.0.3/custom-elements-es5-adapter.js"></script>
+
 	<!-- Traduccion -->
 	<!--
 	<script src="https://unpkg.com/i18next/i18next.js"></script>
@@ -78,10 +83,10 @@
 	  <div class="container">
 		<div class="row align-items-center">
 			<div class="col-md-1 text-left d-none d-md-block d-lg-block">
-				<a href="<cms:link>/sites/uva/index.html</cms:link>" role="link"><i class="fas fa-home"></i></a>
+				<a href="<cms:link>/sites/uva/index.html</cms:link>" role="link" alt="Inicio" aria-label="Inicio"><i class="fas fa-home"></i></a>
 			</div>
 			<div class="col-md-4 text-center">
-				<img src="<cms:link>/resources/uva4/img/uva1.svg</cms:link>" srcset="<cms:link>/system/modules/es.uva.web.portal.enterprise/resources/uva4/img/uva1.svg</cms:link>" />
+				<img alt="Universidad de Valladolid" src="<cms:link>/resources/uva4/img/uva1.svg</cms:link>" srcset="<cms:link>/system/modules/es.uva.web.portal.enterprise/resources/uva4/img/uva1.svg</cms:link>" />
 			</div>
 			<!-- v2 -->
 			<div class="col-md-7 text-right">
@@ -90,6 +95,7 @@
 					<c:set var="langlinks" value="" />
 					<c:set var="showlang" value="true" />
 					<c:set var="showlinks" value="true" />
+					<label for="selectLanguage" style="visibility: hidden;">Seleccionar idioma</label>
 					<select class="langSelect" id="selectLanguage" onChange="ChangeLang()">
 					<c:forEach var="locale" items="${cms.availableLocales}">
 						<c:choose>
@@ -106,7 +112,7 @@
 			</span>
             <span class="separador_left"><a href="http://directorio.uva.es/inicio"><span class="text-menu">Directorio</span> <i class="far fa-address-card"></i></a></span>
 			<span class="separador_left"><a href="http://miportal.uva.es"><span class="text-menu" style="display: inline-block; width: 60px; margin-top: 5px;">Comunidad</span> <i class="fas fa-lock"></i></a></span>
-            <span class="separador_left"><a href="<cms:link>/sites/uva/buscador.html</cms:link>" role="link"><i class="fas fa-search"></i></a></span>
+            <span class="separador_left"><a alt="Buscador" aria-label="Buscador" href="<cms:link>/sites/uva/buscador.html</cms:link>" role="link"><i class="fas fa-search"></i></a></span>
           </div>
 		 </div>
 			
@@ -137,7 +143,7 @@
         </div>
         <div class="col bloque_raya d-none d-md-block">
           <span class="masinformacion">
-		  	<a href="http://comunicacion.uva.es" target="_blank" role="link">
+		  	<a href="http://comunicacion.uva.es" target="_blank" role="link" rel="noopener noreferrer">
 				<span data-i18n-es="más información" data-i18n-en="read more">más información</span> 
 				<!--<span  data-i18n="noticias:noticias.more">¡más información!</span>-->
 				<span class="flecha"><i class="fas fa-angle-right"></i></span>
@@ -150,7 +156,7 @@
 	  <div class="row d-block d-sm-none">
 	  	<div class="col-12 movil text-center">
 			<span class="masinformacion">
-		  	<a href="http://comunicacion.uva.es" target="_blank" role="link">
+		  	<a href="http://comunicacion.uva.es" target="_blank" role="link" rel="noopener noreferrer">
 				<span data-i18n-es="más información" data-i18n-en="read more">más información</span> 
 				<span class="flecha"><i class="fas fa-angle-right"></i></span>
 			</a>
@@ -158,21 +164,21 @@
 		</div>
 	  </div>
     </div>
-	<script src="<cms:link>/system/modules/es.uva.web.portal.enterprise/resources/uva4/js/noticias.js</cms:link>"></script>
+	<%-- <script src="<cms:link>/system/modules/es.uva.web.portal.enterprise/resources/uva4/js/noticias.js</cms:link>"></script> --%>
+	<!-- ES2015 -->
+	<script src="<cms:link>/system/modules/es.uva.web.portal.enterprise/resources/uva4/js/noticias-es5.js</cms:link>"></script>
 
 	<!-- AGENDA -->
 	<div class="container" id="agenda" style="margin-top: 50px;">
       <div class="row">
         <div class="col-12 col-md-2 header">
-          <!--<h1 data-i18n="agenda:agenda.title">¡agenda!</h1>-->
 		  <h1 data-i18n-es="Agenda" data-i18n-en="Calendar">
 		  Agenda
 		  </h1>
         </div>
         <div class="col bloque_raya d-none d-md-block">
 			<span class="masinformacion">
-				<a href="http://eventos.uva.es" target="_blank" role="link">
-					<!--<span  data-i18n="agenda:agenda.more">¡más información! </span>  -->
+				<a href="http://eventos.uva.es" target="_blank" role="link" rel="noopener noreferrer">
 					<span data-i18n-es="más información" data-i18n-en="read more">más información</span>
 					<span class="flecha"><i class="fas fa-angle-right"></i></span>
 				</a>
@@ -188,8 +194,7 @@
 	  <div class="row d-block d-sm-none" style="margin-top: 2em;">
 	  	<div class="col-12 movil text-center">
 			<span class="masinformacion">
-				<a href="http://eventos.uva.es" target="_blank" role="link">
-					<!--<span  data-i18n="agenda:agenda.more">¡más información! </span>  -->
+				<a href="http://eventos.uva.es" target="_blank" role="link" rel="noopener noreferrer">
 					<span data-i18n-es="más información" data-i18n-en="read more">más información</span>
 					<span class="flecha"><i class="fas fa-angle-right"></i></span>
 				</a>
@@ -197,7 +202,9 @@
 		</div>
 	  </div>
     </div>
-	<script src="<cms:link>/system/modules/es.uva.web.portal.enterprise/resources/uva4/js/agenda.js</cms:link>"></script>
+	<%--<script src="<cms:link>/system/modules/es.uva.web.portal.enterprise/resources/uva4/js/agenda.js</cms:link>"></script>--%>
+	<!-- ES2015 -->
+	<script src="<cms:link>/system/modules/es.uva.web.portal.enterprise/resources/uva4/js/agenda-es5.js</cms:link>"></script>
     <script>
       // Slideshow options
       var agendaoptions = {
@@ -215,7 +222,6 @@
           <h1 data-i18n-es="oferta educativa" data-i18n-en="educative offer">oferta educativa</h1>
         </div>
 		<div class="col bloque_raya d-none d-md-block">
-          <!--<span class="masinformacion"><a href="#" role="link">más información <i class="fas fa-angle-right"></i></a></span>-->
         </div>
       </div>
 	  
@@ -249,7 +255,11 @@
 		--%>
 		
 		<!-- ramas -->
-        <div class="col-md-9 text-center" style="background-color: rgba(12, 12, 12, 0.1); padding: 0.5em 0;">
+		<div class="col-md-2" style="background-color: rgba(12, 12, 12, 0.1); padding: 0.5em 0;">
+			<!-- Life is empty -->
+			&nbsp;
+		</div>
+        <div class="col-md-7 text-center" style="background-color: rgba(12, 12, 12, 0.1); padding: 0.5em 0;">
           <h2 class="text-center" data-i18n-es="RAMAS" data-i18n-en="BRANCHES">RAMAS</h2>
 		  <button class="btn azul_blanco" data-i18n-es="Todos" data-i18n-en="All" id="btnTodasRamas">Todos</button>
           <button class="btn azul_blanco" data-i18n-es="Artes y Humanidades" data-i18n-en="Arts and Humanities" id="btnAreaArtes">Artes y Humanidades</button>
@@ -264,7 +274,9 @@
 		  <button class="btn azul_blanco" data-i18n-es="Todos" data-i18n-en="All" id="btnTipoTodos">Todos</button>
           <button class="btn azul_blanco" data-i18n-es="Presencial" data-i18n-en="On-site" id="btnTipoPresencial">Presencial</button>
           <button class="btn azul_blanco" data-i18n-es="Semipresencial" data-i18n-en="Blended" id="btnTipoSemipresencial">Semipresencial</button>
-          <button class="btn azul_blanco" data-i18n-es="Online" data-i18n-en="Online" id="btnTipoVirtual">Online</button>
+          <!--
+		  <button class="btn azul_blanco" data-i18n-es="Online" data-i18n-en="Online" id="btnTipoVirtual">Online</button>
+		  -->
         </div>
 		
 		
@@ -274,19 +286,26 @@
           <nav class="nav flex-column" style="/*margin: 1em 0;*/">
             <a class="nav-link tab azul_blanco" data-i18n-es="GRADOS" data-i18n-en="UNDERGRADUATE" id="btnGrados">GRADOS</a>
             <a class="nav-link tab azul_blanco" data-i18n-es="MÁSTERES" data-i18n-en="GRADUATE" id="btnMasteres">MÁSTERES</a>
-            <a class="nav-link tab azul_blanco" data-i18n-es="DOCTORADO" data-i18n-en="PhD" id="btnDoctorado" href="http://escueladoctorado.uva.es/opencms/oferta/index.html?lang=es" role="link" target="_blank">DOCTORADO</a>
-            <a class="nav-link tab azul_blanco" data-i18n-es="TITULOS PROPIOS" data-i18n-en="OWN TITLES" id="btnTitulos" href="https://alumnos.sigma.uva.es/cowep/control/consultaEPTipo?entradaPublica=true&idioma=es.ES&centro=140&ano=2018" role="link" target="_blank">TITULOS PROPIOS</a>
-            <a class="nav-link tab azul_blanco" data-i18n-es="FORMACIÓN CONTINUA" data-i18n-en="CONTINOUS FORMATION" id="btnContinua" href="http://www.uva.es/export/sites/uva/2.docencia/2.05.cursos/2.05.01.cursos/" role="link" target="_blank">FORMACIÓN CONTINUA</a>
-            <a class="nav-link tab azul_blanco" data-i18n-es="CURSOS DE ESPAÑOL" data-i18n-en="SPANISH COURSES" id="btnCursos" href="https://spanishinvalladolid.com/" role="link" target="_blank">CURSOS DE ESPAÑOL</a>
+            <a class="nav-link tab azul_blanco" data-i18n-es="DOCTORADO" data-i18n-en="PhD" id="btnDoctorado">DOCTORADO</a>
+            <!--
+			<a class="nav-link tab azul_blanco" data-i18n-es="DOCTORADO" data-i18n-en="PhD" id="btnDoctorado" href="http://escueladoctorado.uva.es/opencms/oferta/index.html?lang=es" role="link" target="_blank">DOCTORADO</a>
+            -->
+			<a class="nav-link tab azul_blanco" data-i18n-es="TITULOS PROPIOS" data-i18n-en="OWN TITLES" id="btnTitulos" role="link">TITULOS PROPIOS</a>
+            <!--
+			<a class="nav-link tab azul_blanco" data-i18n-es="TITULOS PROPIOS" data-i18n-en="OWN TITLES" id="btnTitulos" href="https://alumnos.sigma.uva.es/cowep/control/consultaEPTipo?entradaPublica=true&idioma=es.ES&centro=140&ano=2018" role="link" target="_blank">TITULOS PROPIOS</a>
+            -->
+			<a class="nav-link tab azul_blanco" data-i18n-es="FORMACIÓN CONTINUA" data-i18n-en="CONTINOUS FORMATION" id="btnContinua" href="http://www.uva.es/export/sites/uva/2.docencia/2.05.cursos/2.05.01.cursos/" role="link" target="_blank" rel="noopener noreferrer">FORMACIÓN CONTINUA</a>
+            <a class="nav-link tab azul_blanco" data-i18n-es="CURSOS DE ESPAÑOL" data-i18n-en="SPANISH COURSES" id="btnCursos" href="https://spanishinvalladolid.com/" role="link" target="_blank" rel="noopener noreferrer">CURSOS DE ESPAÑOL</a>
           </nav>
         </div>
         <div class="col-md-10" id="estudios_contenido">
-          <img src="/resources/uva4/img/oferta.png" style="min-width: 100%; height: auto;"/>
+          <img alt="Oferta Educativa" src="/resources/uva4/img/oferta.png" style="min-width: 100%; height: auto;"/>
         </div>
       </div>
     </div>
-	<script src="<cms:link>/system/modules/es.uva.web.portal.enterprise/resources/uva4/js/oferta.js</cms:link>"></script>
-	
+	<%-- <script src="<cms:link>/system/modules/es.uva.web.portal.enterprise/resources/uva4/js/oferta.js</cms:link>"></script> --%>
+	<!-- ES 2015 -->
+	<script src="<cms:link>/system/modules/es.uva.web.portal.enterprise/resources/uva4/js/oferta-es5.js</cms:link>"></script>
 
 	<!-- CONTACTO -->
 	  <div class="container contacto" style="margin-top: 70px;">
@@ -301,16 +320,18 @@
 					  <div class="form-row align-items-center">
 
 						  <div class="col-md-4">
-							  <input type="text" class="form-control mb-2"  id="formulario_contacto_name" name="formulario_contacto_name" placeholder="Nombre" />
+						  	<label for="formulario_contacto_name" style="display: none;" data-i18n-en="Name">Nombre</label>
+							<input type="text" class="form-control mb-2"  id="formulario_contacto_name" name="formulario_contacto_name" placeholder="Nombre" />
 						  </div>
 						  <div class="col-md-4">
-							  <input type="text" class="form-control mb-2"  id="formulario_contacto_mail" name="formulario_contacto_mail" placeholder="Escriba su email aqui" />
+						  	<label for="formulario_contacto_mail" style="display: none;" data-i18n-en="email">Correo electronico</label>
+							<input type="text" class="form-control mb-2"  id="formulario_contacto_mail" name="formulario_contacto_mail" placeholder="Escriba su email aqui" />
 						  </div>
 						  <div class="col-md-3">
-							  <input type="text" class="form-control mb-2"  id="formulario_contacto_phone" name="formulario_contacto_phone" placeholder="Telefono" />
+						  	<label for="formulario_contacto_phone" style="display: none;" data-i18n-en="Phone number">Teléfono</label>
+							<input type="text" class="form-control mb-2"  id="formulario_contacto_phone" name="formulario_contacto_phone" placeholder="Telefono" />
 						  </div>
 						  <div class="col-auto">
-							  <!--<button tyoe="submit" id="formulario_contacto_enviar" class="btn btn-primary mb-2" data-i18n="contacto:contacto.button">enviar</button>-->
 							  <button tyoe="submit" id="formulario_contacto_enviar" class="btn btn-primary mb-2 contacto" data-i18n-es="enviar" data-i18n-en="send">enviar</button>
 						  </div>
 
@@ -339,12 +360,12 @@
 	
 		<div class="row">
 			<div class="col-md-3 text-center">
-				<a href="https://ceitriangular.org/" target="_blank"><img src="<cms:link>/_imagenes/CieLogo.png</cms:link>" /></a>
+				<a aria-label="Ceitriangular" href="https://ceitriangular.org/" target="_blank" rel="noopener noreferrer"><img alt="CeiTriangular" src="<cms:link>/_imagenes/CieLogo.png</cms:link>" /></a>
 			</div>
 			<div class="col-md-9 text-center">
-			<a href="<cms:link>/7.comunidaduniversitaria/7.13.patrocinadores/7.13.02.bancosantander/index.html</cms:link>" target="_blank"><img src="<cms:link>/_imagenes/santander.gif_1156717278.gif</cms:link>" /></a>
-			<a href="<cms:link>/7.comunidaduniversitaria/7.13.patrocinadores/7.13.01.agenciaviajesbarcelo/index.html</cms:link>" target="_blank"><img src="<cms:link>/_imagenes/patrocinador01barcelo.png_818694141.png</cms:link>" /></a>
-			<a href="<cms:link>/7.comunidaduniversitaria/7.13.patrocinadores/7.13.04.openbank/</cms:link>" target="_blank"><img src="<cms:link>/_imagenes/patrocinador03openbank.png_1815782397.png</cms:link>" /></a>
+			<a href="<cms:link>/7.comunidaduniversitaria/7.13.patrocinadores/7.13.02.bancosantander/index.html</cms:link>" target="_blank" rel="noopener noreferrer"><img alt="Banco Santander" src="<cms:link>/_imagenes/santander.gif_1156717278.gif</cms:link>" /></a>
+			<a href="<cms:link>/7.comunidaduniversitaria/7.13.patrocinadores/7.13.01.agenciaviajesbarcelo/index.html</cms:link>" target="_blank" rel="noopener noreferrer"><img alt="Barceló Viajes" src="<cms:link>/_imagenes/patrocinador01barcelo.png_818694141.png</cms:link>" /></a>
+			<a href="<cms:link>/7.comunidaduniversitaria/7.13.patrocinadores/7.13.04.openbank/</cms:link>" target="_blank" rel="noopener noreferrer"><img alt="OpenBank" src="<cms:link>/_imagenes/patrocinador03openbank.png_1815782397.png</cms:link>" /></a>
 			</div>
 	
 		</div>
@@ -357,7 +378,7 @@
         <div class="container">
           <div class="row">
             <div class="cell-12 col-md-12 gmap">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11924.299444357766!2d-4.726204847456391!3d41.654124535691764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4712b1b3f53785%3A0xe9ec32442c2575f5!2sPalacio+de+Santa+Cruz!5e0!3m2!1ses!2ses!4v1530607016352" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+              <iframe title="Mapa de localización" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11924.299444357766!2d-4.726204847456391!3d41.654124535691764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4712b1b3f53785%3A0xe9ec32442c2575f5!2sPalacio+de+Santa+Cruz!5e0!3m2!1ses!2ses!4v1530607016352" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
           </div>
         </div>
@@ -373,9 +394,9 @@
             <div class="cell-4 col-md-4">
               <h1 class="text-center">Te interesa</h1>
               <ul>
-                <li><a href="http://spanishinvalladolid.com/" role="link">Español en Valladolid</a></li>
-                <li><a href="http://www.uva.es/5.empresaeinstituciones/5.01.practicasenempresa/5.01.02.estudiantes/" role="link">Prácticas de Estudiantes</a></li>
-                <li><a href="http://www.uva.es/1.lauva/1.09.defensordelacomunidad/1.09.01.presentacion/" role="link">Defensor de la Comunidad</a></li>
+                <li><a href="http://spanishinvalladolid.com/" role="link" rel="noopener noreferrer">Español en Valladolid</a></li>
+                <li><a href="http://www.uva.es/5.empresaeinstituciones/5.01.practicasenempresa/5.01.02.estudiantes/" role="link" rel="noopener noreferrer">Prácticas de Estudiantes</a></li>
+                <li><a href="http://www.uva.es/1.lauva/1.09.defensordelacomunidad/1.09.01.presentacion/" role="link" rel="noopener noreferrer">Defensor de la Comunidad</a></li>
               </ul>
 			  <h1 class="text-center">Divulgación</h1>
               <ul>
@@ -385,11 +406,11 @@
             <div class="cell-4 col-md-4">
               <h1 class="text-center">Descubre</h1>
               <ul>
-                <li><a href="http://iee.blogs.uva.es/" role="link">IEE</a></li>
-                <li><a href="http://funge.uva.es/idiomas/" role="link">Centro de Idiomas</a></li>
-                <li><a href="http://funge.uva.es/palacio/" role="link">Palacio de Congresos</a></li>
-				<li><a href="http://www.fundacionjimenezarellano.com/" role="link">Fundación Jimenez Arellano</a></li>
-				<li><a href="http://www.relint.uva.es/" role="link">Internacional</a></li>
+                <li><a href="http://iee.blogs.uva.es/" role="link" rel="noopener noreferrer">IEE</a></li>
+                <li><a href="http://funge.uva.es/idiomas/" role="link" rel="noopener noreferrer">Centro de Idiomas</a></li>
+                <li><a href="http://funge.uva.es/palacio/" role="link" rel="noopener noreferrer">Palacio de Congresos</a></li>
+				<li><a href="http://www.fundacionjimenezarellano.com/" role="link" rel="noopener noreferrer">Fundación Jimenez Arellano</a></li>
+				<li><a href="http://www.relint.uva.es/" role="link" rel="noopener noreferrer">Internacional</a></li>
               </ul>
             </div>
             <div class="cell-4 col-md-4">
@@ -407,7 +428,7 @@
           </div>
           <div class="row pie_enlaces align-items-center">
             <div class="cell-6 col-md-6">
-              <form method="post">
+              <form method="post" action="<cms:link>/sites/uva/suscripciones.html</cms:link>">
                 <div class="form-group row text-center">
                   <div class="col-md-8">
                     <input type="text" name="email" placeholder="Su dirección de email">
@@ -418,9 +439,9 @@
                 </div>
               </form>
               <span style="text-align: left;">
-                <a href="#" class="socialicon" role="link"><i class="fab fa-facebook-square" style="font-size: 2em; color: black; margin-bottom: 0.5em;"></i></a>&nbsp;&nbsp;
-                <a href="#" class="socialicon" role="link"><i class="fab fa-twitter-square" style="font-size: 2em;; color: black; margin-bottom: 0.5em;"></i></a>&nbsp;&nbsp;
-                <a href="#" class="socialicon" role="link"><i class="fas fa-rss-square" style="font-size: 2em; color: black; margin-bottom: 0.5em;"></i></a>
+                <a href="#" class="socialicon" role="link" alt="Facebook" aria-label="Facebook"><i class="fab fa-facebook-square" style="font-size: 2em; color: black; margin-bottom: 0.5em;"></i></a>&nbsp;&nbsp;
+                <a href="#" class="socialicon" role="link" alt="Twitter" aria-label="Twitter"><i class="fab fa-twitter-square" style="font-size: 2em;; color: black; margin-bottom: 0.5em;"></i></a>&nbsp;&nbsp;
+                <a href="#" class="socialicon" role="link" alt="Rss" aria-label="Rss"><i class="fas fa-rss-square" style="font-size: 2em; color: black; margin-bottom: 0.5em;"></i></a>
               </span>
             </div>
             <div class="cell-6 col-md-6">
@@ -439,17 +460,14 @@
         <div class="container">
           <div class="row">
             <div class="cell-12 cell-md-12 text-center">
-              <h1>Universidad de Valladolid // Palacio de Santa Cruz, codigop postal Sed consequoat, leo eget bibendum sodales, augue velit cusus nunc</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultrices rutrum auctor. Donec fermentum, lorem at semper ultrices, velit tellus efficitur massa, placerat tincidunt ante arcu non urna. Mauris vel tortor a magna porttitor finibus eu eget orci. Mauris gravida vel libero quis suscipit. Nam interdum quam at lectus tincidunt, blandit iaculis arcu blandit.</p>
+              <h1>Universidad de Valladolid // Palacio de Santa Cruz, 47002 Valladolid (España)</h1>
+              <p>Los contenidos suministrados por la web están sujetos a los derechos de propiedad intelectual e industrial y son titularidad exclusiva de Universidad de Valladolid. La adquisición de algún producto o servicio no confiere al adquiriente ningún derecho de alteración, explotación, reproducción o distribución del mismo fuera de lo estrictamente contratado reservándose Universidad de Valladolid todos los derechos. <a href="http://www.uva.es/export/sites/uva/1.lauva/1.04.secretariageneral/1.04.08.proteccion_datos/index.html" role="link">Más información</a></p>
             </div>
           </div>
         </div>
       </div>
 
     </footer>
-	
-	
-	
-	<!--<script src="/resources/uva4/js/i18n.js"></script>-->
+	<%--<script src="/resources/uva4/js/i18n.js"></script>--%>
   </body>
 </html>

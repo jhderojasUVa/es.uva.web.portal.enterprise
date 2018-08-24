@@ -300,7 +300,7 @@ function eventos_jsonp(url) {
 
 document.addEventListener("DOMContentLoaded",function(){
   //index=Solr%20Offline
-  var data = eventos_jsonp("http://ediciond.uva.es/system/modules/es.uva.web.portal.enterprise/elements/eventos/eventos_proxy.jsp?dataType=jsonp");
+  var data = eventos_jsonp("http://www-des.uva.es/system/modules/es.uva.web.portal.enterprise/elements/eventos/eventos_proxy.jsp?dataType=jsonp");
   data.then((res) => {
     let contador=0;
     if (res.events && res.total_found>0) {

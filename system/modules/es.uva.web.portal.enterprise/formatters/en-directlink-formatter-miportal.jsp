@@ -7,8 +7,37 @@
 <cms:bundle basename="es.uva.web.portal.enterprise.directlink">
 <cms:formatter var="content" val="value" rdfa="rdfa">
 
-<div class="container vivelauva" style="margin-top: 70px;">
+<div class="container separacion_bloques">
+	<div class="row">
+      <div class="col-12 cabecera_bloque">
+        <h1>${content.value.Title}</h1>
+      </div>
+    </div>
+	<div class="row no-margins">
+	<c:forEach var="item" items="${content.valueList.Item}">
+		<div class="${cms:lookup(cms:getListSize(content.valueList.Item), '1:col-xs-12|2:col-sm-6|3:col-sm-4|4:col-md-3 col-sm-6|5:col-md-2 col-sm-6|6:col-md-2 col-sm-4')}">
+			<div class="${item.value.Style} tile">
+				<h1>
+					<c:if test="${item.value.Link.isSet}">
+						<a href="<cms:link>${item.value.Link}</cms:link>" role="link">
+					</c:if>
+					${item.value.Headline}
+					<c:if test="${item.value.Link.isSet}">
+						</a>
+					</c:if>
+				</h1>
+				
+				<c:if test="${item.value.Text.isSet}">
+					<h5>${item.value.Text}</h5>
+				</c:if>
+			</div>
+		</div>
+	</c:forEach>
+	</div>
+</div>
 
+
+<%--
 	<div class="row">
         <div class="col-12 col-md-3 header">
 		  <h1 data-i18n-es="Vive la UVa" data-i18n-en="Uva's life">${content.value.Title}</h1>
@@ -41,8 +70,7 @@
 		</div>
 	</c:forEach>
 	</div>
-
-</div>
+--%>
 
 </cms:formatter>
 </cms:bundle>

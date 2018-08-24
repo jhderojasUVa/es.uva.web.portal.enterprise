@@ -33,8 +33,8 @@
     <HeadIncludeJs>
       <JavascriptLink>
         <link type="WEAK">
-          <target><![CDATA[/system/modules/es.uva.web.portal.enterprise/resources/uva4/js/slideshow.js]]></target>
-          <uuid>2a9663e6-7aad-11e8-9993-0242ac11002b</uuid>
+          <target><![CDATA[/system/modules/es.uva.web.portal.enterprise/resources/uva4/js/slideshow-es5.js]]></target>
+          <uuid>7f3e7587-a6ae-11e8-8403-0050568213af</uuid>
         </link>
       </JavascriptLink>
       <JavascriptLink>

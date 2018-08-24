@@ -1,0 +1,426 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
+        <script>
+        let params={
+            "colors":[
+                {"name":"lime"},	 	 	 
+                {"name":"green"},	 	 	 
+                {"name":"emerald"},	 	 	 
+                {"name":"blue"},	 	 	 
+                {"name":"teal"}, 	 	 
+                {"name":"cyan"},	 	 	 
+                {"name":"cobalt"},	 	 
+                {"name":"indigo"}, 
+                {"name":"violet"},
+                {"name":"pink"},
+                {"name":"magenta"},
+                {"name":"crimson"},
+                {"name":"red"},
+                {"name":"orange"},
+                {"name":"amber"},
+                {"name":"yellow"},
+                {"name":"brown"},
+                {"name":"olive"},
+                {"name":"steel"},
+                {"name":"mauve"},
+                {"name":"taupe"},
+                {"name":"gray"},
+                {"name":"grayBlue"},
+            ]
+        }
+        let data={
+        };
+		
+		async function fetchURLs() {
+			try {
+			  // Promise.all() lets us coalesce multiple promises into a single super-promise
+			  var data = await Promise.all([
+			  	fetch('http://ediciond.uva.es/system/modules/es.uva.web.portal.enterprise/elements/miportal/user_settings.jsp', {
+					method: 'get',
+				}).then(function(response) {
+					return response.json();
+				}).then(function(res) {
+					console.log('RESPUESTA SETTINGS', res.value);
+					data=JSON.parse(res.value);
+					render();
+				}).catch(function(error) {
+					console.log("error");
+					console.log(error);
+				}),
+				//Pedimos los datos de los grid (pueden cambiar, por lo que hay que coordinarlo con los settings del usuario)
+				fetch('http://ediciond.uva.es/system/modules/es.uva.web.portal.enterprise/elements/miportal/data.json', {
+					method: 'get',
+				}).then(function(response) {
+					console.log('RESPUESTA DATA');
+					console.log(response)
+					return response.json();
+				}).then(function(res) {
+					console.log('RESPUESTA DATA 2');
+					console.log(res);
+				}).catch(function(error) {
+					console.log("error");
+					console.log(error);
+				})
+			  ]);
+			} catch (error) {
+				console.log("ERROR");
+				console.log(error);
+			}
+
+        $('document').ready(function(){
+		
+            console.log("READY");
+			/*
+			EJEMPLO POST
+            fetch('http://ediciond.uva.es/system/modules/es.uva.web.portal.enterprise/elements/miportal/user_settings.jsp', {
+                method: 'post',
+                body: JSON.stringify(data)
+            }).then(function(response) {
+				console.log("POST RESPONSE");
+				console.log(response);
+                return response.json();
+            }).then(function(data) {
+                console.log('RESPUESTA', data.error);
+            });
+			*/
+			//Pedimos los settings del usuario
+			fetch('http://ediciond.uva.es/system/modules/es.uva.web.portal.enterprise/elements/miportal/user_settings.jsp', {
+                method: 'get',
+            }).then(function(response) {
+                return response.json();
+            }).then(function(res) {
+                console.log('RESPUESTA SETTINGS', res.value);
+				data=JSON.parse(res.value);
+				render();
+            }).catch(function(error) {
+                console.log("error");
+                console.log(error);
+            });
+			//Pedimos los datos de los grid (pueden cambiar, por lo que hay que coordinarlo con los settings del usuario)
+			fetch('http://ediciond.uva.es/system/modules/es.uva.web.portal.enterprise/elements/miportal/data.json', {
+                method: 'get',
+            }).then(function(response) {
+				console.log('RESPUESTA DATA');
+				console.log(response)
+                return response.json();
+            }).then(function(res) {
+                console.log('RESPUESTA DATA 2');
+				console.log(res);
+            }).catch(function(error) {
+                console.log("error");
+                console.log(error);
+            });
+        });
+		
+        </script>
+    </head>
+    <body>
+        <div id="migrid" class="container">
+           
+        </div>
+        <script>
+			Element.prototype.appendBefore = function (element) {
+			  element.parentNode.insertBefore(this, element);
+			},false;
+			
+			Element.prototype.appendAfter = function (element) {
+				console.log(element);
+				console.log(element.parentNode);
+				console.log(element.nextSibling);
+			  element.parentNode.insertBefore(this, element.nextSibling);
+			},false;
+		
+			function insertAfter(e,i){ 
+				if(e.nextSibling){ 
+					e.parentNode.insertBefore(i,e.nextSibling); 
+				} else { 
+					e.parentNode.appendChild(i); 
+				}
+			}
+
+            function clickTile(event) {
+                console.log("clickTile");
+                var el=event.target;
+                //Buscamos el indice del elemento
+                var index= data.rows.findIndex(elemento => elemento.id === el.id);
+				if (index<0) return;
+
+				//Vaciamos el contenido del elemento contenedor
+				var miGrid=document.getElementById("migrid");
+				var miGrid_tiles=document.getElementById("migrid_tiles");
+				miGrid_tiles.style.display = "none";
+
+				var prev=data.rows.slice(0,index);
+				var act=data.rows.slice(index,index+1);
+				var next=data.rows.slice(index+1);
+				console.log(data.rows);
+				console.log(act);
+				var elprev=document.createElement("div");
+				elprev.id=el.id+'_prev';
+				buildGrid(elprev,prev);
+				console.log(prev);
+				
+				//miGrid.appendChild(elprev);
+				//insertAfter(miGrid_tiles,elprev);
+				elprev.appendAfter(miGrid_tiles);
+				
+				var elact=document.createElement("div");
+				elact.id=el.id+'_extended';
+				elact.innerHTML='<p>ELEMENTO <button class="button primary mini square outline mif-cancel" onclick="closeTile(\''+el.id+'\')"></button></p>';
+				buildGrid(elact,act[0].rows,false);
+				
+				//miGrid.appendChild(elact);
+				//insertAfter(elprev,elact);
+				elact.appendAfter(elprev);
+				
+				var elnext=document.createElement("div");
+				elnext.id=el.id+'_next';
+				buildGrid(elnext,next);
+				
+				//miGrid.appendChild(elnext); 
+				//insertAfter(elnext,elact);
+				elnext.appendAfter(elact);
+            }
+			
+			function closeTile(nodep) {
+				//Cerramos el hijo y pintamos el padre
+				var migrid=document.getElementById('migrid');
+				var migrid_tiles=document.getElementById("migrid_tiles");
+				
+				var el=document.getElementById(nodep+'_extended');
+				var index= data.rows.findIndex(elemento => elemento.id === nodep);
+				if (index<0) return;
+				
+				//Borramos el prev
+				var elem=document.getElementById(nodep+'_prev')
+				migrid.removeChild(elem);
+				//Borramos el next
+				var elem=document.getElementById(nodep+'_next')
+				migrid.removeChild(elem);
+				//Cambiamos el act
+				var elem=document.getElementById(nodep+'_extended')
+				migrid.removeChild(elem);
+				//Mostramos el padre
+				migrid_tiles.style.display = "grid";
+				
+            }
+
+            function selectTile(event) {
+                console.log("selectTile");
+                var el=event.target;
+                console.log(el);
+                var index= data.rows.findIndex(elemento => elemento.id === el.id);
+                console.log(index);
+                console.log(el.className);
+                if (index==-1) return;
+      
+                if (el.className.search("selected")>0) {
+                    el.className=data.rows[index].class;
+                    el.innerHTML=data.rows[index].content;
+                } else {
+                    el.className=el.className+" selected";
+                    el.innerHTML="<p>EDITANDO</p>";
+
+                    el.innerHTML='<p>EDITANDO</p>'+
+                        '<p><span class="mif-star-full"></span>'+
+                        '<button class="button primary mini square outline mif-palette" onclick="color('+el.id+')"></button>'+
+                        '<button class="button primary mini square outline mif-minus" onclick="sizeMinus('+el.id+')"></button>'+
+                        '<button class="button primary mini square outline mif-plus" onclick="sizePlus('+el.id+')"></button>'+
+						'<button class="button primary mini square outline mif-save" onclick="save()"></button></p>';
+                }
+            }
+
+            function sizeMinus(el) {
+                var index= data.rows.findIndex(elemento => elemento.id === el.id);
+                if (index==-1) return;
+                var element=data.rows[index];
+                console.log("sizeMinus");
+                console.log(element);
+                if (element.params["data-size"]) {
+                   switch(element.params["data-size"]) {
+                        case "small":
+                            element.params["data-size"]="small";
+                            break;
+                        case "medium":
+                            element.params["data-size"]="small";
+                            break;
+                        case "wide":
+                            element.params["data-size"]="medium";
+                            break;
+                        case "large":
+                            element.params["data-size"]="wide";
+                            break;
+                        default:
+                            break;
+                   }
+                   el.setAttribute("data-size", element.params["data-size"]);
+                   el.className=element.class+" "+"tile-"+element.params["data-size"];
+                }
+            }
+
+            function sizePlus(el) {
+                console.log("sizePlus");
+                console.log(el);
+                var index= data.rows.findIndex(elemento => elemento.id === el.id);
+                if (index==-1) return;
+                var element=data.rows[index];
+                if (element.params["data-size"]) {
+                   console.log(element.params["data-size"]);
+                   switch(element.params["data-size"]) {
+                        case "small":
+                            element.params["data-size"]="medium";
+                            break;
+                        case "medium":
+                            element.params["data-size"]="wide";
+                            break;
+                        case "wide":
+                            element.params["data-size"]="large";
+                            break;
+                        case "large":
+                            element.params["data-size"]="large";
+                            break;
+                        default:
+                            break;
+                   }
+                   el.setAttribute("data-size", element.params["data-size"]);
+                   el.className=element.class+" "+"tile-"+element.params["data-size"];
+                }
+            }
+			
+			function save() {
+				fetch('http://ediciond.uva.es/system/modules/es.uva.web.portal.enterprise/elements/miportal/user_settings.jsp', {
+					method: 'post',
+					headers: {
+						'Accept': 'application/json',
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify(data)
+				}).then(function(response) {
+					return response.json();
+				}).then(function(data) {
+					console.log('RESPUESTA', data.error);
+				}).catch(function(error) {
+					console.log("error");
+					console.log(error);
+				});
+            }
+
+            function buildtile(element) {
+                var miDivElement = document.createElement('div');
+                miDivElement.id=element.id;
+                miDivElement.className=element.class+" "+"tile-"+element.params["data-size"];
+                miDivElement.innerHTML = element.content;
+                Object.keys(element.params).forEach(function(key) {
+                    param=element.params[key];
+                    miDivElement.setAttribute(key, param);
+                });
+                if (element.rows) {
+                    if (element.rows.length>0) {
+                        miDivElement.addEventListener("click",clickTile);
+                    }
+                } else {
+                    miDivElement.addEventListener("click",selectTile);
+                }
+                return miDivElement;
+            }
+
+            function buildGrid(parent,elements,clear=true) {
+                var miDiv = document.createElement("div");
+				miDiv.className="tiles-grid";//"row";
+                miDiv.id=parent.id+"_tiles";//"row";
+                console.log(miDiv);
+                elements.forEach (function(element) {
+                    miDiv.appendChild(buildtile(element));
+                });
+				if (clear) parent.innerHTML = "";
+                parent.appendChild(miDiv);
+                return miDiv;
+            }
+			
+			function render() {
+				var miGrid=document.getElementById("migrid");
+				buildGrid(migrid,data.rows);
+			}
+
+            
+
+            window.addEventListener("resize", function(element) {
+                console.log("RESIZE");
+                console.log(window.innerWidth);
+            });
+        </script>
+        <!--
+        <div class="pos-relative">
+            <div class="bg-red fg-white" data-role="collapse"
+                data-toggle-element="#collapse_toggle_2" data-collapsed="true">
+                <p class="p-10 text-center">
+                    In Metro 4 you can transform any element to collapsible.
+                </p>
+            </div>
+        </div>
+        -->
+        
+        <script>
+            /*
+            console.log("COLLAPSE");
+            console.log($('#boton1'));
+            console.log($('#boton1').data);
+                el = $('#boton1').data('collapse');
+            console.log(el);
+                var collapsed = el.isCollapsed();
+            console.log(collapsed);
+                var f1 = collapsed === true ? "expand" : "collapse";
+                var f2 = collapsed === true ? "collapse" : "expand";
+                el[f1]();
+                setTimeout(function(){
+                    el[f2]();
+                }, 2000);
+            */
+        </script>
+        <!--
+        <div class="grid">
+            <div class="row">
+                <div id="boton1" data-role="tile" class="bg-red tile-medium" data-role-tile="true">
+                    <span class="badge-top">10</span>
+                </div>
+                <div id="boton2" data-role="tile" class="bg-green tile-medium" data-role-tile="true">
+                    <span class="badge-bottom">10</span>
+                </div>
+                <div id="boton3" data-role="tile" class="tile-medium" data-role-tile="true">
+                    <span class="mif-facebook icon"></span>
+                    <span class="branding-bar">Facebook</span>
+                    <span class="badge-bottom">10</span>
+                </div> 
+                <div id="boton4" data-role="tile" class="bg-pink tile-medium" data-role-tile="true">
+                    <span class="mif-cart icon"></span><span class="branding-bar">Store</span><span class="badge-top">10</span>
+                </div> 
+            </div>
+        </div>
+        -->
+		<!--
+        <div class="container">
+                <div class="tiles-grid">
+                    <div data-role="tile" class="bg-red tile-medium" data-role-tile="true">
+                        <span class="badge-top">10</span>
+                    </div>
+                    <div data-role="tile" class="bg-green tile-medium" data-role-tile="true">
+                        <span class="badge-bottom">10</span>
+                    </div>
+                    <div data-role="tile" class="tile-medium" data-role-tile="true">
+                        <span class="mif-facebook icon"></span>
+                        <span class="branding-bar">Facebook</span>
+                        <span class="badge-bottom">10</span>
+                    </div>
+                    <div data-role="tile" class="bg-pink tile-medium" data-role-tile="true">
+                        <span class="mif-cart icon"></span>
+                        <span class="branding-bar">Store</span>
+                        <span class="badge-top">10</span>
+                    </div>
+                </div>
+            </div>
+		-->
+    </body>
+</html>
