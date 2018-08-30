@@ -11,6 +11,7 @@
 <html lang="${cms.locale}" dir="ltr">
   <head>
     <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<title><cms:info property="opencms.title" /></title>
 	<meta name="description" content="<cms:property name="Description" file="search" default="Universidad de Valladolid" />">
 	<meta name="keywords" content="<cms:property name="Keywords" file="search" default="universidad, valladolid, uva" />">
@@ -64,16 +65,16 @@
 	</c:if>
 	
 	<!-- Header -->
-	<div class="container-fluid header fondo_azul" style="height: 58px;">
+	<div class="container-fluid header">
       <div class="row justify-content-md-center align-items-center">
-        <div class="col-5">
-          <img alt="Universidad de Valladolid" src="<cms:link>/system/modules/es.uva.web.portal.enterprise/resources/miportal/img/logo_uva.svg</cms:link>" style="margin-top: 0.5em;"/>
+        <div class="col-12 col-md-10 col-lg-5">
+          <img alt="Universidad de Valladolid" src="<cms:link>/system/modules/es.uva.web.portal.enterprise/resources/miportal/img/logo_uva.svg</cms:link>" style="margin-top: 0.7em;"/>
         </div>
       </div>
     </div>
 	
 	<!-- User data -->
-	<div class="miportal_letras">
+	<div class="miportal_letras d-none d-lg-block d-xl-block">
       <h1>Mi Portal</h1>
     </div>
 
@@ -86,7 +87,7 @@
           <div class="user_profile">
             <img src="https://via.placeholder.com/80x103?text=foto" alt="imagen usuario">
             <div class="user_data">
-              <h5>${firstname}&nbsp;${lastname}</h5>
+              <h5 class="d-none d-lg-block d-xl-block">${firstname}&nbsp;${lastname}</h5>
               <select name="perfil">
                 <option value="1" selected>PAS</option>
                 <option value="2">PDI</option>
@@ -96,15 +97,16 @@
           </div>
           <div class="user_icons">
             <div class="icons_up">
-              <span class="icon_group">Servicio de Atención <a href="tel://983423000" role="link"><i class="far fa-comments"></i></a></span>
-              <span class="icon_group">Salir <a href="#" role="link"><i class="fas fa-sign-out-alt"></i></a></span>
+			<span class="icon_group"><a href="http://www.uva.es/ldap" role="link"><span class="icon_description">Mis datos</span> <i class="fas fa-user-circle"></i></a></span>
+			<span class="icon_group"><a href="tel://983423000" role="link" target="_blank" alt="Servicio de Atención"><span class="icon_description">Servicio de Atención</span> <i class="far fa-comments"></i></a></span>
+			<a href="${logoutLink}" role="link" alt="Salor"><span class="icon_group" ><span class="icon_description">Salir</span> <i class="fas fa-sign-out-alt"></i></span></a>
             </div>
             <div class="icons_down">
-              <span class="icon_group">Avisos <a href="#" role="link"><i class="fas fa-exclamation"></i> <span class="badge badge-pill badge-warning">3</span></a></span>
-              <span class="icon_group">Buzon <a href="http://webmail.uva.es" role="link"><i class="far fa-envelope"></i> <span class="badge badge-pill badge-warning">44</span></a></span>
-              <span class="icon_group">Agenda <a href="http://webmail.uva.es" role="link"><i class="far fa-calendar-alt"></i></a></span>
-              <span class="icon_group">Directorio <a href="http://directorio.uva.es" role="link"><i class="fas fa-users"></i></a></span>
-              <span class="icon_group">Configuración <a href="http://directorio.uva.es" role="link"><i class="fas fa-cog"></i></a></span>
+              <span class="icon_group"><a href="#" role="link"><span class="icon_description">Avisos</span> <i class="fas fa-exclamation"></i> <span class="badge badge-pill badge-warning">3</span></a></span>
+              <span class="icon_group"><a href="http://webmail.uva.es" role="link" target="_blank" alt="Buzón"><span class="icon_description">Buzon</span> <i class="far fa-envelope"></i> <span class="badge badge-pill badge-warning">44</span></a></span>
+              <span class="icon_group"><a href="#" role="link" target="_blank" alt="Agenda"><span class="icon_description">Agenda</span> <i class="far fa-calendar-alt"></i></a></span>
+			  <span class="icon_group"><a href="http://directorio.uva.es" role="link" target="_blank" alt="Directorio"><span class="icon_description">Directorio</span> <i class="fas fa-users"></i></a></span>
+			  <span class="icon_group"><a href="#" role="link"><span class="icon_description">Configuración</span> <i class="fas fa-cog"></i></a></span>
             </div>
           </div>
         </div>
@@ -112,9 +114,9 @@
     </div>
 	
 	<!-- ELEMENTOS -->
-	
-	<cms:container name="contenedor" type="contenedor" detailview="true" maxElements="20"/>
-	
+	<section>
+		<cms:container name="contenedor" type="contenedor" detailview="true" maxElements="20"/>
+	</section>
 	
 	<!-- Footer -->
     <footer style="margin-top: 70px;">
@@ -123,20 +125,21 @@
       <div class="container-full enlaces">
         <div class="container">
           <div class="row">
-            <!--<div class="cell-3 col-md-3">
-              
-            </div>-->
             <div class="cell-4 col-md-4">
-              <h1 class="text-center">Te interesa</h1>
+              <h1 class="text-center">Para todos</h1>
               <ul>
+			  	<li><a href="http://ipa.uva.es/" role="link" rel="noopener noreferrer">IPA Información de Pisos en Alquiler</a></li>
+				<li><a href="http://consigna.uva.es/" role="link" rel="noopener noreferrer">Servicio de Consigna</a></li>
+				<li><a href="http://edicion2.uva.es/6.vidauniversitaria/6.13.alojamientos/6.13.08.alojamientos/index.html" role="link">Alojamientos UVa</a></li>
                 <li><a href="http://spanishinvalladolid.com/" role="link" rel="noopener noreferrer">Español en Valladolid</a></li>
                 <li><a href="http://www.uva.es/5.empresaeinstituciones/5.01.practicasenempresa/5.01.02.estudiantes/" role="link" rel="noopener noreferrer">Prácticas de Estudiantes</a></li>
                 <li><a href="http://www.uva.es/1.lauva/1.09.defensordelacomunidad/1.09.01.presentacion/" role="link" rel="noopener noreferrer">Defensor de la Comunidad</a></li>
+				<li><a href="http://www.uva.es/export/sites/uva/7.comunidaduniversitaria/7.13.patrocinadores/7.13.01.agenciaviajesbarcelo/index.html" role="link" rel="noopener noreferrer">B the travel brand</a></li>
               </ul>
-			  <h1 class="text-center">Divulgación</h1>
-              <ul>
-                <li><a href="http://ucc.uva.es" role="link">UVaDivulga</a></li>
-              </ul>
+			  <h1 class="text-center">Para personal UVa</h1>
+			  <ul>
+			  	<li><a href="http://intranet.uva.es/papeleria/index.html" role="link" rel="noopener noreferrer">Papelería</a></li>
+			  </ul>
             </div>
             <div class="cell-4 col-md-4">
               <h1 class="text-center">Descubre</h1>
@@ -151,35 +154,16 @@
             <div class="cell-4 col-md-4">
               <h1 class="text-center" data-i18n-es="Descubre" data-i18n-en="Discover">UVa</h1>
               <ul>
-                <li><a href="http://stic.uva.es" role="link">Servicio de Tecnologías de la Información y las Comunicaciones</a></li>
+			  	<li><a href="http://sede.uva.es" role="link">Sede Electrónica</a></li>
+				<li><a href="https://contrataciondelestado.es/wps/poc?uri=deeplink%3AperfilContratante&idBp=7IJNVbZm%2FMkQK2TEfXGy%2BA%3D%3D" role="link">Perfil del Contratante</a></li>
 				<li><a href="http://audiovisuales.uva.es" role="link">Audiovisuales</a></li>
 				<li><a href="http://www.uva.es/6.vidauniversitaria/6.04.gabinetemedico/index.html" role="link">Gabinete Médico</a></li>
-				<li><a href="http://edicion2.uva.es/6.vidauniversitaria/6.13.alojamientos/6.13.08.alojamientos/index.html" role="link">Alojamientos UVa</a></li>
-				<li><a href="https://contrataciondelestado.es/wps/poc?uri=deeplink%3AperfilContratante&idBp=7IJNVbZm%2FMkQK2TEfXGy%2BA%3D%3D" role="link">Perfil del Contratante</a></li>
-				<li><a href="http://ods.uva.es" role="link">Sostenible UVa</a></li>
 				<li><a href="<cms:link>/mapaweb.html</cms:link>" role="link">Mapa del sitio web</a></li>
               </ul>
             </div>
           </div>
           <div class="row pie_enlaces align-items-center">
-            <div class="cell-6 col-md-6">
-              <form method="post" action="<cms:link>/sites/uva/suscripciones.html</cms:link>">
-                <div class="form-group row text-center">
-                  <div class="col-md-8">
-                    <input type="text" name="email" placeholder="Su dirección de email">
-                  </div>
-                  <div class="col-md-4 text-left">
-                    <button type="submit" class="btn bton-primary" data-i18n-es="suscripción" data-i18n-en="subscribe">suscripci&oacute;n</button>
-                  </div>
-                </div>
-              </form>
-              <span style="text-align: left;">
-                <a href="#" class="socialicon" role="link" alt="Facebook" aria-label="Facebook"><i class="fab fa-facebook-square" style="font-size: 2em; color: black; margin-bottom: 0.5em;"></i></a>&nbsp;&nbsp;
-                <a href="#" class="socialicon" role="link" alt="Twitter" aria-label="Twitter"><i class="fab fa-twitter-square" style="font-size: 2em;; color: black; margin-bottom: 0.5em;"></i></a>&nbsp;&nbsp;
-                <a href="#" class="socialicon" role="link" alt="Rss" aria-label="Rss"><i class="fas fa-rss-square" style="font-size: 2em; color: black; margin-bottom: 0.5em;"></i></a>
-              </span>
-            </div>
-            <div class="cell-6 col-md-6">
+            <div class="cell-6 col-md-6 offset-md-6">
               <div class="lema">
               <strong data-i18n-es="800 años de innovación" data-i18n-en="800 years of innovation">800 a&ntilde;os de innovaci&oacute;n</strong><br/>
               Sapientia Aedificavit<br/>

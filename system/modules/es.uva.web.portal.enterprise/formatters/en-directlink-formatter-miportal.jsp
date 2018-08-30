@@ -15,8 +15,21 @@
     </div>
 	<div class="row no-margins">
 	<c:forEach var="item" items="${content.valueList.Item}">
-		<div class="${cms:lookup(cms:getListSize(content.valueList.Item), '1:col-xs-12|2:col-sm-6|3:col-sm-4|4:col-md-3 col-sm-6|5:col-md-2 col-sm-6|6:col-md-2 col-sm-4')}">
-			<div class="${item.value.Style} tile">
+		<c:set var="totaltamanyo">${cms:getListSize(content.valueList.Item)}</c:set>
+		
+		<c:if test="${totaltamanyo>5}">
+		<div class="col-sm-6 col-md-3 col-6">
+		</c:if>
+		
+		<c:if test="${totaltamanyo<=5}">
+		<div class="col-6 col-md-3"><%--col para hasta 5--%>
+		</c:if>
+
+			<div class="${item.value.Style} tile" 
+				 <c:if test="${item.value.Image.isSet}">
+					style="background-image: url('<cms:link>${item.value.Image}</cms:link>'); background-repeat: no-repeat; background-position: right bottom; background-size: contain;"
+				</c:if>
+			>
 				<h1>
 					<c:if test="${item.value.Link.isSet}">
 						<a href="<cms:link>${item.value.Link}</cms:link>" role="link">
@@ -26,7 +39,7 @@
 						</a>
 					</c:if>
 				</h1>
-				
+
 				<c:if test="${item.value.Text.isSet}">
 					<h5>${item.value.Text}</h5>
 				</c:if>

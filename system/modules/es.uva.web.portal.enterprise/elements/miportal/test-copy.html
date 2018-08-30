@@ -47,6 +47,9 @@
 			},false;
 			
 			Element.prototype.appendAfter = function (element) {
+				console.log(element);
+				console.log(element.parentNode);
+				console.log(element.nextSibling);
 			  element.parentNode.insertBefore(this, element.nextSibling);
 			},false;
 			
@@ -61,6 +64,7 @@
 				}).then(function(res) {
 					console.log('RESPUESTA SETTINGS', res.value);
 					user_settings=JSON.parse(res.value);
+					render();
 				}).catch(function(error) {
 					console.log("error");
 					console.log(error);
@@ -91,81 +95,13 @@
 
 				console.log("READY");
 				fetchURLs().then(function(response) {
-				/*
-					if (!jsonEqual(grids,user_settings)) {
-						procesarJsonObject(grids,user_settings);
-						console.log("PROCESADO");
-						console.log(user_settings);
-						render();
-					}
-					*/
-					user_settings=grids;
-					render();
+					procesar(grids,user_settings);
 				});
-				
 			});
-			
-			function jsonEqual(a,b) {
-				return JSON.stringify(a) === JSON.stringify(b);
-			}
-			function procesarJsonObject(obj1,obj2) {
-				//Miramos las keys del obj1
-				Object.keys(obj1).forEach(key=> {
-					procesarJsonElement(obj1,obj2,key);
-				});
-			}
-			function procesarJsonElement(obj1,obj2,key) {
-				console.log(obj1[key]);
-				if (obj2[key]==undefined) {
-					obj2[key]=obj1[key];
-				} else if (obj1[key].constructor == Array) {
-					//console.log("--- procesarJsonElement Array");
-					//Es un array
-					procesarJsonArray(obj1[key],obj2[key]);
-				} else if (obj1[key].constructor == Boolean) {
-					console.log("--- procesarJsonElement Boolean");
-				} else if (obj1[key].constructor == Function) {
-					console.log("--- procesarJsonElement Function");
-				} else if (obj1[key].constructor == Number) {
-					console.log("--- procesarJsonElement Number");
-				} else if (obj1[key].constructor == String) {
-					//console.log("--- procesarJsonElement String");
-					if (obj1[key]===obj2[key]) {
-					} else {
-						console.log("DIFERENTES VALORES");
-						console.log(obj1[key]);
-						console.log(obj2[key]);
-					}
-				} else if (obj1[key].constructor == Object) {
-					console.log("--- procesarJsonElement Object");
-					procesarJsonObject(obj1[key],obj2[key]);
-				} else if (Array.isArray(obj1[key])) {
-					//Es un array
-					procesarJsonArray(obj1[key],obj2[key]);
-				} else if (typeof(obj1[key] == 'object')) {
-					console.log("OBJECT");
-					console.log(obj1[key]);
-				} else if (obj1[key]===obj2[key]) {
+		
+			function procesar(data,settings) {
+				console.log("PROCESAR");
 				
-				} else {
-					console.log("DIFERENTES VALORES");
-					console.log(obj1[key]);
-					console.log(obj2[key]);
-				}
-				
-			}
-			function procesarJsonArray(array1,array2) {
-				console.log(array1);
-				array1.forEach(ele1 => {
-					//Tiene que tener id. ES OBLIGATORIO
-					var index= array2.findIndex(elemento => elemento.id === ele1.id);
-					if (index>=0) {
-						procesarJsonObject(ele1,array2[index]);
-					} else {
-						console.log("NO ESTA EN EL ARRAY 2 ");
-						array2.push(ele1);
-					}
-				});
 			}
 		
 			function insertAfter(e,i){ 
@@ -177,34 +113,26 @@
 			}
 
             function clickTile(event) {
-				//MOSTRAMOS EL CONTENIDO DE UN TILE SI TIENE
                 console.log("clickTile");
                 var el=event.target;
-				console.log(el);
-				console.log(el.parentId);
-				//Buscamos el row
-				let grid=undefined;
-				user_settings.forEach(row=>{
-					if (row.id=== el.parentId) {
-						grid=row;
-					}
-				})
-				if (grid===undefined) return;
                 //Buscamos el indice del elemento
-                var index= grid.rows.findIndex(elemento => elemento.id === el.id);
+                var index= data.rows.findIndex(elemento => elemento.id === el.id);
 				if (index<0) return;
 
-				//Ocultamos el contenido del elemento contenedor
-				var miGrid=document.getElementById(grid.id);
-				var miGrid_tiles=document.getElementById(grid.id+"_tiles");
+				//Vaciamos el contenido del elemento contenedor
+				var miGrid=document.getElementById("migrid");
+				var miGrid_tiles=document.getElementById("migrid_tiles");
 				miGrid_tiles.style.display = "none";
 
-				var prev=grid.rows.slice(0,index);
-				var act=grid.rows.slice(index,index+1);
-				var next=grid.rows.slice(index+1);
+				var prev=data.rows.slice(0,index);
+				var act=data.rows.slice(index,index+1);
+				var next=data.rows.slice(index+1);
+				console.log(data.rows);
+				console.log(act);
 				var elprev=document.createElement("div");
 				elprev.id=el.id+'_prev';
 				buildGrid(elprev,prev);
+				console.log(prev);
 				
 				//miGrid.appendChild(elprev);
 				//insertAfter(miGrid_tiles,elprev);
@@ -212,7 +140,7 @@
 				
 				var elact=document.createElement("div");
 				elact.id=el.id+'_extended';
-				elact.innerHTML='<p>ELEMENTO <button class="button primary mini square outline mif-cancel" onclick="closeTile(\''+grid.id+'\',\''+el.id+'\')"></button></p>';
+				elact.innerHTML='<p>ELEMENTO <button class="button primary mini square outline mif-cancel" onclick="closeTile(\''+el.id+'\')"></button></p>';
 				buildGrid(elact,act[0].rows,false);
 				
 				//miGrid.appendChild(elact);
@@ -228,39 +156,26 @@
 				elnext.appendAfter(elact);
             }
 			
-			function closeTile(parentid,nodeid) {
-				console.log(nodeid);
-				let parent=document.getElementById(parentid);
-				console.log(parent);
-				let parentId=parent.id;
-				console.log(parentId);
-				//Buscamos el row
-				let grid=undefined;
-				user_settings.forEach(row=>{
-					if (row.id=== parentId) {
-						grid=row;
-					}
-				})
-				if (grid===undefined) return;
+			function closeTile(nodep) {
 				//Cerramos el hijo y pintamos el padre
-				var miGrid=document.getElementById(grid.id);
-				var miGrid_tiles=document.getElementById(grid.id+"_tiles");
+				var migrid=document.getElementById('migrid');
+				var migrid_tiles=document.getElementById("migrid_tiles");
 				
-				var el=document.getElementById(nodeid+'_extended');
-				var index= grid.rows.findIndex(elemento => elemento.id === nodeid);
+				var el=document.getElementById(nodep+'_extended');
+				var index= data.rows.findIndex(elemento => elemento.id === nodep);
 				if (index<0) return;
 				
 				//Borramos el prev
-				var elem=document.getElementById(nodeid+'_prev')
-				miGrid.removeChild(elem);
+				var elem=document.getElementById(nodep+'_prev')
+				migrid.removeChild(elem);
 				//Borramos el next
-				var elem=document.getElementById(nodeid+'_next')
-				miGrid.removeChild(elem);
+				var elem=document.getElementById(nodep+'_next')
+				migrid.removeChild(elem);
 				//Cambiamos el act
-				var elem=document.getElementById(nodeid+'_extended')
-				miGrid.removeChild(elem);
+				var elem=document.getElementById(nodep+'_extended')
+				migrid.removeChild(elem);
 				//Mostramos el padre
-				miGrid_tiles.style.display = "grid";
+				migrid_tiles.style.display = "grid";
 				
             }
 
@@ -268,13 +183,6 @@
                 console.log("selectTile");
                 var el=event.target;
                 console.log(el);
-				let grid=undefined;
-				user_settings.forEach(row=>{
-					if (row.id=== el.id) {
-						grid=row;
-					}
-				})
-				if (grid===undefined) return;
                 var index= data.rows.findIndex(elemento => elemento.id === el.id);
                 console.log(index);
                 console.log(el.className);
@@ -371,12 +279,11 @@
 				});
             }
 
-            function buildtile(parent,element) {
+            function buildtile(element) {
                 var miDivElement = document.createElement('div');
                 miDivElement.id=element.id;
                 miDivElement.className=element.class+" "+"tile-"+element.params["data-size"];
                 miDivElement.innerHTML = element.content;
-				miDivElement.parentId=parent.id;
                 Object.keys(element.params).forEach(function(key) {
                     param=element.params[key];
                     miDivElement.setAttribute(key, param);
@@ -397,32 +304,16 @@
                 miDiv.id=parent.id+"_tiles";//"row";
                 console.log(miDiv);
                 elements.forEach (function(element) {
-                    miDiv.appendChild(buildtile(parent,element));
+                    miDiv.appendChild(buildtile(element));
                 });
 				if (clear) parent.innerHTML = "";
                 parent.appendChild(miDiv);
                 return miDiv;
             }
 			
-			function buildGridContainer(parent,element) {
-                var miDiv = document.createElement("div");
-                miDiv.id=element.id;
-				var miDiv2 = document.createElement("div");
-				miDiv2.id=element.id+"_title";
-				miDiv2.innerHTML="<h2>"+element.title+"</h2>";
-				miDiv.appendChild(miDiv2);
-				parent.appendChild(miDiv);
-                buildGrid(miDiv,element.rows,false);	
-                return miDiv;
-            }
-			
 			function render() {
 				var miGrid=document.getElementById("migrid");
-				user_settings.forEach(grid => {
-					console.log(grid);
-					buildGridContainer(migrid,grid);
-				})
-				
+				buildGrid(migrid,data.rows);
 			}
 
             
