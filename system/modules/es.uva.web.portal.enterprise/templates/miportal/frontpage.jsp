@@ -88,11 +88,8 @@
             <img src="https://via.placeholder.com/80x103?text=foto" alt="imagen usuario">
             <div class="user_data">
               <h5 class="d-none d-lg-block d-xl-block">${firstname}&nbsp;${lastname}</h5>
-              <select name="perfil">
-                <option value="1" selected>PAS</option>
-                <option value="2">PDI</option>
-                <option value="3">Alumno</option>
-              </select>
+			  <!-- Selector de perfiles -->
+			  <div id="perfiles"></div>
             </div>
           </div>
           <div class="user_icons">
@@ -112,6 +109,146 @@
         </div>
       </div>
     </div>
+	
+	<!-- Generador de contenido para los bloques -->
+	<div id="contenido"></div>
+	
+	<!-- Templates --> 
+  	<template id="grupos-tiles">
+	<style>
+		/* Importamos bootstrap */
+		@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css');
+		.separacion_bloques {
+ 			/*margin-bottom: 3em;*/
+			margin-top: 3em;
+  		}
+		.cabecera_bloque {
+			border-top: 3px solid #0b1f4a; 
+		}
+		.cabecera_bloque h1 {
+			color: #0b1f4a;
+			margin-left: -15px;
+			margin-right: -15px;
+			font-size: 2em; 
+		}
+		.no-margins {
+			margin-left: -30px;
+			margin-right: -30px;
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+	</style>
+	
+	<div class="container separacion_bloques">
+		<div class="row">
+			<div class="col-12 cabecera_bloque">
+				<h1>Mi Portal</h1>
+			</div>
+		</div>
+		<div id="miportalcontenido" class="container"></div>
+	</div>
+	
+	</template>
+	<template id="elemento-tile">
+    <style>
+		/* Importamos bootstrap */
+		@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css');
+		@import url('/system/modules/es.uva.web.portal.enterprise/resources/miportal/css/miportal.css');
+		/* Esto podiamos dejarlo solo para las fuentes */
+		@import url('/system/modules/es.uva.web.portal.enterprise/resources/uva4/css/footer.css');
+		
+		/* Parche del bootstrap para ajustar las cajas */
+		:host {
+			width: calc(100% - 75%);
+		}
+		.tile {
+			min-width: 100%;
+			height: 140px;
+			margin-top: 1em; 
+		}
+		.tile.azul {
+			background-color: #0b1f4a; 
+		}
+		.tile.azul h1 {
+			color: white;
+			position: relative;
+			left: 0.7em;
+			top: 0.7em;
+			font-size: 1em;
+			width: 95%; 
+		}
+		.tile.azul h1 a {
+			color: white;
+			text-decoration: underline; 
+		}
+		.tile.azul h5 {
+			color: white;
+			max-width: inherit;
+			position: absolute;
+			bottom: 0.7em;
+			right: 2em;
+			font-size: 0.7em;
+			text-transform: lowercase; 
+		}
+		.tile.azul_claro {
+			background-color: #5af0ff; 
+		}
+		.tile.azul_claro h1 {
+			color: #0b1f4a;
+			position: relative;
+			left: 0.7em;
+			top: 0.7em;
+			font-size: 1em;
+			width: 95%; 
+		}
+		.tile.azul_claro h1 a {
+			color: #0b1f4a;
+			text-decoration: underline; 
+		}
+		.tile.azul_claro h5 {
+			color: #0b1f4a;
+			max-width: inherit;
+			position: absolute;
+			bottom: 0.7em;
+			right: 2em;
+			font-size: 0.7em;
+			text-transform: lowercase; 
+		}
+		.tile.gris {
+			background-color: #f0f0f0; 
+		}
+		.tile.gris h1 {
+			color: #575757;
+			position: relative;
+			left: 0.7em;
+			top: 0.7em;
+			font-size: 1em;
+			width: 95%; 
+		}
+		.tile.gris h1 a {
+			color: #575757;
+			text-decoration: underline; 
+		}
+		.tile.gris h5 {
+			color: #575757;
+			max-width: inherit;
+			position: absolute;
+			bottom: 0.7em;
+			right: 2em;
+			font-size: 0.7em;
+			text-transform: lowercase; 
+		}
+    </style>
+	<div class="col"> <!-- must be col col-md-3 -->
+		<div class="azul tile">
+		  <h1><slot name="title">Title</slot></h1>
+		</div>
+	</div>
+    
+  </template>
+	
+	<script src="<cms:link>/system/modules/es.uva.web.portal.enterprise/resources/miportal/js/miportalComponent.js</cms:link>"></script>
+
 	
 	<!-- ELEMENTOS -->
 	<section>

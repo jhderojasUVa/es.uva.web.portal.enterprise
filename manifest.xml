@@ -4,7 +4,7 @@
 	<info>
 		<creator>e09338789f</creator>
 		<opencms_version>10.5.3</opencms_version>
-		<createdate>Thu, 30 Aug 2018 10:24:32 GMT</createdate>
+		<createdate>Wed, 05 Sep 2018 11:34:48 GMT</createdate>
 		<infoproject>Offline</infoproject>
 		<export_version>10</export_version>
 	</info>
@@ -1141,7 +1141,7 @@
 			<type>plain</type>
 			<uuidstructure>d017a3af-ac3e-11e8-9a3d-0050568213af</uuidstructure>
 			<uuidresource>d017a3b0-ac3e-11e8-9a3d-0050568213af</uuidresource>
-			<datelastmodified>Thu, 30 Aug 2018 10:24:14 GMT</datelastmodified>
+			<datelastmodified>Wed, 05 Sep 2018 09:08:10 GMT</datelastmodified>
 			<userlastmodified>e09338789f</userlastmodified>
 			<datecreated>Thu, 30 Aug 2018 10:24:01 GMT</datecreated>
 			<usercreated>e09338789f</usercreated>
@@ -1267,7 +1267,7 @@
 			<type>plain</type>
 			<uuidstructure>e951f3fb-8ffd-11e8-9372-0050568213af</uuidstructure>
 			<uuidresource>e951f3fc-8ffd-11e8-9372-0050568213af</uuidresource>
-			<datelastmodified>Fri, 27 Jul 2018 08:54:45 GMT</datelastmodified>
+			<datelastmodified>Thu, 30 Aug 2018 11:14:48 GMT</datelastmodified>
 			<userlastmodified>e09338789f</userlastmodified>
 			<datecreated>Wed, 25 Jul 2018 11:28:53 GMT</datecreated>
 			<usercreated>e09338789f</usercreated>
@@ -1856,6 +1856,26 @@
 			<usercreated>Admin</usercreated>
 			<flags>0</flags>
 			<properties/>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/resources/uva4/img/external-link-alt.svg</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/resources/uva4/img/external-link-alt.svg</destination>
+			<type>plain</type>
+			<uuidstructure>810545bb-ac44-11e8-9a3d-0050568213af</uuidstructure>
+			<uuidresource>810545bc-ac44-11e8-9a3d-0050568213af</uuidresource>
+			<datelastmodified>Thu, 30 Aug 2018 11:04:45 GMT</datelastmodified>
+			<userlastmodified>e09338789f</userlastmodified>
+			<datecreated>Thu, 30 Aug 2018 11:04:45 GMT</datecreated>
+			<usercreated>e09338789f</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property>
+					<name>Title</name>
+					<value><![CDATA[external-link-alt]]></value>
+				</property>
+			</properties>
 			<relations/>
 			<accesscontrol/>
 		</file>
@@ -2620,8 +2640,8 @@
 			<type>jsp</type>
 			<uuidstructure>170e2cea-a533-11e8-8403-0050568213af</uuidstructure>
 			<uuidresource>170e2ceb-a533-11e8-8403-0050568213af</uuidresource>
-			<datelastmodified>Wed, 29 Aug 2018 10:42:01 GMT</datelastmodified>
-			<userlastmodified>Admin</userlastmodified>
+			<datelastmodified>Wed, 05 Sep 2018 09:35:34 GMT</datelastmodified>
+			<userlastmodified>e09338789f</userlastmodified>
 			<datecreated>Tue, 21 Aug 2018 11:12:28 GMT</datecreated>
 			<usercreated>Admin</usercreated>
 			<flags>0</flags>
