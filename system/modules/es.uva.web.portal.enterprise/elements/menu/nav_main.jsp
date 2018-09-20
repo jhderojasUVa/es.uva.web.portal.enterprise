@@ -4,7 +4,10 @@
 <div class="container menu">
 	<div class="row align-items-end">
 		<div class="col-md-3 d-none d-md-block d-lg-block">
+			<!--
 			<img src="<cms:link>/system/modules/es.uva.web.portal.enterprise/resources/uva4/img/logo_uva.png</cms:link>" alt="Universidad de Valladolid" />
+			-->
+			<img src="<cms:link>/system/modules/es.uva.web.portal.enterprise/resources/uva4/img/logoUVa.png</cms:link>" alt="Universidad de Valladolid" />
 		</div>
 		<div class="col-md-9 text-right d-none d-md-block d-lg-block">
 			<cms:navigation type="forSite" locale="${cms.locale}" resource="${navStartFolder}" startLevel="${navStartLevel}" endLevel="${navStartLevel}" var="nav"/>

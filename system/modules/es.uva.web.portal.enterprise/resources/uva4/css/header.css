@@ -233,4 +233,9 @@ h2 p {
 	margin-left: 5px;
 }
 
+/* Google translator patch */
+#google_translate_element a:hover {
+	color: black;
+}
+
 /*# sourceMappingURL=header.css.map */

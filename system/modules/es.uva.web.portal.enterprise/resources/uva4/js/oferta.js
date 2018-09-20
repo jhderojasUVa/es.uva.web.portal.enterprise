@@ -3,8 +3,11 @@ var filtroEstudios = {
   clase: 0,
   campus: 0,
   rama: 0,
-  tipo: 0,
+  tipolearning: 0,
+  tipo: 0
 };
+
+var loadEstudios = 0;
 
 const listadoCampus = [
 	{"id":"0","desc": "Todos los campus"},
@@ -39,22 +42,56 @@ async function estudios_jsonp(url) {
 function estudios_respuesta(data) {
   // Funcion para insertar los estudios en el array de estudios
   if (data.response && data.response.numFound>0 && data.response.docs) {
-  	let theResponse = data.response.docs;
     // Si hay estudios
-	// Ordenamos
-	theResponse.sort(function(elemA, elemB) {
-		// por campus de menor a mayor numero de campus
-		return parseInt(elemA["ficha.campus_prop"]) - parseInt(elemB["ficha.campus_prop"]);
-	});
-
-	// Recorremos
-	theResponse.forEach(doc => {
-	  // Y los metemos
+    let theResponse = data.response.docs;
+    // Ordenamos
+    theResponse.sort(function(elemA, elemB) {
+      // por campus de menor a mayor numero de campus
+      return parseInt(elemA["ficha.campus_prop"]) - parseInt(elemB["ficha.campus_prop"]);
+    });
+    // Recorremos
+    theResponse.forEach(doc => {
+      //Miramos el tipo, especialmente para los Solr. La idea es transformar un texto a un número
+      if (doc.type) {
+        switch(doc.type) {
+          case "estudios":
+            switch (doc["campo.tipo_prop"]) {
+              case "1":
+                doc.tipo=1;
+                break;
+              case "2":
+                doc.tipo=2;
+                break;
+            }
+            //console.log(doc);
+            break;
+          case "doctorado":
+            doc.tipo=3;
+            break;
+          case "titulos":
+            doc.tipo=4;
+            break;
+          case "cursos":
+            doc.tipo=5;
+            break;
+          default:
+            break;
+        }
+      }
+      // Y los metemos
       estudios.push(doc);
     });
   } else {
     // Si no hay estudios mostramos un error
   	throw "Error en la lectura de los estudios";
+  }
+
+  loadEstudios=loadEstudios+1;
+  if (loadEstudios>3) {
+    //Ocultamos el loadin
+    showhide("estudios_loader");
+    //Mostramos la caja
+    showhide("estudios_content");
   }
 }
 
@@ -99,7 +136,6 @@ class Estudio extends HTMLElement {
 		let campus = dimeCampus(val["ficha.campus_prop"]);
 		// Creamos el elemento en si por dentro con toda su maraña
 		// Con campus
-		//html+='<p id="'+val.id+'"><a href="http://www.uva.es' + val.link + '" target="_blank" role="link">' + val.Title_prop + '</a> (' + campus + ')</p>';
 		html+='<p id="'+val.id+'"><a href="http://www.uva.es' + val.link + '" target="_blank" role="link">' + val.Title_prop.replace('(PA)', '').replace('(SG)', '').replace('(SO)', '') + '</a></p>';  
 	  } else if (val["campo.tipo_prop"]==3) {
 	  	html+='<p id="'+val.COD_PROGRAMA+'"><a href="#" target="_blank" role="link">' + val.DENOMINACION + '</a></p>';  
@@ -116,7 +152,7 @@ class Estudio extends HTMLElement {
 customElements.define(Estudio.is, Estudio);
 
 function estudios_clear() {
-   //Limpuamos el elemento que contiene los estudios
+   // Limpiamos el elemento que contiene los estudios
    // Primero buscamos el contenido que esta en el id "estudios_contenido"
    var div = document.getElementById('estudios_contenido');
    while(div.firstChild) {
@@ -141,8 +177,16 @@ function estudios_hide(name) {
   }
 }
 
+function showhide(name) {
+   var div = document.getElementById(name);
+  if (div.style.display !== "none") {
+    div.style.display = "none";
+  } else {
+    div.style.display = "";
+  }
+}
+
 function estudios_filtro_element(elemento) {
-  //let res = true; // ?
   if (filtroEstudios.clase != 0) {
     if (elemento["campo.tipo_prop"] != filtroEstudios.clase) return false;
   }
@@ -152,8 +196,11 @@ function estudios_filtro_element(elemento) {
   if (filtroEstudios.rama != 0) {
     if (elemento["ficha.rama_prop"] != filtroEstudios.rama) return false;
   }
+  if (filtroEstudios.tipolearning != 0) {
+    if (elemento["ficha.tipolearning_prop"] != filtroEstudios.tipolearning) return false;
+  }
   if (filtroEstudios.tipo != 0) {
-    if (elemento["ficha.tipolearning_prop"] != filtroEstudios.tipo) return false;
+    if (elemento["tipo"] != filtroEstudios.tipo) return false;
   }
   return true;
 }
@@ -164,12 +211,12 @@ function estudios_filtro() {
   // Ordenamos
   elementos.sort((a,b) => {
   	if (a.DesCur < b.DesCur || a.DENOMINACION < b.DENOMINACION) {
-		return -1;
-	}
-	if (a.DesCur > b.DesCur || a.DENOMINACION > b.DENOMINACION) {
-		return 1;
-	}
-	return 0;
+      return -1;
+    }
+    if (a.DesCur > b.DesCur || a.DENOMINACION > b.DENOMINACION) {
+      return 1;
+    }
+    return 0;
   });
   // Primero limpiamos
   estudios_clear();
@@ -177,35 +224,36 @@ function estudios_filtro() {
   var divElementCampus;
   let numCampus=[]; //Almacena los campus con más de un elemento
   listadoCampus.forEach(campus => {
-  	let elementos_campus = elementos.filter(elemento => (elemento["ficha.campus_prop"] == campus.id));
-	if (elementos_campus.length > 0) {
-		numCampus.push(campus.id);
-		let titleCampus = document.createElement('h2');
-		//titleCampus.innerHTML = '<a onclick="showHide(\''+"oferta_campus_"+campus.id+'\')">'+campus.desc+'</a> <i class="fas fa-arrow-up"></i>';
-		if (campus.id == 0) {
-			titleCampus.innerHTML = campus.desc +' <i class="fas fa-arrow-up"></i>';
-		} else {
-			titleCampus.innerHTML = '<a onclick="showHide(\''+"oferta_campus_"+ campus.id +'\')">' +campus.desc +'</a> <i class="fas fa-arrow-up"></i>';
-		}
-		titleCampus.setAttribute('class', 'campus');
-		document.getElementById('estudios_contenido').appendChild(titleCampus);
 
-		divElementCampus = document.createElement('div');
-		divElementCampus.setAttribute('id', 'oferta_campus_'+campus.id);
-		divElementCampus.setAttribute('class', 'hideElement');
-		document.getElementById('estudios_contenido').appendChild(divElementCampus);
+    let elementos_campus = elementos.filter(elemento => (elemento["ficha.campus_prop"] === campus.id));
+    if (elementos_campus.length > 0) {
+      numCampus.push(campus.id);
+      let titleCampus = document.createElement('h2');
+      
+      if (campus.id == 0) {
+        titleCampus.innerHTML = campus.desc +' <i class="fas fa-angle-down" style="float: right"></i>';
+      } else {
+        titleCampus.innerHTML = '<a onclick="showHide(\''+"oferta_campus_"+ campus.id +'\')">' +campus.desc +'</a> <i class="fas fa-angle-down" style="float: right"></i>';
+      }
+      titleCampus.setAttribute('class', 'campus');
+      document.getElementById('estudios_contenido').appendChild(titleCampus);
 
-		let elementos_campus = elementos.filter(elemento => (elemento["ficha.campus_prop"] == campus.id));
-		elementos_campus.forEach(doc => {
-			let element = new Estudio();
-			element.doc = doc;
-			// Ya nop!
-			//document.getElementById('estudios_contenido').appendChild(element);
+      divElementCampus = document.createElement('div');
+      divElementCampus.setAttribute('id', 'oferta_campus_'+campus.id);
+      divElementCampus.setAttribute('class', 'hideElement');
+      document.getElementById('estudios_contenido').appendChild(divElementCampus);
 
-			// Metemos el contenido en el div que tiene como id el campus!
-			document.getElementById('oferta_campus_'+campus.id).appendChild(element);
-		});
-	}
+      let elementos_campus = elementos.filter(elemento =>  (elemento["ficha.campus_prop"] === campus.id));
+      elementos_campus.forEach(doc => {
+        let element = new Estudio();
+        element.doc = doc;
+        // Ya nop!
+        //document.getElementById('estudios_contenido').appendChild(element);
+
+        // Metemos el contenido en el div que tiene como id el campus!
+        document.getElementById('oferta_campus_'+campus.id).appendChild(element);
+      });
+    }
   });
   
   if (numCampus.length==1) {
@@ -213,7 +261,7 @@ function estudios_filtro() {
   }
   
 
-  if (filtroEstudios.clase == 1 || filtroEstudios.clase == 2 ) {
+  if (filtroEstudios.tipo == 1 || filtroEstudios.tipo == 2 ) {
     //Mostramos los filtros
     estudios_show("filtro");
   } else {
@@ -222,16 +270,14 @@ function estudios_filtro() {
 }
 
 function estudios_estilos() {
-  //Modificamos los estilos de los botones
+  // Modificamos los estilos de los botones
   // Primero se limpian de active los filtros
-  //let elements = document.getElementsByClassName('btn azul_blanco active');
   // Cambiamos a un queryselectorall para que seleccione todo
   let elements = document.querySelectorAll('.btn.azul_blanco.active');
   
   for (let i = 0; i < elements.length; i++) {
-  	// Hacer un remove tarda menos que hacer un classname entero, colega
+  	// Hacer un remove tarda menos que hacer un classname entero
     elements[i].classList.remove('active');
-	//elements[i].className = 'btn azul_blanco';
   }
   
   // Y los botones principales
@@ -240,20 +286,24 @@ function estudios_estilos() {
     other_elements[i].classList.remove('active');
   }
   
-  switch(filtroEstudios.clase) {
+  switch(filtroEstudios.tipo) {
     case 1:
       document.getElementById("btnGrados").className = "nav-link tab azul_blanco active";
       break;
     case 2:
       document.getElementById("btnMasteres").className = "nav-link tab azul_blanco active";
       break;
-	case 3:
-	  document.getElementById("btnDoctorado").className = "nav-link tab azul_blanco active";
-	  break;
-	case 4:
-	  document.getElementById("btnTitulos").className = "nav-link tab azul_blanco active";
-	  break;
+    case 3:
+      document.getElementById("btnDoctorado").className = "nav-link tab azul_blanco active";
+      break;
+    case 4:
+      document.getElementById("btnTitulos").className = "nav-link tab azul_blanco active";
+      break;
+    case 5:
+      document.getElementById("btnFormacion").className = "nav-link tab azul_blanco active";
+      break;
   }
+
   
   /*
   switch(filtroEstudios.campus) {
@@ -296,21 +346,21 @@ function estudios_estilos() {
       break;
   }
   
-  switch(filtroEstudios.tipo) {
+  switch(filtroEstudios.tipolearning) {
   	case 0:
 		document.getElementById("btnTipoTodos").classList.add('active');
 		break;
     case 1:
       //document.getElementById("btnTipoPresencial").className = "btn azul_blanco active";
-	  document.getElementById("btnTipoPresencial").classList.add('active');
+	    document.getElementById("btnTipoPresencial").classList.add('active');
       break
     case 2:
       //document.getElementById("btnTipoSemipresencial").className = "btn azul_blanco active";
-	  document.getElementById("btnTipoSemipresencial").classList.add('active');
+	    document.getElementById("btnTipoSemipresencial").classList.add('active');
       break;
     case 3:
       //document.getElementById("btnTipoVirtual").className = "btn azul_blanco active";
-	  document.getElementById("btnTipoVirtual").classList.add('active');
+	    document.getElementById("btnTipoVirtual").classList.add('active');
       break;
   }
 }
@@ -343,16 +393,12 @@ function showHide(elementId, changearrow = true) {
 	
 	var element = document.getElementById(elementId);
 	
-	/*console.log("SHOW HIDE ");
-	console.log(element);
-	console.log(this.event.target);
-	console.log(this.event.target.nextElementSibling);*/
 	if (element.classList.contains('showElement')) {
 		// Ocultamos
 		// Mostramos la flecha gorda
 		if (changearrow) {
-			this.event.target.nextElementSibling.className = 'fas fa-arrow-up';
-			this.event.target.nextElementSibling.style = 'color: rgba(55, 55, 55, 0.8);';
+			this.event.target.nextElementSibling.className = 'fas fa-angle-down';
+			this.event.target.nextElementSibling.style = 'color: rgba(55, 55, 55, 0.8); float: right';
 		}
 		// Ocultamos la capa
 		element.classList.remove('showElement');
@@ -361,8 +407,8 @@ function showHide(elementId, changearrow = true) {
 		// Mostramos
 		// Cambiamos la flecha
 		if (changearrow) {
-			this.event.target.nextElementSibling.className = 'fas fa-arrow-down';
-			this.event.target.nextElementSibling.style = 'color: rgba(0, 0, 0, 0.3);';
+			this.event.target.nextElementSibling.className = 'fas fa-angle-up';
+			this.event.target.nextElementSibling.style = 'color: rgba(0, 0, 0, 0.3); float: right';
 		}
 		// Mostamos la capa
 		element.classList.remove('hideElement');
@@ -372,19 +418,24 @@ function showHide(elementId, changearrow = true) {
 
 document.addEventListener("DOMContentLoaded",function(){
   //index=Solr%20Offline
-  var data = estudios_jsonp("http://www.uva.es/opencms/handleSolrSelect?rows=2000&fq=type:estudios&wt=json&json.wrf=estudios_respuesta");
+  var data = estudios_jsonp("http://www-des.uva.es/opencms/handleSolrSelect?rows=2000&fq=type:estudios&wt=json&json.wrf=estudios_respuesta");
   data.then((res) => {
-    estudios_respuesta(res) 
+    estudios_respuesta(res);
   });
   
-  data = estudios_jsonp("http://ediciond.uva.es/system/modules/es.uva.web.portal.enterprise/elements/doctorado/doctorado.jsp");
+  data = estudios_jsonp("http://www-des.uva.es/system/modules/es.uva.web.portal.enterprise/elements/doctorado/doctorado.jsp");
   data.then((res) => {
-    estudios_respuesta(res) 
+    estudios_respuesta(res);
   });
   
-  data = estudios_jsonp("http://ediciond.uva.es/system/modules/es.uva.web.portal.enterprise/elements/titulos/titulos.jsp");
+  data = estudios_jsonp("http://www-des.uva.es/system/modules/es.uva.web.portal.enterprise/elements/titulos/titulos.jsp");
   data.then((res) => {
-    estudios_respuesta(res) 
+    estudios_respuesta(res);
+  });
+
+  var data = estudios_jsonp("http://www-des.uva.es/opencms/handleSolrSelect?rows=2000&fq=type:cursos&wt=json&json.wrf=estudios_respuesta");
+  data.then((res) => {
+    estudios_respuesta(res);
   });
 
   /*************
@@ -392,25 +443,44 @@ document.addEventListener("DOMContentLoaded",function(){
    *************/
   // Seccion de Grados, Master
   document.getElementById('btnGrados').onclick = function(){
-    filtroEstudios.clase = 1;
+    filtroEstudios.tipo = 1;
     estudios_filtro();
     estudios_estilos();
   };
 
   document.getElementById('btnMasteres').onclick = function(){
-    filtroEstudios.clase = 2;
+    filtroEstudios.tipo = 2;
     estudios_filtro();
     estudios_estilos();
   };
   
   document.getElementById('btnDoctorado').onclick = function(){
     filtroEstudios.clase = 3;
+    filtroEstudios.campus = 0;
+    filtroEstudios.rama = 0;
+    filtroEstudios.tipolearning = 0;
+    filtroEstudios.tipo = 3;
     estudios_filtro();
     estudios_estilos();
   };
   
   document.getElementById('btnTitulos').onclick = function(){
     filtroEstudios.clase = 4;
+    filtroEstudios.campus = 0;
+    filtroEstudios.rama = 0;
+    filtroEstudios.tipolearning = 0;
+    filtroEstudios.tipo = 4;
+    estudios_filtro();
+    estudios_estilos();
+  };
+
+  document.getElementById('btnFormacion').onclick = function(){
+    filtroEstudios.clase = 0;
+    filtroEstudios.campus = 0;
+    filtroEstudios.rama = 0;
+    filtroEstudios.tipolearning = 0;
+    filtroEstudios.tipo = 5;
+    console.log(filtroEstudios);
     estudios_filtro();
     estudios_estilos();
   };
@@ -490,14 +560,14 @@ document.addEventListener("DOMContentLoaded",function(){
 
   // Filtro para tipos de estudio (presencial y tal)
   document.getElementById('btnTipoTodos').onclick = function(){
-    filtroEstudios.tipo = 0;
+    filtroEstudios.tipolearning = 0;
     estudios_filtro();
     estudios_estilos();
   };
   
   if (document.getElementById('btnTipoPresencial')) {
 	  document.getElementById('btnTipoPresencial').onclick = function(){
-		filtroEstudios.tipo = 1;
+		filtroEstudios.tipolearning = 1;
 		estudios_filtro();
 		estudios_estilos();
 	  };
@@ -505,7 +575,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
   if (document.getElementById('btnTipoSemipresencial')) {
   document.getElementById('btnTipoSemipresencial').onclick = function(){
-    filtroEstudios.tipo = 2;
+    filtroEstudios.tipolearning = 2;
     estudios_filtro();
     estudios_estilos();
   };
@@ -513,7 +583,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
   if (document.getElementById('btnTipoVirtual')) {
 	  document.getElementById('btnTipoVirtual').onclick = function(){
-		filtroEstudios.tipo = 3;
+		filtroEstudios.tipolearning = 3;
 		estudios_filtro();
 		estudios_estilos();
 	  };

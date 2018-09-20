@@ -81,7 +81,10 @@ class EventoTexto extends HTMLElement {
         border-radius: 4px;
         background-color: #ff8b92; 
       }
-	  .va h1, .pa h1, .se h1, .so h1 {
+	  .uva_rosa h1, .uva_rosa p {
+	  	color: black !important;
+	  }
+	  .va h1, .pa h1, .se h1, .so h1, .uva_rosa h1, .uva_azul h1 {
 	  	font-family: "Lato", Arial;
 		font-size: 4.5rem;
 		font-weight: 400;
@@ -92,7 +95,7 @@ class EventoTexto extends HTMLElement {
 		margin-top: -20px;
 		margin-bottom: -15px;
 	  }
-	  .va p, .pa p, .se p, .so p {
+	  .va p, .pa p, .se p, .so p, .uva_rosa p, .uva_azul p {
 	  	margin: 0; 
 		font-size: 0.8em; 
 		height: 90px; 

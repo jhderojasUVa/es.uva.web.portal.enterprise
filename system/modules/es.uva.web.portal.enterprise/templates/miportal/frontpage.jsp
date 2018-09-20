@@ -94,166 +94,50 @@
           </div>
           <div class="user_icons">
             <div class="icons_up">
-			<span class="icon_group"><a href="http://www.uva.es/ldap" role="link"><span class="icon_description">Mis datos</span> <i class="fas fa-user-circle"></i></a></span>
+			<span class="icon_group"><a href="<cms:link>/0.comun/1.misdatosuva/</cms:link>" role="link"><span class="icon_description">Mis datos</span> <i class="fas fa-user-circle"></i></a></span>
 			<span class="icon_group"><a href="tel://983423000" role="link" target="_blank" alt="Servicio de Atención"><span class="icon_description">Servicio de Atención</span> <i class="far fa-comments"></i></a></span>
 			<a href="${logoutLink}" role="link" alt="Salor"><span class="icon_group" ><span class="icon_description">Salir</span> <i class="fas fa-sign-out-alt"></i></span></a>
             </div>
             <div class="icons_down">
               <span class="icon_group"><a href="#" role="link"><span class="icon_description">Avisos</span> <i class="fas fa-exclamation"></i> <span class="badge badge-pill badge-warning">3</span></a></span>
               <span class="icon_group"><a href="http://webmail.uva.es" role="link" target="_blank" alt="Buzón"><span class="icon_description">Buzon</span> <i class="far fa-envelope"></i> <span class="badge badge-pill badge-warning">44</span></a></span>
-              <span class="icon_group"><a href="#" role="link" target="_blank" alt="Agenda"><span class="icon_description">Agenda</span> <i class="far fa-calendar-alt"></i></a></span>
+              <span class="icon_group"><a href="http://www.uva.es/export/sites/uva/7.comunidaduniversitaria/7.06.calendarioacademico/index.html" role="link" target="_blank" alt="Calendario"><span class="icon_description">Calendarios</span> <i class="far fa-calendar-alt"></i></a></span>
 			  <span class="icon_group"><a href="http://directorio.uva.es" role="link" target="_blank" alt="Directorio"><span class="icon_description">Directorio</span> <i class="fas fa-users"></i></a></span>
+			  <!--
 			  <span class="icon_group"><a href="#" role="link"><span class="icon_description">Configuración</span> <i class="fas fa-cog"></i></a></span>
+			  -->
             </div>
           </div>
         </div>
       </div>
     </div>
 	
-	<!-- Generador de contenido para los bloques -->
-	<div id="contenido"></div>
-	
-	<!-- Templates --> 
-  	<template id="grupos-tiles">
-	<style>
-		/* Importamos bootstrap */
-		@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css');
-		.separacion_bloques {
- 			/*margin-bottom: 3em;*/
-			margin-top: 3em;
-  		}
-		.cabecera_bloque {
-			border-top: 3px solid #0b1f4a; 
-		}
-		.cabecera_bloque h1 {
-			color: #0b1f4a;
-			margin-left: -15px;
-			margin-right: -15px;
-			font-size: 2em; 
-		}
-		.no-margins {
-			margin-left: -30px;
-			margin-right: -30px;
-			margin-top: 15px;
-			margin-bottom: 15px;
-		}
-	</style>
-	
-	<div class="container separacion_bloques">
-		<div class="row">
-			<div class="col-12 cabecera_bloque">
-				<h1>Mi Portal</h1>
-			</div>
-		</div>
-		<div id="miportalcontenido" class="container"></div>
-	</div>
-	
-	</template>
-	<template id="elemento-tile">
-    <style>
-		/* Importamos bootstrap */
-		@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css');
-		@import url('/system/modules/es.uva.web.portal.enterprise/resources/miportal/css/miportal.css');
-		/* Esto podiamos dejarlo solo para las fuentes */
-		@import url('/system/modules/es.uva.web.portal.enterprise/resources/uva4/css/footer.css');
-		
-		/* Parche del bootstrap para ajustar las cajas */
-		:host {
-			width: calc(100% - 75%);
-		}
-		.tile {
-			min-width: 100%;
-			height: 140px;
-			margin-top: 1em; 
-		}
-		.tile.azul {
-			background-color: #0b1f4a; 
-		}
-		.tile.azul h1 {
-			color: white;
-			position: relative;
-			left: 0.7em;
-			top: 0.7em;
-			font-size: 1em;
-			width: 95%; 
-		}
-		.tile.azul h1 a {
-			color: white;
-			text-decoration: underline; 
-		}
-		.tile.azul h5 {
-			color: white;
-			max-width: inherit;
-			position: absolute;
-			bottom: 0.7em;
-			right: 2em;
-			font-size: 0.7em;
-			text-transform: lowercase; 
-		}
-		.tile.azul_claro {
-			background-color: #5af0ff; 
-		}
-		.tile.azul_claro h1 {
-			color: #0b1f4a;
-			position: relative;
-			left: 0.7em;
-			top: 0.7em;
-			font-size: 1em;
-			width: 95%; 
-		}
-		.tile.azul_claro h1 a {
-			color: #0b1f4a;
-			text-decoration: underline; 
-		}
-		.tile.azul_claro h5 {
-			color: #0b1f4a;
-			max-width: inherit;
-			position: absolute;
-			bottom: 0.7em;
-			right: 2em;
-			font-size: 0.7em;
-			text-transform: lowercase; 
-		}
-		.tile.gris {
-			background-color: #f0f0f0; 
-		}
-		.tile.gris h1 {
-			color: #575757;
-			position: relative;
-			left: 0.7em;
-			top: 0.7em;
-			font-size: 1em;
-			width: 95%; 
-		}
-		.tile.gris h1 a {
-			color: #575757;
-			text-decoration: underline; 
-		}
-		.tile.gris h5 {
-			color: #575757;
-			max-width: inherit;
-			position: absolute;
-			bottom: 0.7em;
-			right: 2em;
-			font-size: 0.7em;
-			text-transform: lowercase; 
-		}
-    </style>
-	<div class="col"> <!-- must be col col-md-3 -->
-		<div class="azul tile">
-		  <h1><slot name="title">Title</slot></h1>
-		</div>
-	</div>
-    
-  </template>
-	
-	<script src="<cms:link>/system/modules/es.uva.web.portal.enterprise/resources/miportal/js/miportalComponent.js</cms:link>"></script>
-
-	
 	<!-- ELEMENTOS -->
 	<section>
 		<cms:container name="contenedor" type="contenedor" detailview="true" maxElements="20"/>
 	</section>
+	
+	<!-- Generador de contenido para los bloques -->
+	<div id="contenido"></div>
+	
+	 <script>
+		 function handleLoad(e) {
+			 console.log('Loaded import: ' + e.target.href);
+		 }
+		 function handleError(e) {
+			 console.log('Error loading import: ' + e.target.href);
+		 }
+	</script>
+	
+	<link rel="import" id="template_grupos" href="./templates/grupo-tiles.html"	onload="handleLoad(event)" onerror="handleError(event)">
+	<link rel="import" id="template_elemento" href="./templates/elemento-tile.html"	onload="handleLoad(event)" onerror="handleError(event)">
+	
+	
+	
+	<script src="<cms:link>/system/modules/es.uva.web.portal.enterprise/resources/miportal/js/miportalComponent.js</cms:link>"></script>
+
+	
+	
 	
 	<!-- Footer -->
     <footer style="margin-top: 70px;">

@@ -16,19 +16,19 @@
     }
 
     connectedCallback() {
-      console.log('Custom square element added to page.');
+      //console.log('Custom square element added to page.');
     }
 
     disconnectedCallback() {
-      console.log('Custom square element removed from page.');
+      //console.log('Custom square element removed from page.');
     }
 
     adoptedCallback() {
-      console.log('Custom square element moved to new page.');
+      //console.log('Custom square element moved to new page.');
     }
     
     attributeChangedCallback(name, oldValue, newValue) {
-      console.log('Custom square element attributes changed.');
+      //console.log('Custom square element attributes changed.');
     }
 
   }
@@ -47,9 +47,9 @@
         html+="Telefono: "+phone+"<br>";
         Email.send(
           "mensajes@uva.es",
-          "david.rodriguez.merino@uva.es",
-            "Formulario de contacto Oferta educativa",
-            html,
+          "soporte-web@uva.es",
+          "Formulario de contacto Oferta educativa",
+          html,
           {
             token: "022cd46e-d0d6-4f7a-9507-04e8ae3bcdf6",
             callback: function done(message) { 

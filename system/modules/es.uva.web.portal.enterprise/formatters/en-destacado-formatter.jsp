@@ -9,7 +9,7 @@
 
 	<div class="container destacado" style="margin-top: 70px; margin-bottom: 70px;">
 		<div class="row">
-			<div class="col-12 col-md-3 header">
+			<div class="col-12 col-md-4 header">
 			  <h1 data-i18n-es="${content.value.Title}" data-i18n-en="Links">${content.value.Title}</h1>
 			</div>
 			<div class="col bloque_raya d-none d-md-block">

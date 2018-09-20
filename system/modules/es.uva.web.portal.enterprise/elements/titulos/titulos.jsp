@@ -74,6 +74,7 @@ ${param["callback"]}(
 				</c:forEach>
 				<json:property name="campo.tipo_prop" value="4"/>
 				<json:property name="ficha.campus_prop" value="0"/>
+				<json:property name="type" value="titulos"/>
 			</json:object>
 		  </json:array>
 		</json:object>

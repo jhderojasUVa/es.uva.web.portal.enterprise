@@ -30,9 +30,6 @@
 %><%@page import="org.json.simple.JSONObject"%><%
 %><%
 // Variables
-String url = "http://eventos.uva.es/api/eventsearch";
-String api_key = "39b0c6894ca6f7475dffa14df16f3f12";
-String USER_AGENT = "Mozilla/5.0";
 CmsJspActionElement jsp = new CmsJspActionElement(pageContext, request, response);
 CmsObject cms = jsp.getCmsObject();
 
@@ -74,6 +71,7 @@ ${param["callback"]}(
 				</c:forEach>
 				<json:property name="campo.tipo_prop" value="3"/>
 				<json:property name="ficha.campus_prop" value="0"/>
+				<json:property name="type" value="doctorado"/>
 			</json:object>
 		  </json:array>
 		</json:object>
