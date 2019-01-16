@@ -5,7 +5,19 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <cms:formatter var="content" val="value" rdfa="rdfa">
+	<!-- Slideshow -->
+	<uva-slideshow auto="true">
+		<c:forEach var="elemento" items="${content.valueList.Elementos}">
+			<c:if test="${elemento.value.Imagen.exists && elemento.value.Imagen.isSet}">
+				<c:set var="imagen" value="${elemento.value.Imagen}"/>
+				<uva-slideshow-img src="${imagen.value.Image}" alt="${imagen.value.Alt}" title="${imagen.value.Alt}" ></uva-slideshow-img>
+				</c:if>
+		</c:forEach>
+	</uva-slideshow>
+	
+<%--
 <!-- CARRUSEL -->
+	
 	<div id="slideshow">
 
 		<div class="container">
@@ -52,5 +64,6 @@
 		</div>
 		
 	</div>
+--%>
 
 </cms:formatter>

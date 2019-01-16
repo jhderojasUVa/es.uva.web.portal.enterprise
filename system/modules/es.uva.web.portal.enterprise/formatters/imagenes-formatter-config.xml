@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<NewFormatters xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="opencms://system/modules/org.opencms.ade.config/schemas/formatters/new_formatter.xsd">
+  <NewFormatter language="en">
+    <NiceName><![CDATA[Imagenes Uva]]></NiceName>
+    <Type><![CDATA[imagenes]]></Type>
+    <Jsp>
+      <link type="WEAK">
+        <target><![CDATA[/system/modules/es.uva.web.portal.enterprise/formatters/imagenes-formatter.jsp]]></target>
+        <uuid>4d5ac2ff-bfcb-11e8-b7c2-0050568213af</uuid>
+      </link>
+    </Jsp>
+    <Rank><![CDATA[1000]]></Rank>
+    <Match>
+      <Types>
+        <ContainerType><![CDATA[contenedor]]></ContainerType>
+        <ContainerType><![CDATA[contentmiportal]]></ContainerType>
+      </Types>
+    </Match>
+    <Preview>false</Preview>
+    <SearchContent>true</SearchContent>
+    <AutoEnabled>true</AutoEnabled>
+    <Detail>true</Detail>
+    <NestedContainers>true</NestedContainers>
+    <Setting>
+      <PropertyName><![CDATA[imgalign]]></PropertyName>
+      <DisplayName><![CDATA[Alineacion de la imagen]]></DisplayName>
+      <Description><![CDATA[Alineacion de la imagen]]></Description>
+      <Widget><![CDATA[select]]></Widget>
+      <Default><![CDATA[left]]></Default>
+      <WidgetConfig><![CDATA[left:izquierda|right:derecha|center:centrado]]></WidgetConfig>
+    </Setting>
+    <Setting>
+      <PropertyName><![CDATA[around]]></PropertyName>
+      <DisplayName><![CDATA[Texto alrededor]]></DisplayName>
+      <Description><![CDATA[Texto alrededor]]></Description>
+      <Widget><![CDATA[checkbox]]></Widget>
+      <Default><![CDATA[false]]></Default>
+    </Setting>
+    <Setting>
+      <PropertyName><![CDATA[dinamic]]></PropertyName>
+      <DisplayName><![CDATA[Gif dinámico]]></DisplayName>
+      <Description><![CDATA[Gif dinámico]]></Description>
+      <Widget><![CDATA[checkbox]]></Widget>
+      <Default><![CDATA[false]]></Default>
+    </Setting>
+  </NewFormatter>
+</NewFormatters>

@@ -57,22 +57,22 @@ function estudios_respuesta(data) {
           case "estudios":
             switch (doc["campo.tipo_prop"]) {
               case "1":
-                doc.tipo=1;
+                doc.tipo = 1;
                 break;
               case "2":
-                doc.tipo=2;
+                doc.tipo = 2;
                 break;
             }
             //console.log(doc);
             break;
           case "doctorado":
-            doc.tipo=3;
+            doc.tipo = 3;
             break;
           case "titulos":
-            doc.tipo=4;
+            doc.tipo = 4;
             break;
           case "cursos":
-            doc.tipo=5;
+            doc.tipo = 5;
             break;
           default:
             break;
@@ -86,8 +86,8 @@ function estudios_respuesta(data) {
   	throw "Error en la lectura de los estudios";
   }
 
-  loadEstudios=loadEstudios+1;
-  if (loadEstudios>3) {
+  loadEstudios = loadEstudios + 1;
+  if (loadEstudios > 3) {
     //Ocultamos el loadin
     showhide("estudios_loader");
     //Mostramos la caja
@@ -127,20 +127,21 @@ class Estudio extends HTMLElement {
 
   set doc(val) {
   	// Seteamos el valor del elemento
-    if (val) {;
+    if (val) {
 	  // Si hay valor en el .doc del elemento...
       let html='';
-	  if ((val["campo.tipo_prop"]==1)||(val["campo.tipo_prop"]==2)) {
+	  if ((val["campo.tipo_prop"] == 1)||(val["campo.tipo_prop"] == 2)) {
 		// El campus, el campus
 		// Bueno ya no porque esta ordenado
 		let campus = dimeCampus(val["ficha.campus_prop"]);
 		// Creamos el elemento en si por dentro con toda su maraña
 		// Con campus
-		html+='<p id="'+val.id+'"><a href="http://www.uva.es' + val.link + '" target="_blank" role="link">' + val.Title_prop.replace('(PA)', '').replace('(SG)', '').replace('(SO)', '') + '</a></p>';  
-	  } else if (val["campo.tipo_prop"]==3) {
-	  	html+='<p id="'+val.COD_PROGRAMA+'"><a href="#" target="_blank" role="link">' + val.DENOMINACION + '</a></p>';  
-	  } else if (val["campo.tipo_prop"]==4) {
-	  	html+='<p id="'+val.IdCurso+'"><a href="#" target="_blank" role="link">' + val.DesCur + '</a></p>';  
+		console.log(val.Title_prop);
+		html+='<p id="'+ val.id +'"><a href="http://www.uva.es' + val.link + '" target="_blank" role="link">' + val.Title_prop.replace('(PA)', '').replace('(SG)', '').replace('(SO)', '') + '</a></p>';  
+	  } else if (val["campo.tipo_prop"] == 3) {
+	  	html+='<p id="'+ val.COD_PROGRAMA +'"><a href="#" target="_blank" role="link">' + val.DENOMINACION + '</a></p>';  
+	  } else if (val["campo.tipo_prop"] == 4) {
+	  	html+='<p id="'+ val.IdCurso +'"><a href="#" target="_blank" role="link">' + val.DesCur + '</a></p>';  
 	  }
 	  // Esto es una chapuza para los CSS, lo ideal es hacer un @import pero eso al final
 	  let thecss = '<style>:host { }:host p { font-size: 0.9rem; line-height: 1; margin-left: 0.5em; }:host p a { text-decoration: none; color: rgba(55, 55, 55, 0.8);}:host p a:hover { text-decoration: underline; }</style>';
@@ -178,7 +179,8 @@ function estudios_hide(name) {
 }
 
 function showhide(name) {
-   var div = document.getElementById(name);
+  // Funcion para mostrar y esconder una capa
+  var div = document.getElementById(name);
   if (div.style.display !== "none") {
     div.style.display = "none";
   } else {
@@ -187,9 +189,16 @@ function showhide(name) {
 }
 
 function estudios_filtro_element(elemento) {
-  if (filtroEstudios.clase != 0) {
+
+	// Funcion que hace el filtrado
+	// Devuelve true si filta por esa "cosa"
+	// Devuelve false si no ha de filtrar por esa cosa
+
+	// Esto huele a que se tipo y clase son lo mismo salvo que en algun lado no se cambia y peta
+	// asi que eliminamos 1 y listo calisto
+  /*if (filtroEstudios.clase != 0) {
     if (elemento["campo.tipo_prop"] != filtroEstudios.clase) return false;
-  }
+  }*/
   if (filtroEstudios.campus != 0) {
     if (elemento["ficha.campus_prop"] != filtroEstudios.campus) return false;
   }
@@ -208,6 +217,7 @@ function estudios_filtro_element(elemento) {
 function estudios_filtro() {
   // Crea los estudios (los elementos) y les asigna el contenido filtrado (o no)
   let elementos = estudios.filter(estudios_filtro_element);
+
   // Ordenamos
   elementos.sort((a,b) => {
   	if (a.DesCur < b.DesCur || a.DENOMINACION < b.DENOMINACION) {
@@ -222,19 +232,24 @@ function estudios_filtro() {
   estudios_clear();
 
   var divElementCampus;
-  let numCampus=[]; //Almacena los campus con más de un elemento
+  let numCampus = []; //Almacena los campus con más de un elemento
+  
   listadoCampus.forEach(campus => {
 
     let elementos_campus = elementos.filter(elemento => (elemento["ficha.campus_prop"] === campus.id));
+
     if (elementos_campus.length > 0) {
       numCampus.push(campus.id);
       let titleCampus = document.createElement('h2');
       
-      if (campus.id == 0) {
+      /*if (campus.id == 0) {
         titleCampus.innerHTML = campus.desc +' <i class="fas fa-angle-down" style="float: right"></i>';
       } else {
         titleCampus.innerHTML = '<a onclick="showHide(\''+"oferta_campus_"+ campus.id +'\')">' +campus.desc +'</a> <i class="fas fa-angle-down" style="float: right"></i>';
-      }
+      }*/
+	  
+	  titleCampus.innerHTML = '<a onclick="showHide(\''+"oferta_campus_"+ campus.id +'\')">' +campus.desc +'</a> <i class="fas fa-angle-down" style="float: right"></i>';
+	  
       titleCampus.setAttribute('class', 'campus');
       document.getElementById('estudios_contenido').appendChild(titleCampus);
 
@@ -244,11 +259,11 @@ function estudios_filtro() {
       document.getElementById('estudios_contenido').appendChild(divElementCampus);
 
       let elementos_campus = elementos.filter(elemento =>  (elemento["ficha.campus_prop"] === campus.id));
+
       elementos_campus.forEach(doc => {
+	  	// Creamos los elementos
         let element = new Estudio();
         element.doc = doc;
-        // Ya nop!
-        //document.getElementById('estudios_contenido').appendChild(element);
 
         // Metemos el contenido en el div que tiene como id el campus!
         document.getElementById('oferta_campus_'+campus.id).appendChild(element);
@@ -286,6 +301,7 @@ function estudios_estilos() {
     other_elements[i].classList.remove('active');
   }
   
+  // Cambio segun el tipo de estudios (Grados, Masteres, Doctorado...)
   switch(filtroEstudios.tipo) {
     case 1:
       document.getElementById("btnGrados").className = "nav-link tab azul_blanco active";
@@ -325,6 +341,7 @@ function estudios_estilos() {
   }
   */
   
+  // Cambio segun el tipo de estudios (Todos, Ciencias, Arte, Salud...)
   switch(filtroEstudios.rama) {
   	case 0:
 		document.getElementById("btnTodasRamas").className = "btn azul_blanco active";
@@ -346,20 +363,18 @@ function estudios_estilos() {
       break;
   }
   
+  // Cambio segun la forma de estudio (Todos, Presencial, Semi...)
   switch(filtroEstudios.tipolearning) {
   	case 0:
 		document.getElementById("btnTipoTodos").classList.add('active');
 		break;
     case 1:
-      //document.getElementById("btnTipoPresencial").className = "btn azul_blanco active";
 	    document.getElementById("btnTipoPresencial").classList.add('active');
       break
     case 2:
-      //document.getElementById("btnTipoSemipresencial").className = "btn azul_blanco active";
 	    document.getElementById("btnTipoSemipresencial").classList.add('active');
       break;
     case 3:
-      //document.getElementById("btnTipoVirtual").className = "btn azul_blanco active";
 	    document.getElementById("btnTipoVirtual").classList.add('active');
       break;
   }
@@ -418,21 +433,25 @@ function showHide(elementId, changearrow = true) {
 
 document.addEventListener("DOMContentLoaded",function(){
   //index=Solr%20Offline
+  // Peticion de Grados
   var data = estudios_jsonp("http://www-des.uva.es/opencms/handleSolrSelect?rows=2000&fq=type:estudios&wt=json&json.wrf=estudios_respuesta");
   data.then((res) => {
     estudios_respuesta(res);
   });
   
+  // Peticion de Doctorado
   data = estudios_jsonp("http://www-des.uva.es/system/modules/es.uva.web.portal.enterprise/elements/doctorado/doctorado.jsp");
   data.then((res) => {
     estudios_respuesta(res);
   });
   
+  // Peticion de Titulos Propios
   data = estudios_jsonp("http://www-des.uva.es/system/modules/es.uva.web.portal.enterprise/elements/titulos/titulos.jsp");
   data.then((res) => {
     estudios_respuesta(res);
   });
-
+  
+  // Peticion de Cursos
   var data = estudios_jsonp("http://www-des.uva.es/opencms/handleSolrSelect?rows=2000&fq=type:cursos&wt=json&json.wrf=estudios_respuesta");
   data.then((res) => {
     estudios_respuesta(res);
@@ -521,7 +540,7 @@ document.addEventListener("DOMContentLoaded",function(){
   };
   */
 
-  // Filtro para Ramas
+  // Filtro para Ramas de Estudio
   document.getElementById('btnTodasRamas').onclick = function() {
   	filtroEstudios.rama = 0;
 	estudios_filtro();

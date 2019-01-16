@@ -12,7 +12,7 @@
   <head>
     <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no">
-	<title><cms:info property="opencms.title" /></title>
+	<title>MiPortal - <cms:info property="opencms.title" /> - Universidad de Valladolid</title>
 	<meta name="description" content="<cms:property name="Description" file="search" default="Universidad de Valladolid" />">
 	<meta name="keywords" content="<cms:property name="Keywords" file="search" default="universidad, valladolid, uva" />">
 	<meta http-equiv="Content-Type" content="text/html; charset=${cms.requestContext.encoding}">
@@ -41,15 +41,20 @@
     <!-- ES2015 -->
 	<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.0.2/webcomponents-bundle.js"></script>
-
+	<script type="text/javascript" src="<cms:link>/system/modules/es.uva.web.portal.enterprise/resources/uva4/js/html-imports.min.js</cms:link>"></script>
+	<!--
+	<script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.0.3/custom-elements-es5-adapter.js"></script>
+	  <script type="text/javascript" src="./html-imports.min.js"></script>
+	-->
 	<script src="<cms:link>/system/modules/es.uva.web.portal.enterprise/resources/uva4/js/languagechanger.js</cms:link>"></script>
+	
 	<!-- JS elementos -->
 	<script src="<cms:link>/system/modules/es.uva.web.portal.enterprise/resources/uva4/js/header.js</cms:link>"></script>
 	<script src="<cms:link>/system/modules/es.uva.web.portal.enterprise/resources/uva4/js/menu.js</cms:link>"></script>
 	
 	<!-- Font awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+	
 	<!-- CSS -->
 	<link rel="stylesheet" href="<cms:link>/system/modules/es.uva.web.portal.enterprise/resources/uva4/css/footer.css</cms:link>" />
 	<link href="<cms:link>/system/modules/es.uva.web.portal.enterprise/resources/miportal/css/miportal.css</cms:link>" rel="stylesheet">
@@ -72,70 +77,10 @@
         </div>
       </div>
     </div>
-	
-	<!-- User data -->
-	<div class="miportal_letras d-none d-lg-block d-xl-block">
-      <h1>Mi Portal</h1>
-    </div>
 
-    <div class="container miportal">
-      <div class="row align-items-center">
-        <div class="col-1">
-          <a href="http://www.uva.es" role="link"><img src="<cms:link>/system/modules/es.uva.web.portal.enterprise/resources/miportal/img/logo_uva_cuadrado.png</cms:link>" alt="Universidad de Valladolid"></a>
-        </div>
-        <div class="col">
-          <div class="user_profile">
-            <img src="https://via.placeholder.com/80x103?text=foto" alt="imagen usuario">
-            <div class="user_data">
-              <h5 class="d-none d-lg-block d-xl-block">${firstname}&nbsp;${lastname}</h5>
-			  <!-- Selector de perfiles -->
-			  <div id="perfiles"></div>
-            </div>
-          </div>
-          <div class="user_icons">
-            <div class="icons_up">
-			<span class="icon_group"><a href="<cms:link>/0.comun/1.misdatosuva/</cms:link>" role="link"><span class="icon_description">Mis datos</span> <i class="fas fa-user-circle"></i></a></span>
-			<span class="icon_group"><a href="tel://983423000" role="link" target="_blank" alt="Servicio de Atención"><span class="icon_description">Servicio de Atención</span> <i class="far fa-comments"></i></a></span>
-			<a href="${logoutLink}" role="link" alt="Salor"><span class="icon_group" ><span class="icon_description">Salir</span> <i class="fas fa-sign-out-alt"></i></span></a>
-            </div>
-            <div class="icons_down">
-              <span class="icon_group"><a href="#" role="link"><span class="icon_description">Avisos</span> <i class="fas fa-exclamation"></i> <span class="badge badge-pill badge-warning">3</span></a></span>
-              <span class="icon_group"><a href="http://webmail.uva.es" role="link" target="_blank" alt="Buzón"><span class="icon_description">Buzon</span> <i class="far fa-envelope"></i> <span class="badge badge-pill badge-warning">44</span></a></span>
-              <span class="icon_group"><a href="http://www.uva.es/export/sites/uva/7.comunidaduniversitaria/7.06.calendarioacademico/index.html" role="link" target="_blank" alt="Calendario"><span class="icon_description">Calendarios</span> <i class="far fa-calendar-alt"></i></a></span>
-			  <span class="icon_group"><a href="http://directorio.uva.es" role="link" target="_blank" alt="Directorio"><span class="icon_description">Directorio</span> <i class="fas fa-users"></i></a></span>
-			  <!--
-			  <span class="icon_group"><a href="#" role="link"><span class="icon_description">Configuración</span> <i class="fas fa-cog"></i></a></span>
-			  -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-	
-	<!-- ELEMENTOS -->
-	<section>
-		<cms:container name="contenedor" type="contenedor" detailview="true" maxElements="20"/>
-	</section>
-	
-	<!-- Generador de contenido para los bloques -->
-	<div id="contenido"></div>
-	
-	 <script>
-		 function handleLoad(e) {
-			 console.log('Loaded import: ' + e.target.href);
-		 }
-		 function handleError(e) {
-			 console.log('Error loading import: ' + e.target.href);
-		 }
-	</script>
-	
-	<link rel="import" id="template_grupos" href="./templates/grupo-tiles.html"	onload="handleLoad(event)" onerror="handleError(event)">
-	<link rel="import" id="template_elemento" href="./templates/elemento-tile.html"	onload="handleLoad(event)" onerror="handleError(event)">
-	
-	
-	
-	<script src="<cms:link>/system/modules/es.uva.web.portal.enterprise/resources/miportal/js/miportalComponent.js</cms:link>"></script>
-
+  <!-- Generador de contenido para los bloques -->
+  <script type="module" src="<cms:link>/system/modules/es.uva.web.portal.enterprise/resources/miportal/js/miportalComponent.js</cms:link>" defer></script>
+  <miportal-contenido info="<cms:link>/sites/miportal/ws/info.jsp</cms:link>" data="<cms:link>/sites/miportal/ws/datos.jsp</cms:link>" data-perfil=""></miportal-contenido>
 	
 	
 	

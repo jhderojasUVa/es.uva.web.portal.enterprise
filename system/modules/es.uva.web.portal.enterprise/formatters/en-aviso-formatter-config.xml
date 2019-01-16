@@ -13,7 +13,7 @@
     <Rank><![CDATA[1000]]></Rank>
     <Match>
       <Types>
-        <ContainerType><![CDATA[contenedor]]></ContainerType>
+        <ContainerType><![CDATA[contentmiportal]]></ContainerType>
       </Types>
     </Match>
     <Preview>false</Preview>

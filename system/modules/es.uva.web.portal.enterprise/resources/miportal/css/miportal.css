@@ -13,18 +13,15 @@
     color: #0b1f4a;
     font-size: 4em; }
 
-.user_profile {
-  /*position: absolute;
-  top: -50px;*/ }
-  .user_profile .user_data {
-    position: absolute;
-    bottom: 0;
-    left: 125px; }
-    @media only screen and (max-width: 1196px) {
-      .user_profile .user_data {
-        bottom: none;
-        top: 0;
-        left: 65px; } }
+.user_profile .user_data {
+  position: absolute;
+  bottom: 0;
+  left: 125px; }
+  @media only screen and (max-width: 1196px) {
+    .user_profile .user_data {
+      bottom: none;
+      top: 0;
+      left: 65px; } }
   @media only screen and (max-width: 1196px) and (max-width: 1196px) {
     .user_profile .user_data select {
       position: absolute;
@@ -34,17 +31,22 @@
       position: absolute;
       top: 25px;
       left: 25px; } }
-  .user_profile h5 {
-    position: relative;
-    bottom: 0;
-    color: #0b1f4a;
-    font-size: 0.9em; }
-  .user_profile img {
-    float: left;
-    margin: 0 1em; }
-    @media only screen and (max-width: 1196px) {
-      .user_profile img {
-        display: none !important; } }
+
+.user_profile h5 {
+  position: relative;
+  bottom: 0;
+  color: #0b1f4a;
+  font-size: 0.9em; }
+.user_profile img {
+  float: left;
+  margin: 0 1em; }
+  @media only screen and (max-width: 1196px) {
+    .user_profile img {
+      display: none !important; }
+	 .user_profile miportal-photo {
+	 	display: none !important;
+		 }
+	 }
 
 .miportal {
   border-bottom: 3px solid #0b1f4a;
@@ -56,7 +58,8 @@
       font-size: 1.7em; }
     .miportal .user_icons .badge {
       vertical-align: top !important;
-      margin-left: -0.5em; }
+      margin-left: -0.5em;
+      margin-top: -0.5em; }
       .miportal .user_icons .badge.badge-pill {
         border-radius: 0 !important; }
     .miportal .user_icons .icon_group {
@@ -77,10 +80,12 @@
             background-color: #0b1f4a; }
     .miportal .user_icons .icons_up {
       position: absolute;
-      right: 0; }
+      right: 0;
+	  top: 0;}
       @media only screen and (max-width: 1197px) {
         .miportal .user_icons .icons_up {
-          margin-top: 10px; } }
+          margin-top: 10px;
+		  top: 0;} }
     .miportal .user_icons .icons_down {
       position: absolute;
       bottom: 0;
@@ -180,6 +185,89 @@
 .separacion_bloques {
   margin-bottom: 3em; }
 
+.rutademigas ul li {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 1em;
+  color: #777; }
+  .rutademigas ul li:after {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: '\f105';
+    margin: 0 0.5em; }
+  .rutademigas ul li a {
+    color: black; }
+
+.contenidoPagina .titular h1 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 2em; }
+.contenidoPagina .destacado h1 {
+  font-family: 'Lato', sans-serif;
+  font-size: 3em;
+  font-weight: 700;
+  margin: 0 0.5em; }
+.contenidoPagina .destacado p {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.4em;
+  font-weight: 400;
+  /*letter-spacing: 2.3em;*/
+  line-height: 2.3em;
+  margin: 0 1em; }
+.contenidoPagina .parrafo p {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.33em;
+  font-weight: 300;
+  /*letter-spacing: 2em;*/
+  line-height: 2em; }
+.contenidoPagina .enlaceDocumento .enlace, .contenidoPagina .enlaceDocumento .documento {
+  margin: 0 0.5em;
+  margin-bottom: 1em;
+  background-color: #5af0ff;
+  padding: 0.5em; }
+  .contenidoPagina .enlaceDocumento .enlace a, .contenidoPagina .enlaceDocumento .documento a {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5em;
+    font-weight: 300;
+    color: black; }
+    .contenidoPagina .enlaceDocumento .enlace a:hover, .contenidoPagina .enlaceDocumento .documento a:hover {
+      text-decoration: none; }
+    .contenidoPagina .enlaceDocumento .enlace a:after, .contenidoPagina .enlaceDocumento .documento a:after {
+      display: inline-block;
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: url("../img/arrow-alt-circle-right-regular_black.svg");
+      width: 20px;
+      margin-left: 1em; }
+.contenidoPagina .enlacesDestacados .enlace {
+  padding: 0.5em;
+  background-color: #5af0ff; }
+  .contenidoPagina .enlacesDestacados .enlace h1 {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5em;
+    line-height: 1; }
+  .contenidoPagina .enlacesDestacados .enlace p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.33em;
+    font-weight: 300;
+    line-height: 1.1;
+    padding-bottom: 1em; }
+  .contenidoPagina .enlacesDestacados .enlace .arrowLink {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 2em;
+    padding-bottom: 0.2em; }
+    .contenidoPagina .enlacesDestacados .enlace .arrowLink a {
+      color: black; }
+.contenidoPagina .youtube {
+  margin-top: 1em;
+  margin-bottom: 1em; }
+  .contenidoPagina .youtube p.description {
+    font-family: 'Lato', sans-serif;
+    font-size: 14pt;
+    font-weight: 300; }
+
 .no-margins {
   margin-left: -30px;
   margin-right: -30px;
@@ -188,3 +276,18 @@
 
 .col-half-offset {
   margin-left: 4.166666667%; }
+
+/*# sourceMappingURL=miportal.css.map */
+
+/* Enlaces genericos */
+.parrafo a, .destacado a {
+	color: rgba(12, 12, 12, 0.9);
+	font-size: 1.1em;
+	box-shadow: inset 0 -5px 0 #5af0ff;
+	transition: .2s ease-in-out 0s;
+}
+
+.parrafo a:hover, .destacado a:hover {
+	background: #5af0ff;
+	text-decoration: none;
+}

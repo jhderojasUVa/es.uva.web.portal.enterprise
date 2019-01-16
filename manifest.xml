@@ -4,7 +4,7 @@
 	<info>
 		<creator>e09338789f</creator>
 		<opencms_version>10.5.3</opencms_version>
-		<createdate>Thu, 20 Sep 2018 10:39:48 GMT</createdate>
+		<createdate>Wed, 16 Jan 2019 11:31:21 GMT</createdate>
 		<infoproject>Offline</infoproject>
 		<export_version>10</export_version>
 	</info>
@@ -255,7 +255,7 @@
 			<type>jsp</type>
 			<uuidstructure>dde5d159-a468-11e8-9372-0050568213af</uuidstructure>
 			<uuidresource>dde5d15a-a468-11e8-9372-0050568213af</uuidresource>
-			<datelastmodified>Mon, 17 Sep 2018 09:00:03 GMT</datelastmodified>
+			<datelastmodified>Mon, 05 Nov 2018 11:36:43 GMT</datelastmodified>
 			<userlastmodified>Admin</userlastmodified>
 			<datecreated>Mon, 20 Aug 2018 11:04:54 GMT</datecreated>
 			<usercreated>Admin</usercreated>
@@ -312,6 +312,30 @@
 			<usercreated>Admin</usercreated>
 			<flags>0</flags>
 			<properties/>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/elements/menu/nav_breadcrumb_miportal.jsp</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/elements/menu/nav_breadcrumb_miportal.jsp</destination>
+			<type>jsp</type>
+			<uuidstructure>4373127a-cc68-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>4373127b-cc68-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Wed, 10 Oct 2018 08:54:21 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Wed, 10 Oct 2018 08:41:21 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property>
+					<name>cache</name>
+					<value><![CDATA[locale;uri;]]></value>
+				</property>
+				<property type="shared">
+					<name>export</name>
+					<value><![CDATA[false]]></value>
+				</property>
+			</properties>
 			<relations/>
 			<accesscontrol/>
 		</file>
@@ -488,12 +512,32 @@
 			<accesscontrol/>
 		</file>
 		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/elements/titulos/titulos-copy.jsp</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/elements/titulos/titulos-copy.jsp</destination>
+			<type>jsp</type>
+			<uuidstructure>aba2af62-dce4-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>aba2af63-dce4-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Wed, 12 Sep 2018 08:12:44 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Wed, 31 Oct 2018 08:12:12 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property type="shared">
+					<name>export</name>
+					<value><![CDATA[false]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
 			<source>system/modules/es.uva.web.portal.enterprise/elements/titulos/titulos.jsp</source>
 			<destination>system/modules/es.uva.web.portal.enterprise/elements/titulos/titulos.jsp</destination>
 			<type>jsp</type>
 			<uuidstructure>81eb0b45-a50e-11e8-9372-0050568213af</uuidstructure>
 			<uuidresource>81eb0b46-a50e-11e8-9372-0050568213af</uuidresource>
-			<datelastmodified>Wed, 12 Sep 2018 08:12:44 GMT</datelastmodified>
+			<datelastmodified>Mon, 05 Nov 2018 09:54:53 GMT</datelastmodified>
 			<userlastmodified>Admin</userlastmodified>
 			<datecreated>Tue, 21 Aug 2018 06:50:36 GMT</datecreated>
 			<usercreated>Admin</usercreated>
@@ -570,12 +614,116 @@
 			<accesscontrol/>
 		</file>
 		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/formatters/botones-formatter-config.xml</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/formatters/botones-formatter-config.xml</destination>
+			<type>formatter_config</type>
+			<uuidstructure>06df2e89-c164-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>06df2e8a-c164-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Wed, 26 Sep 2018 08:14:36 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Wed, 26 Sep 2018 08:13:19 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property>
+					<name>Title</name>
+					<value><![CDATA[Botones Uva]]></value>
+				</property>
+				<property>
+					<name>locale</name>
+					<value><![CDATA[en]]></value>
+				</property>
+				<property>
+					<name>locale-available</name>
+					<value><![CDATA[en]]></value>
+				</property>
+				<property>
+					<name>search.exclude</name>
+					<value><![CDATA[all]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/formatters/botones-formatter.jsp</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/formatters/botones-formatter.jsp</destination>
+			<type>jsp</type>
+			<uuidstructure>fb7df946-c163-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>fb7df947-c163-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Wed, 26 Sep 2018 08:15:15 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Wed, 26 Sep 2018 08:13:00 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property type="shared">
+					<name>export</name>
+					<value><![CDATA[false]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/formatters/documentos-formatter-config.xml</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/formatters/documentos-formatter-config.xml</destination>
+			<type>formatter_config</type>
+			<uuidstructure>ac4d5c62-bfca-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>ac4d5c63-bfca-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Tue, 25 Sep 2018 10:39:44 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Mon, 24 Sep 2018 07:23:02 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property>
+					<name>Title</name>
+					<value><![CDATA[Mi Portal Documento]]></value>
+				</property>
+				<property>
+					<name>locale</name>
+					<value><![CDATA[en]]></value>
+				</property>
+				<property>
+					<name>locale-available</name>
+					<value><![CDATA[en]]></value>
+				</property>
+				<property>
+					<name>search.exclude</name>
+					<value><![CDATA[all]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/formatters/documentos-formatter.jsp</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/formatters/documentos-formatter.jsp</destination>
+			<type>jsp</type>
+			<uuidstructure>60d8f0cd-c0af-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>60d8f0ce-c0af-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Wed, 26 Sep 2018 08:48:54 GMT</datelastmodified>
+			<userlastmodified>e09338789f</userlastmodified>
+			<datecreated>Tue, 25 Sep 2018 10:40:11 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property type="shared">
+					<name>export</name>
+					<value><![CDATA[false]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
 			<source>system/modules/es.uva.web.portal.enterprise/formatters/en-aviso-formatter-config.xml</source>
 			<destination>system/modules/es.uva.web.portal.enterprise/formatters/en-aviso-formatter-config.xml</destination>
 			<type>formatter_config</type>
 			<uuidstructure>ac993ee0-a6ac-11e8-8403-0050568213af</uuidstructure>
 			<uuidresource>ac993ee1-a6ac-11e8-8403-0050568213af</uuidresource>
-			<datelastmodified>Thu, 23 Aug 2018 08:17:37 GMT</datelastmodified>
+			<datelastmodified>Tue, 25 Sep 2018 10:07:10 GMT</datelastmodified>
 			<userlastmodified>Admin</userlastmodified>
 			<datecreated>Thu, 23 Aug 2018 08:15:19 GMT</datecreated>
 			<usercreated>Admin</usercreated>
@@ -627,8 +775,8 @@
 			<type>formatter_config</type>
 			<uuidstructure>76d2e95e-8fe0-11e8-9372-0050568213af</uuidstructure>
 			<uuidresource>76d2e95f-8fe0-11e8-9372-0050568213af</uuidresource>
-			<datelastmodified>Wed, 25 Jul 2018 11:30:10 GMT</datelastmodified>
-			<userlastmodified>e09338789f</userlastmodified>
+			<datelastmodified>Fri, 26 Oct 2018 07:18:29 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
 			<datecreated>Wed, 25 Jul 2018 07:58:06 GMT</datecreated>
 			<usercreated>Admin</usercreated>
 			<flags>0</flags>
@@ -659,8 +807,8 @@
 			<type>jsp</type>
 			<uuidstructure>76c2bcbb-8fe0-11e8-9372-0050568213af</uuidstructure>
 			<uuidresource>76c2bcbc-8fe0-11e8-9372-0050568213af</uuidresource>
-			<datelastmodified>Tue, 18 Sep 2018 10:32:40 GMT</datelastmodified>
-			<userlastmodified>e09338789f</userlastmodified>
+			<datelastmodified>Fri, 26 Oct 2018 07:16:16 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
 			<datecreated>Wed, 25 Jul 2018 07:58:06 GMT</datecreated>
 			<usercreated>Admin</usercreated>
 			<flags>0</flags>
@@ -679,8 +827,8 @@
 			<type>formatter_config</type>
 			<uuidstructure>f4daf275-a772-11e8-8403-0050568213af</uuidstructure>
 			<uuidresource>f4daf276-a772-11e8-8403-0050568213af</uuidresource>
-			<datelastmodified>Fri, 24 Aug 2018 08:00:16 GMT</datelastmodified>
-			<userlastmodified>e09338789f</userlastmodified>
+			<datelastmodified>Fri, 26 Oct 2018 07:36:25 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
 			<datecreated>Fri, 24 Aug 2018 07:54:41 GMT</datecreated>
 			<usercreated>e09338789f</usercreated>
 			<flags>0</flags>
@@ -711,8 +859,8 @@
 			<type>formatter_config</type>
 			<uuidstructure>d9f4df54-8fe0-11e8-9372-0050568213af</uuidstructure>
 			<uuidresource>d9f4df55-8fe0-11e8-9372-0050568213af</uuidresource>
-			<datelastmodified>Fri, 24 Aug 2018 07:53:34 GMT</datelastmodified>
-			<userlastmodified>e09338789f</userlastmodified>
+			<datelastmodified>Fri, 26 Oct 2018 07:36:12 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
 			<datecreated>Wed, 25 Jul 2018 08:00:52 GMT</datecreated>
 			<usercreated>Admin</usercreated>
 			<flags>0</flags>
@@ -778,12 +926,116 @@
 			<accesscontrol/>
 		</file>
 		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/formatters/enlaces-formatter-config.xml</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/formatters/enlaces-formatter-config.xml</destination>
+			<type>formatter_config</type>
+			<uuidstructure>3966a585-bfc9-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>3966a586-bfc9-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Tue, 25 Sep 2018 10:07:36 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Mon, 24 Sep 2018 07:12:40 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property>
+					<name>Title</name>
+					<value><![CDATA[Enlaces UVa]]></value>
+				</property>
+				<property>
+					<name>locale</name>
+					<value><![CDATA[en]]></value>
+				</property>
+				<property>
+					<name>locale-available</name>
+					<value><![CDATA[en]]></value>
+				</property>
+				<property>
+					<name>search.exclude</name>
+					<value><![CDATA[all]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/formatters/enlaces-formatter.jsp</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/formatters/enlaces-formatter.jsp</destination>
+			<type>jsp</type>
+			<uuidstructure>3f59041b-bfc9-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>3f59041c-bfc9-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Mon, 24 Sep 2018 07:22:17 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Mon, 24 Sep 2018 07:12:50 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property type="shared">
+					<name>export</name>
+					<value><![CDATA[false]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/formatters/imagenes-formatter-config.xml</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/formatters/imagenes-formatter-config.xml</destination>
+			<type>formatter_config</type>
+			<uuidstructure>597a8d53-bfcb-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>597a8d54-bfcb-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Fri, 26 Oct 2018 07:39:30 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Mon, 24 Sep 2018 07:27:53 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property>
+					<name>Title</name>
+					<value><![CDATA[Imagenes Uva]]></value>
+				</property>
+				<property>
+					<name>locale</name>
+					<value><![CDATA[en]]></value>
+				</property>
+				<property>
+					<name>locale-available</name>
+					<value><![CDATA[en]]></value>
+				</property>
+				<property>
+					<name>search.exclude</name>
+					<value><![CDATA[all]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/formatters/imagenes-formatter.jsp</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/formatters/imagenes-formatter.jsp</destination>
+			<type>jsp</type>
+			<uuidstructure>4d5ac2ff-bfcb-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>4d5ac300-bfcb-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Tue, 25 Sep 2018 10:55:13 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Mon, 24 Sep 2018 07:27:33 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property type="shared">
+					<name>export</name>
+					<value><![CDATA[false]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
 			<source>system/modules/es.uva.web.portal.enterprise/formatters/noticias-formatter-config.xml</source>
 			<destination>system/modules/es.uva.web.portal.enterprise/formatters/noticias-formatter-config.xml</destination>
 			<type>formatter_config</type>
 			<uuidstructure>c63a6955-7dcb-11e8-9783-0242ac11002b</uuidstructure>
 			<uuidresource>c63a6956-7dcb-11e8-9783-0242ac11002b</uuidresource>
-			<datelastmodified>Mon, 02 Jul 2018 07:44:39 GMT</datelastmodified>
+			<datelastmodified>Tue, 25 Sep 2018 10:07:58 GMT</datelastmodified>
 			<userlastmodified>Admin</userlastmodified>
 			<datecreated>Mon, 02 Jul 2018 07:44:39 GMT</datecreated>
 			<usercreated>Admin</usercreated>
@@ -830,13 +1082,65 @@
 			<accesscontrol/>
 		</file>
 		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/formatters/parrafos-formatter-config.xml</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/formatters/parrafos-formatter-config.xml</destination>
+			<type>formatter_config</type>
+			<uuidstructure>198881cb-bfcc-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>198881cc-bfcc-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Tue, 25 Sep 2018 10:08:11 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Mon, 24 Sep 2018 07:33:15 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property>
+					<name>Title</name>
+					<value><![CDATA[Sample formatter for Parrafo]]></value>
+				</property>
+				<property>
+					<name>locale</name>
+					<value><![CDATA[en]]></value>
+				</property>
+				<property>
+					<name>locale-available</name>
+					<value><![CDATA[en]]></value>
+				</property>
+				<property>
+					<name>search.exclude</name>
+					<value><![CDATA[all]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/formatters/parrafos-formatter.jsp</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/formatters/parrafos-formatter.jsp</destination>
+			<type>jsp</type>
+			<uuidstructure>1d6a00c1-bfcc-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>1d6a00c2-bfcc-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Mon, 24 Sep 2018 07:34:53 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Mon, 24 Sep 2018 07:33:22 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property type="shared">
+					<name>export</name>
+					<value><![CDATA[false]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
 			<source>system/modules/es.uva.web.portal.enterprise/formatters/slideshows-formatter-config.xml</source>
 			<destination>system/modules/es.uva.web.portal.enterprise/formatters/slideshows-formatter-config.xml</destination>
 			<type>formatter_config</type>
 			<uuidstructure>107b5b70-7abc-11e8-9993-0242ac11002b</uuidstructure>
 			<uuidresource>107b5b71-7abc-11e8-9993-0242ac11002b</uuidresource>
-			<datelastmodified>Thu, 23 Aug 2018 08:28:52 GMT</datelastmodified>
-			<userlastmodified>e09338789f</userlastmodified>
+			<datelastmodified>Tue, 15 Jan 2019 10:41:40 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
 			<datecreated>Thu, 28 Jun 2018 10:14:38 GMT</datecreated>
 			<usercreated>Admin</usercreated>
 			<flags>0</flags>
@@ -867,8 +1171,8 @@
 			<type>jsp</type>
 			<uuidstructure>2704b496-7abc-11e8-9993-0242ac11002b</uuidstructure>
 			<uuidresource>2704b497-7abc-11e8-9993-0242ac11002b</uuidresource>
-			<datelastmodified>Thu, 19 Jul 2018 08:39:44 GMT</datelastmodified>
-			<userlastmodified>e09338789f</userlastmodified>
+			<datelastmodified>Tue, 15 Jan 2019 11:01:49 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
 			<datecreated>Thu, 28 Jun 2018 10:15:16 GMT</datecreated>
 			<usercreated>Admin</usercreated>
 			<flags>0</flags>
@@ -934,6 +1238,162 @@
 			<accesscontrol/>
 		</file>
 		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/formatters/subtitulos-formatter-config.xml</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/formatters/subtitulos-formatter-config.xml</destination>
+			<type>formatter_config</type>
+			<uuidstructure>f31a8e22-bfcb-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>f31a8e23-bfcb-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Tue, 25 Sep 2018 10:08:41 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Mon, 24 Sep 2018 07:32:11 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property>
+					<name>Title</name>
+					<value><![CDATA[Sample formatter for Subtitulo]]></value>
+				</property>
+				<property>
+					<name>locale</name>
+					<value><![CDATA[en]]></value>
+				</property>
+				<property>
+					<name>locale-available</name>
+					<value><![CDATA[en]]></value>
+				</property>
+				<property>
+					<name>search.exclude</name>
+					<value><![CDATA[all]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/formatters/subtitulos-formatter.jsp</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/formatters/subtitulos-formatter.jsp</destination>
+			<type>jsp</type>
+			<uuidstructure>10583648-bfcc-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>10583649-bfcc-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Mon, 24 Sep 2018 07:36:13 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Mon, 24 Sep 2018 07:33:00 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property type="shared">
+					<name>export</name>
+					<value><![CDATA[false]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/formatters/titulos-formatter-config.xml</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/formatters/titulos-formatter-config.xml</destination>
+			<type>formatter_config</type>
+			<uuidstructure>ea248c79-bfcb-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>ea248c7a-bfcb-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Tue, 25 Sep 2018 10:06:54 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Mon, 24 Sep 2018 07:31:56 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property>
+					<name>Title</name>
+					<value><![CDATA[Sample formatter for Titulo]]></value>
+				</property>
+				<property>
+					<name>locale</name>
+					<value><![CDATA[en]]></value>
+				</property>
+				<property>
+					<name>locale-available</name>
+					<value><![CDATA[en]]></value>
+				</property>
+				<property>
+					<name>search.exclude</name>
+					<value><![CDATA[all]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/formatters/titulos-formatter.jsp</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/formatters/titulos-formatter.jsp</destination>
+			<type>jsp</type>
+			<uuidstructure>eda37a0f-bfcb-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>eda37a10-bfcb-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Mon, 24 Sep 2018 07:36:17 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Mon, 24 Sep 2018 07:32:02 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property type="shared">
+					<name>export</name>
+					<value><![CDATA[false]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/formatters/videos-formatter-config.xml</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/formatters/videos-formatter-config.xml</destination>
+			<type>formatter_config</type>
+			<uuidstructure>83b75b04-bfce-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>83b75b05-bfce-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Fri, 26 Oct 2018 07:36:33 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Mon, 24 Sep 2018 07:50:32 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property>
+					<name>Title</name>
+					<value><![CDATA[Video uva]]></value>
+				</property>
+				<property>
+					<name>locale</name>
+					<value><![CDATA[en]]></value>
+				</property>
+				<property>
+					<name>locale-available</name>
+					<value><![CDATA[en]]></value>
+				</property>
+				<property>
+					<name>search.exclude</name>
+					<value><![CDATA[all]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/formatters/videos-formatter.jsp</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/formatters/videos-formatter.jsp</destination>
+			<type>jsp</type>
+			<uuidstructure>87fa34da-bfce-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>87fa34db-bfce-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Mon, 24 Sep 2018 07:54:42 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Mon, 24 Sep 2018 07:50:40 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property type="shared">
+					<name>export</name>
+					<value><![CDATA[false]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
 			<destination>system/modules/es.uva.web.portal.enterprise/i18n</destination>
 			<type>folder</type>
 			<uuidstructure>c628b60d-7dcb-11e8-9783-0242ac11002b</uuidstructure>
@@ -987,6 +1447,117 @@
 			<accesscontrol/>
 		</file>
 		<file>
+			<destination>system/modules/es.uva.web.portal.enterprise/java_src</destination>
+			<type>folder</type>
+			<uuidstructure>eee54418-d1f7-11e8-b7c2-0050568213af</uuidstructure>
+			<datelastmodified>Wed, 17 Oct 2018 10:32:23 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Wed, 17 Oct 2018 10:32:23 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties/>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<destination>system/modules/es.uva.web.portal.enterprise/java_src/es</destination>
+			<type>folder</type>
+			<uuidstructure>0dd5f36a-d1f8-11e8-b7c2-0050568213af</uuidstructure>
+			<datelastmodified>Wed, 17 Oct 2018 10:33:14 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Wed, 17 Oct 2018 10:33:14 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties/>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<destination>system/modules/es.uva.web.portal.enterprise/java_src/es/uva</destination>
+			<type>folder</type>
+			<uuidstructure>1158ffac-d1f8-11e8-b7c2-0050568213af</uuidstructure>
+			<datelastmodified>Wed, 17 Oct 2018 10:33:20 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Wed, 17 Oct 2018 10:33:20 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties/>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<destination>system/modules/es.uva.web.portal.enterprise/java_src/es/uva/web</destination>
+			<type>folder</type>
+			<uuidstructure>14b7e21e-d1f8-11e8-b7c2-0050568213af</uuidstructure>
+			<datelastmodified>Wed, 17 Oct 2018 10:33:26 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Wed, 17 Oct 2018 10:33:26 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties/>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<destination>system/modules/es.uva.web.portal.enterprise/java_src/es/uva/web/portal</destination>
+			<type>folder</type>
+			<uuidstructure>190bd2f0-d1f8-11e8-b7c2-0050568213af</uuidstructure>
+			<datelastmodified>Wed, 17 Oct 2018 10:33:33 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Wed, 17 Oct 2018 10:33:33 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties/>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<destination>system/modules/es.uva.web.portal.enterprise/java_src/es/uva/web/portal/intranet</destination>
+			<type>folder</type>
+			<uuidstructure>1de14fd2-d1f8-11e8-b7c2-0050568213af</uuidstructure>
+			<datelastmodified>Wed, 17 Oct 2018 10:33:41 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Wed, 17 Oct 2018 10:33:41 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties/>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<destination>system/modules/es.uva.web.portal.enterprise/java_src/es/uva/web/portal/intranet/ws</destination>
+			<type>folder</type>
+			<uuidstructure>21a583c4-d1f8-11e8-b7c2-0050568213af</uuidstructure>
+			<datelastmodified>Wed, 17 Oct 2018 10:33:48 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Wed, 17 Oct 2018 10:33:48 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties/>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/java_src/es/uva/web/portal/intranet/ws/IntranetWS.java</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/java_src/es/uva/web/portal/intranet/ws/IntranetWS.java</destination>
+			<type>plain</type>
+			<uuidstructure>257a0b67-d1f8-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>257a0b68-d1f8-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Thu, 18 Oct 2018 07:16:41 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Wed, 17 Oct 2018 10:33:54 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property>
+					<name>Title</name>
+					<value><![CDATA[IntranetWS]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
 			<destination>system/modules/es.uva.web.portal.enterprise/resources</destination>
 			<type>folder</type>
 			<uuidstructure>42545f46-7aa8-11e8-9993-0242ac11002b</uuidstructure>
@@ -1026,12 +1597,32 @@
 			<accesscontrol/>
 		</file>
 		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/resources/miportal/css/miportal-copy.css</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/resources/miportal/css/miportal-copy.css</destination>
+			<type>plain</type>
+			<uuidstructure>ecf57071-bcc4-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>ecf57072-bcc4-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Tue, 28 Aug 2018 07:01:32 GMT</datelastmodified>
+			<userlastmodified>e09338789f</userlastmodified>
+			<datecreated>Thu, 20 Sep 2018 11:04:20 GMT</datecreated>
+			<usercreated>e09338789f</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property>
+					<name>Title</name>
+					<value><![CDATA[miportal]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
 			<source>system/modules/es.uva.web.portal.enterprise/resources/miportal/css/miportal.css</source>
 			<destination>system/modules/es.uva.web.portal.enterprise/resources/miportal/css/miportal.css</destination>
 			<type>plain</type>
 			<uuidstructure>88e14344-a770-11e8-8403-0050568213af</uuidstructure>
 			<uuidresource>88e14345-a770-11e8-8403-0050568213af</uuidresource>
-			<datelastmodified>Tue, 28 Aug 2018 07:01:32 GMT</datelastmodified>
+			<datelastmodified>Tue, 11 Dec 2018 07:55:57 GMT</datelastmodified>
 			<userlastmodified>e09338789f</userlastmodified>
 			<datecreated>Fri, 24 Aug 2018 07:37:20 GMT</datecreated>
 			<usercreated>e09338789f</usercreated>
@@ -1051,7 +1642,7 @@
 			<type>plain</type>
 			<uuidstructure>8904f7e7-a770-11e8-8403-0050568213af</uuidstructure>
 			<uuidresource>8904f7e8-a770-11e8-8403-0050568213af</uuidresource>
-			<datelastmodified>Tue, 28 Aug 2018 07:01:32 GMT</datelastmodified>
+			<datelastmodified>Tue, 25 Sep 2018 11:23:24 GMT</datelastmodified>
 			<userlastmodified>e09338789f</userlastmodified>
 			<datecreated>Fri, 24 Aug 2018 07:37:21 GMT</datecreated>
 			<usercreated>e09338789f</usercreated>
@@ -1433,6 +2024,46 @@
 				<property type="shared">
 					<name>image.size</name>
 					<value><![CDATA[w:270,h:150]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/resources/miportal/img/arrow-alt-circle-right-regular_black.svg</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/resources/miportal/img/arrow-alt-circle-right-regular_black.svg</destination>
+			<type>plain</type>
+			<uuidstructure>c28c21ed-c0b4-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>c28c21ee-c0b4-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Tue, 25 Sep 2018 11:18:42 GMT</datelastmodified>
+			<userlastmodified>e09338789f</userlastmodified>
+			<datecreated>Tue, 25 Sep 2018 11:18:42 GMT</datecreated>
+			<usercreated>e09338789f</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property>
+					<name>Title</name>
+					<value><![CDATA[arrow-alt-circle-right-regular_black]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/resources/miportal/img/arrow-alt-circle-right-regular_white.svg</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/resources/miportal/img/arrow-alt-circle-right-regular_white.svg</destination>
+			<type>plain</type>
+			<uuidstructure>c2a10980-c0b4-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>c2a10981-c0b4-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Tue, 25 Sep 2018 11:18:42 GMT</datelastmodified>
+			<userlastmodified>e09338789f</userlastmodified>
+			<datecreated>Tue, 25 Sep 2018 11:18:42 GMT</datecreated>
+			<usercreated>e09338789f</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property>
+					<name>Title</name>
+					<value><![CDATA[arrow-alt-circle-right-regular_white]]></value>
 				</property>
 			</properties>
 			<relations/>
@@ -1880,13 +2511,93 @@
 			<accesscontrol/>
 		</file>
 		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/resources/miportal/js/html-imports.min.js</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/resources/miportal/js/html-imports.min.js</destination>
+			<type>plain</type>
+			<uuidstructure>b865c56e-d5e3-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>b865c56f-d5e3-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Mon, 22 Oct 2018 10:17:46 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Mon, 22 Oct 2018 10:17:46 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property>
+					<name>Title</name>
+					<value><![CDATA[html-imports.min]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/resources/miportal/js/html-imports.min.js.map</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/resources/miportal/js/html-imports.min.js.map</destination>
+			<type>plain</type>
+			<uuidstructure>b894ebc1-d5e3-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>b894ebc2-d5e3-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Mon, 22 Oct 2018 10:17:46 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Mon, 22 Oct 2018 10:17:46 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property>
+					<name>Title</name>
+					<value><![CDATA[html-imports.min.js]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/resources/miportal/js/miportalComponent-copy.js</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/resources/miportal/js/miportalComponent-copy.js</destination>
+			<type>plain</type>
+			<uuidstructure>b75d100d-ee4a-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>b75d100e-ee4a-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Thu, 18 Oct 2018 11:13:51 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Thu, 22 Nov 2018 11:35:30 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property>
+					<name>Title</name>
+					<value><![CDATA[Componente que crea los rows de "mi Portal"]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/resources/miportal/js/miportalComponent-es5.js</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/resources/miportal/js/miportalComponent-es5.js</destination>
+			<type>plain</type>
+			<uuidstructure>38ce51fc-cc77-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>38ce51fd-cc77-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Wed, 10 Oct 2018 11:05:27 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Wed, 10 Oct 2018 10:28:26 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property>
+					<name>Title</name>
+					<value><![CDATA[miportalComponent-es5]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
 			<source>system/modules/es.uva.web.portal.enterprise/resources/miportal/js/miportalComponent.js</source>
 			<destination>system/modules/es.uva.web.portal.enterprise/resources/miportal/js/miportalComponent.js</destination>
 			<type>plain</type>
 			<uuidstructure>d017a3af-ac3e-11e8-9a3d-0050568213af</uuidstructure>
 			<uuidresource>d017a3b0-ac3e-11e8-9a3d-0050568213af</uuidresource>
-			<datelastmodified>Mon, 17 Sep 2018 06:22:55 GMT</datelastmodified>
-			<userlastmodified>e09338789f</userlastmodified>
+			<datelastmodified>Thu, 22 Nov 2018 11:35:38 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
 			<datecreated>Thu, 30 Aug 2018 10:24:01 GMT</datecreated>
 			<usercreated>e09338789f</usercreated>
 			<flags>0</flags>
@@ -1896,6 +2607,56 @@
 					<value><![CDATA[Componente que crea los rows de "mi Portal"]]></value>
 				</property>
 			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/resources/miportal/js/miportalStorage-es5.js</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/resources/miportal/js/miportalStorage-es5.js</destination>
+			<type>plain</type>
+			<uuidstructure>38d6684f-cc77-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>38d66850-cc77-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Wed, 10 Oct 2018 11:05:27 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Wed, 10 Oct 2018 10:28:26 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property>
+					<name>Title</name>
+					<value><![CDATA[miportalStorage-es5]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/resources/miportal/js/miportalStorage.js</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/resources/miportal/js/miportalStorage.js</destination>
+			<type>plain</type>
+			<uuidstructure>8b91c9a4-cc74-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>8b91c9a5-cc74-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Tue, 16 Oct 2018 17:10:57 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Wed, 10 Oct 2018 10:09:16 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties/>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/resources/miportal/js/worker.js</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/resources/miportal/js/worker.js</destination>
+			<type>plain</type>
+			<uuidstructure>8650b9b2-cc74-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>8650b9b3-cc74-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Wed, 10 Oct 2018 10:12:34 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Wed, 10 Oct 2018 10:09:07 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties/>
 			<relations/>
 			<accesscontrol/>
 		</file>
@@ -2780,6 +3541,26 @@
 			<accesscontrol/>
 		</file>
 		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/resources/uva4/img/universityofvalladolid.svg</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/resources/uva4/img/universityofvalladolid.svg</destination>
+			<type>plain</type>
+			<uuidstructure>31e3c649-db69-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>31e3c64a-db69-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Mon, 29 Oct 2018 10:55:49 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Mon, 29 Oct 2018 10:55:49 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property>
+					<name>Title</name>
+					<value><![CDATA[universityofvalladolid]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
 			<source>system/modules/es.uva.web.portal.enterprise/resources/uva4/img/user-circle.svg</source>
 			<destination>system/modules/es.uva.web.portal.enterprise/resources/uva4/img/user-circle.svg</destination>
 			<type>plain</type>
@@ -2878,7 +3659,7 @@
 			<type>plain</type>
 			<uuidstructure>83266ce3-7deb-11e8-bc66-0242ac11002b</uuidstructure>
 			<uuidresource>83266ce4-7deb-11e8-bc66-0242ac11002b</uuidresource>
-			<datelastmodified>Wed, 19 Sep 2018 12:05:03 GMT</datelastmodified>
+			<datelastmodified>Fri, 21 Sep 2018 11:00:01 GMT</datelastmodified>
 			<userlastmodified>e09338789f</userlastmodified>
 			<datecreated>Mon, 02 Jul 2018 11:31:50 GMT</datecreated>
 			<usercreated>Admin</usercreated>
@@ -2887,6 +3668,26 @@
 				<property>
 					<name>Title</name>
 					<value><![CDATA[agenda]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/resources/uva4/js/breadcrumb.js</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/resources/uva4/js/breadcrumb.js</destination>
+			<type>plain</type>
+			<uuidstructure>fb5f6029-189b-11e9-bc72-0050568213af</uuidstructure>
+			<uuidresource>fb5f602a-189b-11e9-bc72-0050568213af</uuidresource>
+			<datelastmodified>Tue, 15 Jan 2019 18:48:12 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Tue, 15 Jan 2019 08:03:02 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property>
+					<name>Title</name>
+					<value><![CDATA[breadcrumb]]></value>
 				</property>
 			</properties>
 			<relations/>
@@ -2913,13 +3714,33 @@
 			<accesscontrol/>
 		</file>
 		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/resources/uva4/js/eventos.js</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/resources/uva4/js/eventos.js</destination>
+			<type>plain</type>
+			<uuidstructure>d99fc843-18c2-11e9-bc72-0050568213af</uuidstructure>
+			<uuidresource>d99fc844-18c2-11e9-bc72-0050568213af</uuidresource>
+			<datelastmodified>Tue, 15 Jan 2019 12:41:16 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Tue, 15 Jan 2019 12:41:16 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property>
+					<name>Title</name>
+					<value><![CDATA[eventos]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
 			<source>system/modules/es.uva.web.portal.enterprise/resources/uva4/js/header.js</source>
 			<destination>system/modules/es.uva.web.portal.enterprise/resources/uva4/js/header.js</destination>
 			<type>plain</type>
 			<uuidstructure>08f6fbc7-834b-11e8-9372-0050568213af</uuidstructure>
 			<uuidresource>08f6fbc8-834b-11e8-9372-0050568213af</uuidresource>
-			<datelastmodified>Tue, 24 Jul 2018 06:39:38 GMT</datelastmodified>
-			<userlastmodified>e09338789f</userlastmodified>
+			<datelastmodified>Tue, 15 Jan 2019 11:31:44 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
 			<datecreated>Mon, 09 Jul 2018 07:38:13 GMT</datecreated>
 			<usercreated>e09338789f</usercreated>
 			<flags>0</flags>
@@ -2927,6 +3748,46 @@
 				<property>
 					<name>Title</name>
 					<value><![CDATA[header]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/resources/uva4/js/html-imports.min.js</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/resources/uva4/js/html-imports.min.js</destination>
+			<type>plain</type>
+			<uuidstructure>bd13e435-d5e3-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>bd13e436-d5e3-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Mon, 22 Oct 2018 10:17:54 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Mon, 22 Oct 2018 10:17:54 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property>
+					<name>Title</name>
+					<value><![CDATA[html-imports.min]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/resources/uva4/js/html-imports.min.js.map</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/resources/uva4/js/html-imports.min.js.map</destination>
+			<type>plain</type>
+			<uuidstructure>bd3093f8-d5e3-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>bd3093f9-d5e3-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Mon, 22 Oct 2018 10:17:54 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Mon, 22 Oct 2018 10:17:54 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property>
+					<name>Title</name>
+					<value><![CDATA[html-imports.min.js]]></value>
 				</property>
 			</properties>
 			<relations/>
@@ -2992,6 +3853,26 @@
 			<accesscontrol/>
 		</file>
 		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/resources/uva4/js/navegacion.js</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/resources/uva4/js/navegacion.js</destination>
+			<type>plain</type>
+			<uuidstructure>d2555131-157e-11e9-bc72-0050568213af</uuidstructure>
+			<uuidresource>d2555132-157e-11e9-bc72-0050568213af</uuidresource>
+			<datelastmodified>Tue, 15 Jan 2019 18:48:12 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Fri, 11 Jan 2019 08:56:45 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property>
+					<name>Title</name>
+					<value><![CDATA[navegacion]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
 			<source>system/modules/es.uva.web.portal.enterprise/resources/uva4/js/noticias-es5.js</source>
 			<destination>system/modules/es.uva.web.portal.enterprise/resources/uva4/js/noticias-es5.js</destination>
 			<type>plain</type>
@@ -3017,8 +3898,8 @@
 			<type>plain</type>
 			<uuidstructure>9b99356f-7de2-11e8-bc66-0242ac11002b</uuidstructure>
 			<uuidresource>9b993570-7de2-11e8-bc66-0242ac11002b</uuidresource>
-			<datelastmodified>Wed, 19 Sep 2018 11:40:20 GMT</datelastmodified>
-			<userlastmodified>e09338789f</userlastmodified>
+			<datelastmodified>Tue, 15 Jan 2019 19:21:13 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
 			<datecreated>Mon, 02 Jul 2018 10:28:06 GMT</datecreated>
 			<usercreated>Admin</usercreated>
 			<flags>0</flags>
@@ -3077,7 +3958,7 @@
 			<type>plain</type>
 			<uuidstructure>6b833084-a6ae-11e8-8403-0050568213af</uuidstructure>
 			<uuidresource>6b833085-a6ae-11e8-8403-0050568213af</uuidresource>
-			<datelastmodified>Fri, 24 Aug 2018 06:35:34 GMT</datelastmodified>
+			<datelastmodified>Mon, 29 Oct 2018 08:43:31 GMT</datelastmodified>
 			<userlastmodified>e09338789f</userlastmodified>
 			<datecreated>Thu, 23 Aug 2018 08:27:49 GMT</datecreated>
 			<usercreated>e09338789f</usercreated>
@@ -3097,7 +3978,7 @@
 			<type>plain</type>
 			<uuidstructure>9b48f6ea-7e9f-11e8-bc66-0242ac11002b</uuidstructure>
 			<uuidresource>9b48f6eb-7e9f-11e8-bc66-0242ac11002b</uuidresource>
-			<datelastmodified>Wed, 19 Sep 2018 07:46:38 GMT</datelastmodified>
+			<datelastmodified>Mon, 29 Oct 2018 08:42:26 GMT</datelastmodified>
 			<userlastmodified>e09338789f</userlastmodified>
 			<datecreated>Tue, 03 Jul 2018 09:01:00 GMT</datecreated>
 			<usercreated>Admin</usercreated>
@@ -3157,7 +4038,7 @@
 			<type>plain</type>
 			<uuidstructure>2a9663e6-7aad-11e8-9993-0242ac11002b</uuidstructure>
 			<uuidresource>2a9663e7-7aad-11e8-9993-0242ac11002b</uuidresource>
-			<datelastmodified>Mon, 23 Jul 2018 06:45:26 GMT</datelastmodified>
+			<datelastmodified>Wed, 16 Jan 2019 11:30:51 GMT</datelastmodified>
 			<userlastmodified>e09338789f</userlastmodified>
 			<datecreated>Thu, 28 Jun 2018 08:27:59 GMT</datecreated>
 			<usercreated>Admin</usercreated>
@@ -3166,6 +4047,106 @@
 				<property>
 					<name>Title</name>
 					<value><![CDATA[slideshow]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/resources/uva4/js/storage.js</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/resources/uva4/js/storage.js</destination>
+			<type>plain</type>
+			<uuidstructure>143d4b34-157c-11e9-bc72-0050568213af</uuidstructure>
+			<uuidresource>143d4b35-157c-11e9-bc72-0050568213af</uuidresource>
+			<datelastmodified>Tue, 15 Jan 2019 11:31:45 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Fri, 11 Jan 2019 08:37:07 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property>
+					<name>Title</name>
+					<value><![CDATA[storage]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/resources/uva4/js/sw.js</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/resources/uva4/js/sw.js</destination>
+			<type>plain</type>
+			<uuidstructure>08662caf-1981-11e9-bc72-0050568213af</uuidstructure>
+			<uuidresource>c894be75-157c-11e9-bc72-0050568213af</uuidresource>
+			<datelastmodified>Fri, 11 Jan 2019 08:42:09 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Fri, 11 Jan 2019 08:42:09 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property>
+					<name>Title</name>
+					<value><![CDATA[sw]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/resources/uva4/js/uva.bundle.js</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/resources/uva4/js/uva.bundle.js</destination>
+			<type>plain</type>
+			<uuidstructure>4bbb3029-157b-11e9-bc72-0050568213af</uuidstructure>
+			<uuidresource>4bbb302a-157b-11e9-bc72-0050568213af</uuidresource>
+			<datelastmodified>Tue, 15 Jan 2019 11:21:51 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Fri, 11 Jan 2019 08:31:30 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property>
+					<name>Title</name>
+					<value><![CDATA[uva.bundle]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/resources/uva4/js/uva.bundle.js.map</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/resources/uva4/js/uva.bundle.js.map</destination>
+			<type>plain</type>
+			<uuidstructure>4bccbc5c-157b-11e9-bc72-0050568213af</uuidstructure>
+			<uuidresource>4bccbc5d-157b-11e9-bc72-0050568213af</uuidresource>
+			<datelastmodified>Tue, 15 Jan 2019 11:21:51 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Fri, 11 Jan 2019 08:31:30 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property>
+					<name>Title</name>
+					<value><![CDATA[uva.bundle.js]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/resources/uva4/js/worker.js</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/resources/uva4/js/worker.js</destination>
+			<type>plain</type>
+			<uuidstructure>10327b61-1981-11e9-bc72-0050568213af</uuidstructure>
+			<uuidresource>c8a4c408-157c-11e9-bc72-0050568213af</uuidresource>
+			<datelastmodified>Tue, 15 Jan 2019 17:26:00 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Fri, 11 Jan 2019 08:42:09 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property>
+					<name>Title</name>
+					<value><![CDATA[worker]]></value>
 				</property>
 			</properties>
 			<relations/>
@@ -3190,7 +4171,7 @@
 			<type>plain</type>
 			<uuidstructure>ac509d12-a6ac-11e8-8403-0050568213af</uuidstructure>
 			<uuidresource>ac509d13-a6ac-11e8-8403-0050568213af</uuidresource>
-			<datelastmodified>Thu, 23 Aug 2018 08:17:01 GMT</datelastmodified>
+			<datelastmodified>Fri, 21 Sep 2018 08:17:12 GMT</datelastmodified>
 			<userlastmodified>Admin</userlastmodified>
 			<datecreated>Thu, 23 Aug 2018 08:15:19 GMT</datecreated>
 			<usercreated>Admin</usercreated>
@@ -3391,7 +4372,7 @@
 			<type>jsp</type>
 			<uuidstructure>dbb7a55c-7aa8-11e8-9993-0242ac11002b</uuidstructure>
 			<uuidresource>dbb7a55d-7aa8-11e8-9993-0242ac11002b</uuidresource>
-			<datelastmodified>Thu, 20 Sep 2018 05:20:53 GMT</datelastmodified>
+			<datelastmodified>Wed, 16 Jan 2019 08:42:51 GMT</datelastmodified>
 			<userlastmodified>e09338789f</userlastmodified>
 			<datecreated>Thu, 28 Jun 2018 07:57:09 GMT</datecreated>
 			<usercreated>Admin</usercreated>
@@ -3463,12 +4444,32 @@
 			<accesscontrol/>
 		</file>
 		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/templates/miportal/frontpage-copy.jsp</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/templates/miportal/frontpage-copy.jsp</destination>
+			<type>jsp</type>
+			<uuidstructure>cc9f4336-ee4a-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>cc9f4337-ee4a-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Mon, 22 Oct 2018 10:36:34 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Thu, 22 Nov 2018 11:36:06 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property type="shared">
+					<name>export</name>
+					<value><![CDATA[false]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
 			<source>system/modules/es.uva.web.portal.enterprise/templates/miportal/frontpage.jsp</source>
 			<destination>system/modules/es.uva.web.portal.enterprise/templates/miportal/frontpage.jsp</destination>
 			<type>jsp</type>
 			<uuidstructure>170e2cea-a533-11e8-8403-0050568213af</uuidstructure>
 			<uuidresource>170e2ceb-a533-11e8-8403-0050568213af</uuidresource>
-			<datelastmodified>Tue, 18 Sep 2018 07:45:12 GMT</datelastmodified>
+			<datelastmodified>Thu, 22 Nov 2018 11:39:11 GMT</datelastmodified>
 			<userlastmodified>Admin</userlastmodified>
 			<datecreated>Tue, 21 Aug 2018 11:12:28 GMT</datecreated>
 			<usercreated>Admin</usercreated>
@@ -3479,6 +4480,174 @@
 					<value><![CDATA[false]]></value>
 				</property>
 			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/templates/miportal/main-copy.jsp</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/templates/miportal/main-copy.jsp</destination>
+			<type>jsp</type>
+			<uuidstructure>146edaba-c0ab-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>146edabb-c0ab-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Mon, 24 Sep 2018 10:56:41 GMT</datelastmodified>
+			<userlastmodified>e09338789f</userlastmodified>
+			<datecreated>Tue, 25 Sep 2018 10:09:24 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property type="shared">
+					<name>export</name>
+					<value><![CDATA[false]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/templates/miportal/main.jsp</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/templates/miportal/main.jsp</destination>
+			<type>jsp</type>
+			<uuidstructure>b309f66d-bd5e-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>b309f66e-bd5e-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Mon, 22 Oct 2018 10:36:50 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Fri, 21 Sep 2018 05:25:06 GMT</datecreated>
+			<usercreated>e09338789f</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property type="shared">
+					<name>export</name>
+					<value><![CDATA[false]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/templates/miportal/misdatos-copy.jsp</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/templates/miportal/misdatos-copy.jsp</destination>
+			<type>jsp</type>
+			<uuidstructure>527f441b-ee4b-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>527f441c-ee4b-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Mon, 22 Oct 2018 10:36:54 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Thu, 22 Nov 2018 11:39:50 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property type="shared">
+					<name>export</name>
+					<value><![CDATA[false]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/templates/miportal/misdatos.jsp</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/templates/miportal/misdatos.jsp</destination>
+			<type>jsp</type>
+			<uuidstructure>4b15300e-d162-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>4b15300f-d162-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Thu, 22 Nov 2018 11:42:52 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Tue, 16 Oct 2018 16:41:13 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property type="shared">
+					<name>export</name>
+					<value><![CDATA[false]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<destination>system/modules/es.uva.web.portal.enterprise/templates/uva</destination>
+			<type>folder</type>
+			<uuidstructure>caac2cbb-cc63-11e8-b7c2-0050568213af</uuidstructure>
+			<datelastmodified>Wed, 10 Oct 2018 08:09:20 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Wed, 10 Oct 2018 08:09:20 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties/>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/templates/uva/frontpage-copy.jsp</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/templates/uva/frontpage-copy.jsp</destination>
+			<type>jsp</type>
+			<uuidstructure>f7276c95-157a-11e9-bc72-0050568213af</uuidstructure>
+			<uuidresource>f7276c96-157a-11e9-bc72-0050568213af</uuidresource>
+			<datelastmodified>Fri, 11 Jan 2019 08:14:07 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Fri, 11 Jan 2019 08:29:08 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property type="shared">
+					<name>export</name>
+					<value><![CDATA[false]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/templates/uva/frontpage-en.jsp</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/templates/uva/frontpage-en.jsp</destination>
+			<type>jsp</type>
+			<uuidstructure>bbfd2476-d8f0-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>bbfd2477-d8f0-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Mon, 29 Oct 2018 11:04:38 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Fri, 26 Oct 2018 07:28:29 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property type="shared">
+					<name>export</name>
+					<value><![CDATA[false]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/templates/uva/frontpage.jsp</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/templates/uva/frontpage.jsp</destination>
+			<type>jsp</type>
+			<uuidstructure>ce9bb66d-cc63-11e8-b7c2-0050568213af</uuidstructure>
+			<uuidresource>b4e12483-d8ee-11e8-b7c2-0050568213af</uuidresource>
+			<datelastmodified>Wed, 16 Jan 2019 08:56:56 GMT</datelastmodified>
+			<userlastmodified>e09338789f</userlastmodified>
+			<datecreated>Fri, 26 Oct 2018 07:13:58 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property type="shared">
+					<name>export</name>
+					<value><![CDATA[false]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/templates/uva/main.jsp</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/templates/uva/main.jsp</destination>
+			<type>containerpage_template</type>
+			<uuidstructure>b950c980-157f-11e9-bc72-0050568213af</uuidstructure>
+			<uuidresource>b950c981-157f-11e9-bc72-0050568213af</uuidresource>
+			<datelastmodified>Tue, 15 Jan 2019 19:08:46 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Fri, 11 Jan 2019 09:03:12 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties/>
 			<relations/>
 			<accesscontrol/>
 		</file>
@@ -3542,7 +4711,7 @@
 			<destination>system/workplace/resources/filetypes</destination>
 			<type>folder</type>
 			<uuidstructure>20efa653-f75b-11e6-abfe-0050568213af</uuidstructure>
-			<datelastmodified>Thu, 20 Sep 2018 06:29:32 GMT</datelastmodified>
+			<datelastmodified>Wed, 12 Dec 2018 07:39:10 GMT</datelastmodified>
 			<userlastmodified>Admin</userlastmodified>
 			<datecreated>Mon, 20 Feb 2017 10:55:44 GMT</datecreated>
 			<usercreated>Admin</usercreated>

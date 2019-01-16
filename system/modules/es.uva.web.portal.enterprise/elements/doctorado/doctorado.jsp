@@ -35,10 +35,10 @@ CmsObject cms = jsp.getCmsObject();
 
 String clientOrigin = request.getHeader("origin");
 //response.setHeader("Access-Control-Allow-Origin", clientOrigin);
-//response.setHeader("Access-Control-Allow-Origin", "*");
-//response.setHeader("Access-Control-Allow-Methods", "GET,POST");
-//response.setHeader("Access-Control-Allow-Headers", "Content-Type");
-//response.setHeader("Access-Control-Max-Age", "86400");
+response.setHeader("Access-Control-Allow-Origin", "*");
+response.setHeader("Access-Control-Allow-Methods", "GET,POST");
+response.setHeader("Access-Control-Allow-Headers", "Content-Type");
+response.setHeader("Access-Control-Max-Age", "86400");
 
 try {
 	
@@ -52,7 +52,7 @@ try {
 %>
 <c:catch var ="catchException">
 	<sql:query var="programas" dataSource="jdbc:apache:commons:dbcp:opencms:web_uva_sigma" scope="request">
-		SELECT * FROM VW_WEB_PLAN
+		SELECT * FROM VW_WEB_PLAN ORDER BY DENOMINACION
 	</sql:query>
 </c:catch>
 <c:if test = "${catchException != null}">
@@ -60,7 +60,10 @@ try {
 	There is an exception: ${catchException.message}</p>
 </c:if>
 <c:catch var ="catchException">
-${param["callback"]}(
+	<c:if test = "${not empty param['callback']}">
+	${param["callback"]}(
+	</c:if>
+	
 	<json:object>
 		<json:object name="response">
 		  <json:property name="numFound" value="${programas.rowCount}"/>
@@ -76,7 +79,9 @@ ${param["callback"]}(
 		  </json:array>
 		</json:object>
 	</json:object>
-)
+	<c:if test = "${not empty param['callback']}">
+	)
+	</c:if>
 </c:catch>
 <c:if test = "${catchException != null}">
 	<p>The exception is : ${catchException} <br />

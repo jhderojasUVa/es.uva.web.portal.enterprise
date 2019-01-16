@@ -139,7 +139,6 @@
 			</div>
 		</nav>
 	</div>
-	<hr>
 	<!-- ELEMENTOS -->
 	
 	<cms:container name="contenedor" type="contenedor" detailview="true" maxElements="20"/>
@@ -398,12 +397,12 @@
 	
 		<div class="row">
 			<div class="col-md-3 text-center">
-				<a aria-label="Ceitriangular" href="https://ceitriangular.org/" target="_blank" rel="noopener noreferrer"><img alt="CeiTriangular" src="<cms:link>/_imagenes/CieLogo.png</cms:link>" /></a>
+				<a aria-label="Ceitriangular" href="https://ceitriangular.org/" target="_blank" rel="noopener noreferrer"><img alt="CeiTriangular" src="<cms:link>/_imagenes/CieLogo.png</cms:link>" class="img-fluid" /></a>
 			</div>
 			<div class="col-md-9 text-center">
-			<a href="<cms:link>/7.comunidaduniversitaria/7.13.patrocinadores/7.13.02.bancosantander/index.html</cms:link>" target="_blank" rel="noopener noreferrer"><img alt="Banco Santander" src="<cms:link>/_imagenes/santander.gif_1156717278.gif</cms:link>" /></a>
-			<a href="<cms:link>/7.comunidaduniversitaria/7.13.patrocinadores/7.13.01.agenciaviajesbarcelo/index.html</cms:link>" target="_blank" rel="noopener noreferrer"><img alt="Barceló Viajes" src="<cms:link>/_imagenes/patrocinador01barcelo.png_818694141.png</cms:link>" /></a>
-			<a href="<cms:link>/7.comunidaduniversitaria/7.13.patrocinadores/7.13.04.openbank/</cms:link>" target="_blank" rel="noopener noreferrer"><img alt="OpenBank" src="<cms:link>/_imagenes/patrocinador03openbank.png_1815782397.png</cms:link>" /></a>
+			<a href="<cms:link>/7.comunidaduniversitaria/7.13.patrocinadores/7.13.02.bancosantander/index.html</cms:link>" target="_blank" rel="noopener noreferrer"><img alt="Banco Santander" src="<cms:link>/_imagenes/santander.gif_1156717278.gif</cms:link>" class="img-fluid" /></a>
+			<a href="<cms:link>/7.comunidaduniversitaria/7.13.patrocinadores/7.13.01.agenciaviajesbarcelo/index.html</cms:link>" target="_blank" rel="noopener noreferrer"><img alt="Barceló Viajes" src="<cms:link>/_imagenes/patrocinador01barcelo.png_818694141.png</cms:link>" class="img-fluid" /></a>
+			<a href="<cms:link>/7.comunidaduniversitaria/7.13.patrocinadores/7.13.04.openbank/</cms:link>" target="_blank" rel="noopener noreferrer"><img alt="OpenBank" src="<cms:link>/_imagenes/patrocinador03openbank.png_1815782397.png</cms:link>" class="img-fluid" /></a>
 			</div>
 	
 		</div>

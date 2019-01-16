@@ -98,9 +98,9 @@ class EventoTexto extends HTMLElement {
 	  .va p, .pa p, .se p, .so p, .uva_rosa p, .uva_azul p {
 	  	margin: 0; 
 		font-size: 0.8em; 
-		height: 90px; 
+		width: 100%;
+		height: 60px; 
 		overflow: hidden; 
-		text-overflow: ellipsis;
 	  }
 	  @media only screen and (max-width: 992px) {
 	  	.va h1, .pa h1, .se h1, .so h1 {
@@ -131,9 +131,7 @@ class EventoTexto extends HTMLElement {
 		  .va p, .pa p, .se p, .so p {
 			margin: 0; 
 			font-size: 0.8em; 
-			height: 90px; 
-			overflow: hidden; 
-			text-overflow: ellipsis;
+			height: 90px;
 		  }
 	  
 	  }
@@ -174,7 +172,10 @@ class EventoTexto extends HTMLElement {
       	html+='    <h1>'+date.getDate()+' <small style="font-size: 0.3em; font-weight: 300; text-transform: capitalize;">'+date.toLocaleString(locale, { month: "long" })+'</small></h1>';
       }
       if (val.title) {
-        html+='    <p>'+val.title+' '+val.id+'</p>';
+	  	if (val.title.length > 130) {
+			val.title = val.title.substr(1, 130) + '...';
+		}
+        html+='    <p>'+val.title+'</p>';
       }
 	  // Fin del elemento
       html+='  </div>';
