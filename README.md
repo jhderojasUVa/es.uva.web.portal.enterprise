@@ -25,3 +25,7 @@ OpenCMS usa su propio MVC que aqui se usa.
 # Forma de uso
 
 Es un modulo de OpenCMS 10.5.3, usese como cualquier modulo.
+
+# Estado
+
+Verde, muy verde... esta en working progress de toda la vida, luego el Master puede funcionar o no (mas bien no).
