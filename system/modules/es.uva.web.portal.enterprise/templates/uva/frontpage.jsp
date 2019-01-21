@@ -136,15 +136,12 @@
 
 	<!-- NOTICIAS -->
 	<div class="container noticias" style="margin-top: 10px;">
-		<div class="row">
-			<div vlass="col-md-12">
-				<uva-noticias title="Noticias" data="https://comunicacion-des.uva.es/ws/noticias.jsp" num="8" locale="es">
-					<p>Cargando... espere por favor</p>
-				</uva-noticias>
-			</div>
-		</div>
+		<uva-noticias title="Noticias" data="https://comunicacion-des.uva.es/ws/noticias.jsp" num="8" locale="es">
+			<p>Cargando... espere por favor</p>
+		</uva-noticias>
 	</div>
 	<!-- AGENDA -->
+	<!--
 	<div class="container">
 		<div class="row">
 			<div class="col-md-3">
@@ -154,7 +151,7 @@
 			</div>
 		</div>
 	</div>
-	
+	-->
 	<%--
 	<!-- OFERTA -->
 	<div class="container oferta_educativa" style="margin-top: 70px;">

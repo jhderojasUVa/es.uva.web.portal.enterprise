@@ -1,6 +1,5 @@
 'use strict';
 
-
 class UVANoticias extends HTMLElement {
 	// Objeto/Clase de las noticias
 	// Este objeto es el padre de todas las noticias, el agujero donde se hacen las noticias
@@ -28,78 +27,179 @@ class UVANoticias extends HTMLElement {
 			this.shadowRoot.innerHTML = `
 <style>
 /* Bootstrap */
-@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css");
+@import url(https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css);
+:host {
+display: -ms-inline-flexbox;
+display: -webkit-inline-flex;
+display: inline-flex;
+
+-webkit-flex-direction: row;
+-ms-flex-direction: row;
+flex-direction: row;
+flex-flow: row wrap;
+
+webkit-flex-wrap: wrap;
+-ms-flex-wrap: wrap;
+flex-wrap: wrap;
+
+-webkit-justify-content: flex-start;
+-ms-flex-pack: start;
+justify-content: flex-start;
+-webkit-align-content: stretch;
+-ms-flex-line-pack: stretch;
+align-content: stretch;
+-webkit-align-items: flex-start;
+-ms-flex-align: start;
+align-items: flex-start;
+}
+
+@media all and (min-width: 1200px) {
+:host {
+-webkit-flex-direction: row;
+-ms-flex-direction: row;
+flex-direction: row;
+}
+}
+
+@media all and (max-width: 1199px) {
+:host {
+-webkit-flex-direction: row;
+-ms-flex-direction: row;
+flex-direction: row;
+}
+}
+
+@media all and (max-width: 999px) {
+:host {
+-webkit-flex-direction: row;
+-ms-flex-direction: row;
+flex-direction: row;
+}
+}
+
+@media all and (max-width: 769px) {
+:host {
+-webkit-flex-direction: column;
+-ms-flex-direction: column;
+flex-direction: column;
+}
+}
+
+@media all and (max-width: 400px) {
+:host {
+-webkit-flex-direction: column;
+-ms-flex-direction: column;
+flex-direction: column;
+}
+
+}
+
 @import url("https://fonts.googleapis.com/css?family=Alegreya:300, 400, 500|Arvo:300, 400, 500|IM+Fell+English+SC:300, 400, 500|Lato:300, 400, 500|Libre+Franklin:300, 400, 500|Montserrat:300, 400, 500|Open+Sans:300, 400, 500|Raleway:300, 400, 500");
-@import url("https://use.fontawesome.com/releases/v5.6.3/css/all.css");
-
 h1, h2, h3 {
-	font-family: "Libre Franklin", sans-serif; 
+/*font-family: "Libre Franklin", sans-serif;*/
+font-family: "Montserrat", sans-serif
 }
 
-.header {
-	border-bottom: 1px solid #121212;
- 	margin-right: 15px;
+h4, h5, h5 .opensans, p .pie_foto, li .pie_foto {
+font-family: "Open Sans", sans-serif; 
 }
 
-.header h1 {
-	font-size: 26px;
-	padding-right: 20px;
-	text-transform: uppercase;
-	margin-right: 15px;
-	position: relative;
-	bottom: -10px;
+h5 .arvo {
+font-family: "Arvo", serif; 
 }
 
-.bloque_raya {
-	margin-left: 0;
-	padding-left: 0;
-	border-bottom: 1px solid #121212;
+p, li {
+font-family: "Lato", sans-serif; 
 }
 
-.bloque_raya .masinformacion {
-	font-size: 12px;
-	padding: 18px 20px;
-	border: 1px solid #121212;
-	text-transform: uppercase;
-	display: inline-block;
-	margin-bottom: -1px;
-	transition: all 0.5s;
+h1 .titulos_cortos {
+font-family: "Montserrat", sans-serif; 
 }
 
-.bloque_raya a .masinformacion {
-	color: #121212;
+blockquote {
+font-family: "Raleway", sans-serif; }
+
+.script {
+font-family: "IM Fell English", serif; }
+
+h1 {
+color: rgba(55, 55, 55, 0.9);
+font-weight: 300;
+font-size: 2.8em;
+line-height: 1.0em;
+margin-bottom: .1em;
+margin-top: .1em; }
+h1 .titulos_cortos {
+font-weight: 400; }
+
+h2 {
+color: rgba(55, 55, 55, 0.8);
+font-weight: 300;
+font-size: 2.5em;
+line-height: 1.0em;
+margin-top: .2em;
+margin-bottom: .0em; }
+
+h3 {
+color: rgba(55, 55, 55, 0.8);
+font-weight: 300;
+font-size: 1.3em;
+line-height: 1.4em;
+margin-top: .5em;
+margin-bottom: .5em; }
+
+h4 {
+color: rgba(55, 55, 55, 0.8);
+font-weight: 400;
+font-size: .8em;
+line-height: 1.4em;
+margin-top: .5em;
+margin-bottom: .5em; }
+
+h5 {
+font-weight: 400;
+color: rgba(55, 55, 55, 0.8);
+font-size: .65em;
+line-height: 1.4em;
+margin-top: .5em;
+margin-bottom: .5em; }
+
+p, li {
+font-weight: 300;
+font-size: 1.15em;
+line-height: 1.4em;
+margin-top: .5em;
+margin-bottom: .5em;
+color: rgba(55, 55, 55, 0.8); }
+p .pie_foto, li .pie_foto {
+font-size: .65em;
+font-weight: 400;
+color: #373737;
+line-height: 1.4em;
+margin-top: .5em;
+margin-bottom: .5em; 
 }
 
-.bloque_raya a:hover .masinformacion {
-	color: #121212;
-	text-decoration: none;
-	background-color: #5af9ff;
-}
-
-.bloque_raya .flecha {
-	transition: all 0.5s;
-}
-
-.bloque_raya a:hover .flecha {
-	display: inline-block;
-	transform: translateX(10px);
+blockquote {
+font-size: 2em;
+line-height: 1.0;
+color: rgba(227, 5, 74, 0.75); 
 }
 
 </style>
-<div class="row">
-	<div class="col-12 col-md-2 header">
+<div style="width: 100%">
+	<div class="header">
 		<h1>Noticias</h1>
 	</div>
 	<div class="col bloque_raya d-none d-md-block">
+		<span class="masinformacion">
 		<a href="http://comunicacion.uva.es" target="_blank" role="link" rel="noopener noreferrer">
-			<span class="masinformacion">
-				<span data-i18n-es="más información" data-i18n-en="read more">más información</span> 
-				<span class="flecha"><i class="fas fa-angle-right"></i></span>
-			</span>
+			<span data-i18n-es="más información" data-i18n-en="read more">más información</span> 
+			<span class="flecha"><i class="fas fa-angle-right"></i></span>
 		</a>
+		</span>
 	</div>
 </div>
-<div class="row" style="margin-top: 15px;" id="noticias-contenido"></div>
 `;
 
 		}
@@ -186,9 +286,8 @@ h1, h2, h3 {
 			noticia.locale = this._localedata;
 			// Pasamos los datos
 			noticia.doc = doc;
-			// Lo añadimos al durumdumdumdum dentro de su sitio cochino
-			let sitioNoticias = this.shadowRoot.getElementById('noticias-contenido');
-			sitioNoticias.appendChild(noticia);
+			// Lo añadimos al durumdumdumdum
+			this.shadowRoot.appendChild(noticia);
 		});
 	}
 
@@ -197,58 +296,57 @@ h1, h2, h3 {
 	}
 }
 customElements.define(UVANoticias.is, UVANoticias);
-  
+
 class UVANoticia extends HTMLElement {
-	static get is() {
-		return 'uva-noticia';
-	}
-	constructor(...args) {
-		// Constructor
-		try {
-			const self = super(...args);
-		} catch(e) {
-			// Si no somos capaces de cargar al padre, error
-			throw "Error al crear el elemento UVANoticia " + e;
-		} finally {
-			//Variables
-			this._doc = undefined;
-			this._locale = undefined;
-			// Creamos el shadow del elemento
-			let shadowRoot = this.attachShadow({ mode: 'open' });
-			this.shadowRoot.innerHTML = `
-<style>
-/* Importamos bootstrap */
-@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css");
-<style>
-</style>
-`;
-		}
-	}
+    static get is() {
+      return 'uva-noticia';
+    }
+    constructor(...args) {
+      // Constructor
+      try {
+        const self = super(...args);
+      } catch(e) {
+        // Si no somos capaces de cargar al padre, error
+        throw "Error al crear el elemento UVANoticia " + e;
+      } finally {
+        //Variables
+        this._doc=undefined;
+        this._locale=undefined;
+        // Creamos el shadow del elemento
+        let shadowRoot = this.attachShadow({ mode: 'open' });
+        this.shadowRoot.innerHTML = `
+        <style>
+          /* Importamos bootstrap */
+          <style>
+          </style>
+          
+          `;
+      }
+    }
+  
+    connectedCallback() {
+        this.addEventListener('click', this.onclick);
+    }
+  
+    disconnectedCallback() {
+        this.removeEventListener('click', this.onclick);
+    }
+  
+    adoptedCallback() {  }
+    attributeChangedCallback(name, oldValue, newValue) {  }
+  
+    set doc(val) {
+      this._doc=val;
+    }
 
-	connectedCallback() {
-		this.addEventListener('click', this.onclick);
-	}
+    set locale(val) {
+      this._locale=val;
+    }
 
-	disconnectedCallback() {
-		this.removeEventListener('click', this.onclick);
-	}
-
-	adoptedCallback() {  }
-	attributeChangedCallback(name, oldValue, newValue) {  }
-
-	set doc(val) {
-		this._doc = val;
-	}
-
-	set locale(val) {
-		this._locale = val;
-	}
-
-
-}
- 
-customElements.define(UVANoticia.is, UVANoticia);
-
+  
+  }
+  customElements.define(UVANoticia.is, UVANoticia);
+  
 class UVANoticiaTexto extends UVANoticia {
 	// Objeto/Clase de la noticia de texto
 	
@@ -269,35 +367,35 @@ class UVANoticiaTexto extends UVANoticia {
 			// Creamos el shadow del elemento
 			this.shadowRoot.innerHTML = `
 <style>
-@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css");
-@import url("https://fonts.googleapis.com/css?family=Alegreya:300, 400, 500|Arvo:300, 400, 500|IM+Fell+English+SC:300, 400, 500|Lato:300, 400, 500|Libre+Franklin:300, 400, 500|Montserrat:300, 400, 500|Open+Sans:300, 400, 500|Raleway:300, 400, 500");
-
 :host {
-	-ms-flex: 0 0 25%;
-	flex: 0 0 25%;
-	max-width: 25%;
-	margin-bottom: 0.5em;
+-webkit-order: 0;
+-ms-flex-order: 0;
+order: 0;
+-webkit-flex: 1 1 20%;
+-ms-flex: 1 1 20%;
+flex: 1 1 20%;
+
+-webkit-align-self: auto;
+-ms-flex-item-align: auto;
+align-self: auto;
+
+padding-top: 10px;
+padding-right: 10px;
+padding-bottom: 10px;
+padding-left: 10px;
 }
 
-a:hover {
-	text-decoration: none;
+a, a:link, a:visited, a:hover, a:active  {
+color: black;
+text-decoration: none;
 }
 
-h1 {
-	font-family: "Lato", sans-serif;
-	font-size: 1.5em;
-	color: rgba(12, 12, 12, 0.9);
-	margin: 0 0.5em;
-}
-
-h1:hover {
-	color: rgba(12, 12, 12, 0.8);
-	cursor: pointer;
-}
 </style>
-
 <a id="link" href="">
-	<h1 id="title"Titulo></h1>
+<div class="headline">
+<div class="category">Categoria</div>
+<h2 id="title"Titulo</h2>
+</div>
 </a>
 `;
 		}
@@ -305,13 +403,10 @@ h1:hover {
 
 	set doc(val) {
 		// Setter para pillar los datos
-
+		
 		// Si hay datos lo pintamos
 		if (val) {
 			// Buscamos en el shadow el titulo para ponerlo segun el idioma del locale
-			var element = this.shadowRoot.getElementById('noticia-texto');
-			//var elementTitle = document.createElement('A');
-			
 			var element = this.shadowRoot.getElementById('title');
 			element.innerHTML = val.title;
 			// Ponemos el texto correspondiente buscando en los locales de los datos
@@ -360,72 +455,42 @@ class UVANoticiaImagen extends UVANoticia {
 			// Creamos el shadow del elemento
 			this.shadowRoot.innerHTML = `
 <style>
-@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css");
-@import url("https://fonts.googleapis.com/css?family=Alegreya:300, 400, 500|Arvo:300, 400, 500|IM+Fell+English+SC:300, 400, 500|Lato:300, 400, 500|Libre+Franklin:300, 400, 500|Montserrat:300, 400, 500|Open+Sans:300, 400, 500|Raleway:300, 400, 500");
-
 :host {
-	-ms-flex: 0 0 25%;
-	flex: 0 0 25%;
-	max-width: 25%;
-	margin-bottom: 0.5em;
-	padding-bottom: 0.5em;
-	
-	position: relative;
-	overflow: hidden;
-	
+-webkit-order: 0;
+-ms-flex-order: 0;
+order: 0;
+-webkit-flex: 1 1 20%;
+-ms-flex: 1 1 20%;
+flex: 1 1 20%;
+
+-webkit-align-self: auto;
+-ms-flex-item-align: auto;
+align-self: auto;
+
+padding-top: 10px;
+padding-right: 10px;
+padding-bottom: 10px;
+padding-left: 10px;
 }
 
-:host(:hover) {
-	cursor: pointer;
+a, a:link, a:visited, a:hover, a:active  {
+color: black;
+text-decoration: none;
 }
-
-:host(:hover) #photo {
-	filter: grayscale(.8);
-}
-
-:host(:hover) h1 {
-	color: rgba(12, 12, 12, 0.8);
-	visibility: visible;
-	transform: translateY(-410px);
-	
-	transition: all 0.8s;
-}
-
-a:hover {
-	text-decoration: none;
-}
-
-h1 {
-	font-family: "Lato", sans-serif;
-	font-size: 1.5em;
-	color: white;
-	margin-left: 0.5em;
-	margin-right: 0.5em;
-	margin-top: 0.5em;
-	padding: 0.3em;
-	background-color: white;
-	
-	visibility: hidden;
-	position: relative;
-	top: 420px;
-	
-	transition: all 0.8s;
-}
-
-
-#photo {
-	height: 100%; 
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+img {
+max-width:100%;
 }
 
 </style>
 <a id="link" href="">
-	<div id="photo">
-		<h1 id="title"></h1>
-		<div style="height: 30px"></div>
-		
+<div class="headline">
+	<div class="category">Categoria I</div>
+	<div class="text-center">
+		<h2 id="title"Titulo</h2>
+	</div>
+		<div class="text-center">
+			<img id="photo" class="img-thumbnail rounded" src="/image.jpeg">
+		</div>
 	</div>
 </a>
 `;
@@ -438,33 +503,34 @@ h1 {
 		// Si hay datos los metemos
 		if (val) {
 			// Buscamos el title en el shadow del objeto para ponerlo
-			var elementTitle = this.shadowRoot.getElementById('title');
-			let title = val.title;
-			if (val.title.length > 50) {
-				title = title.substring(0, 30) + '...';
-			}
-			elementTitle.innerHTML = title;
+			var element = this.shadowRoot.getElementById('title');
+			element.innerHTML = val.title;
 			// Vemos a ver los idiomas para sacar la enjundia (el texto)
 			if (this._locale && val.locales) {
 				let locale = this._locale;
 				let res = val.locales.find(function(element) {
-					return elementTitle.id === locale;
+					return element.id === locale;
 				});
 				// Si hay, lo ponemos, que narices
 				if (res) {
-					elementTitle.innerHTML = res.title;
+					element.innerHTML = res.title;
 				}
 			}
 
 			// El link de Legend of Zelda
-			var elementLink = this.shadowRoot.getElementById('link');
-			elementLink.href = val.link;
+			element = this.shadowRoot.getElementById('link');
+			element.href = val.link;
 
-			// Si hay imagen
+			// Buscamos la foto
+			element = this.shadowRoot.getElementById('photo');
+
 			if (val.image) {
-				// Buscamos la foto, el elemento y le cambiamos el estilo poniendole el fondo
-				let elementPhoto = this.shadowRoot.getElementById('photo');
-				elementPhoto.style.backgroundImage = 'url(' + val.image.replace("/sites/comunicacion","http://comunicacion.uva.es") + ')';
+				// Si hay imagen
+				let url = val.image;
+				// Ponemos la URL bien que es un desastre
+				url = url.replace("/sites/comunicacion","http://comunicacion.uva.es");
+				// Y ponemos la imagen en la imagen (en el src del elemento imagen)
+				element.src = url;
 			}
 		} else {
 			// Trincamos el shadow

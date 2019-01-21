@@ -4,7 +4,7 @@
 	<info>
 		<creator>e09338789f</creator>
 		<opencms_version>10.5.3</opencms_version>
-		<createdate>Wed, 16 Jan 2019 11:31:21 GMT</createdate>
+		<createdate>Mon, 21 Jan 2019 06:50:52 GMT</createdate>
 		<infoproject>Offline</infoproject>
 		<export_version>10</export_version>
 	</info>
@@ -3873,6 +3873,26 @@
 			<accesscontrol/>
 		</file>
 		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/resources/uva4/js/noticias-copy.js</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/resources/uva4/js/noticias-copy.js</destination>
+			<type>plain</type>
+			<uuidstructure>c0f51a71-1a38-11e9-bc72-0050568213af</uuidstructure>
+			<uuidresource>c0f51a72-1a38-11e9-bc72-0050568213af</uuidresource>
+			<datelastmodified>Thu, 17 Jan 2019 09:09:07 GMT</datelastmodified>
+			<userlastmodified>e09338789f</userlastmodified>
+			<datecreated>Thu, 17 Jan 2019 09:17:46 GMT</datecreated>
+			<usercreated>e09338789f</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property>
+					<name>Title</name>
+					<value><![CDATA[noticias]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
 			<source>system/modules/es.uva.web.portal.enterprise/resources/uva4/js/noticias-es5.js</source>
 			<destination>system/modules/es.uva.web.portal.enterprise/resources/uva4/js/noticias-es5.js</destination>
 			<type>plain</type>
@@ -3898,8 +3918,8 @@
 			<type>plain</type>
 			<uuidstructure>9b99356f-7de2-11e8-bc66-0242ac11002b</uuidstructure>
 			<uuidresource>9b993570-7de2-11e8-bc66-0242ac11002b</uuidresource>
-			<datelastmodified>Tue, 15 Jan 2019 19:21:13 GMT</datelastmodified>
-			<userlastmodified>Admin</userlastmodified>
+			<datelastmodified>Thu, 17 Jan 2019 13:23:31 GMT</datelastmodified>
+			<userlastmodified>e09338789f</userlastmodified>
 			<datecreated>Mon, 02 Jul 2018 10:28:06 GMT</datecreated>
 			<usercreated>Admin</usercreated>
 			<flags>0</flags>
@@ -4622,7 +4642,7 @@
 			<type>jsp</type>
 			<uuidstructure>ce9bb66d-cc63-11e8-b7c2-0050568213af</uuidstructure>
 			<uuidresource>b4e12483-d8ee-11e8-b7c2-0050568213af</uuidresource>
-			<datelastmodified>Wed, 16 Jan 2019 08:56:56 GMT</datelastmodified>
+			<datelastmodified>Thu, 17 Jan 2019 11:23:25 GMT</datelastmodified>
 			<userlastmodified>e09338789f</userlastmodified>
 			<datecreated>Fri, 26 Oct 2018 07:13:58 GMT</datecreated>
 			<usercreated>Admin</usercreated>
