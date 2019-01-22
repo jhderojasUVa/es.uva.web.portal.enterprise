@@ -4,7 +4,7 @@
 	<info>
 		<creator>e09338789f</creator>
 		<opencms_version>10.5.3</opencms_version>
-		<createdate>Mon, 21 Jan 2019 06:50:52 GMT</createdate>
+		<createdate>Tue, 22 Jan 2019 06:53:18 GMT</createdate>
 		<infoproject>Offline</infoproject>
 		<export_version>10</export_version>
 	</info>
@@ -2687,12 +2687,32 @@
 			<accesscontrol/>
 		</file>
 		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/resources/uva4/css/agenda-copy.css</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/resources/uva4/css/agenda-copy.css</destination>
+			<type>plain</type>
+			<uuidstructure>6632c2a8-1d5c-11e9-bc72-0050568213af</uuidstructure>
+			<uuidresource>6632c2a9-1d5c-11e9-bc72-0050568213af</uuidresource>
+			<datelastmodified>Mon, 21 Jan 2019 09:06:23 GMT</datelastmodified>
+			<userlastmodified>e09338789f</userlastmodified>
+			<datecreated>Mon, 21 Jan 2019 09:10:30 GMT</datecreated>
+			<usercreated>e09338789f</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property>
+					<name>Title</name>
+					<value><![CDATA[agenda]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
 			<source>system/modules/es.uva.web.portal.enterprise/resources/uva4/css/agenda.css</source>
 			<destination>system/modules/es.uva.web.portal.enterprise/resources/uva4/css/agenda.css</destination>
 			<type>plain</type>
 			<uuidstructure>744d04f0-7de4-11e8-bc66-0242ac11002b</uuidstructure>
 			<uuidresource>744d04f1-7de4-11e8-bc66-0242ac11002b</uuidresource>
-			<datelastmodified>Tue, 18 Sep 2018 08:35:47 GMT</datelastmodified>
+			<datelastmodified>Mon, 21 Jan 2019 09:12:05 GMT</datelastmodified>
 			<userlastmodified>e09338789f</userlastmodified>
 			<datecreated>Mon, 02 Jul 2018 10:41:19 GMT</datecreated>
 			<usercreated>Admin</usercreated>
@@ -3719,8 +3739,8 @@
 			<type>plain</type>
 			<uuidstructure>d99fc843-18c2-11e9-bc72-0050568213af</uuidstructure>
 			<uuidresource>d99fc844-18c2-11e9-bc72-0050568213af</uuidresource>
-			<datelastmodified>Tue, 15 Jan 2019 12:41:16 GMT</datelastmodified>
-			<userlastmodified>Admin</userlastmodified>
+			<datelastmodified>Tue, 22 Jan 2019 06:51:37 GMT</datelastmodified>
+			<userlastmodified>e09338789f</userlastmodified>
 			<datecreated>Tue, 15 Jan 2019 12:41:16 GMT</datecreated>
 			<usercreated>Admin</usercreated>
 			<flags>0</flags>
@@ -3918,7 +3938,7 @@
 			<type>plain</type>
 			<uuidstructure>9b99356f-7de2-11e8-bc66-0242ac11002b</uuidstructure>
 			<uuidresource>9b993570-7de2-11e8-bc66-0242ac11002b</uuidresource>
-			<datelastmodified>Thu, 17 Jan 2019 13:23:31 GMT</datelastmodified>
+			<datelastmodified>Mon, 21 Jan 2019 09:05:18 GMT</datelastmodified>
 			<userlastmodified>e09338789f</userlastmodified>
 			<datecreated>Mon, 02 Jul 2018 10:28:06 GMT</datecreated>
 			<usercreated>Admin</usercreated>
@@ -4642,7 +4662,7 @@
 			<type>jsp</type>
 			<uuidstructure>ce9bb66d-cc63-11e8-b7c2-0050568213af</uuidstructure>
 			<uuidresource>b4e12483-d8ee-11e8-b7c2-0050568213af</uuidresource>
-			<datelastmodified>Thu, 17 Jan 2019 11:23:25 GMT</datelastmodified>
+			<datelastmodified>Mon, 21 Jan 2019 08:56:41 GMT</datelastmodified>
 			<userlastmodified>e09338789f</userlastmodified>
 			<datecreated>Fri, 26 Oct 2018 07:13:58 GMT</datecreated>
 			<usercreated>Admin</usercreated>

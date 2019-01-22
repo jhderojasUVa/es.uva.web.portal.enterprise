@@ -1,285 +1,59 @@
-@charset "UTF-8";
-/*
-  Definición de colores segun su A
+.agenda .header {
+	border-bottom: 1px solid #121212;
+ 	margin-right: 15px;
+}
 
-  v0.1
-*/
-/* ==== Negro ==== */
-/* ==== Azul ==== */
-/* ==== Blanco ==== */
-/* === Generico === */
-@import url("https://fonts.googleapis.com/css?family=Alegreya:300, 400, 500|Arvo:300, 400, 500|IM+Fell+English+SC:300, 400, 500|Lato:300, 400, 500|Libre+Franklin:300, 400, 500|Montserrat:300, 400, 500|Open+Sans:300, 400, 500|Raleway:300, 400, 500");
-h1, h2, h3 {
-  font-family: "Libre Franklin", sans-serif; }
-
-h4, h5, h5 .opensans, p .pie_foto, li .pie_foto {
-  font-family: "Open Sans", sans-serif; }
-
-h5 .arvo {
-  font-family: "Arvo", serif; }
-
-p, li {
-  font-family: "Lato", sans-serif; }
-
-h1 .titulos_cortos {
-  font-family: "Montserrat", sans-serif; }
-
-blockquote {
-  font-family: "Raleway", sans-serif; }
-
-.script {
-  font-family: "IM Fell English", serif; }
-
-h1 {
-  color: rgba(55, 55, 55, 0.9);
-  font-weight: 300;
-  font-size: 2.8em;
-  line-height: 1.0em;
-  margin-bottom: .1em;
-  margin-top: .1em; }
-  h1 .titulos_cortos {
-    font-weight: 400; }
-
-h2 {
-  color: rgba(55, 55, 55, 0.8);
-  font-weight: 300;
-  font-size: 2.5em;
-  line-height: 1.0em;
-  margin-top: .2em;
-  margin-bottom: .0em; }
-
-h3 {
-  color: rgba(55, 55, 55, 0.8);
-  font-weight: 300;
-  font-size: 1.3em;
-  line-height: 1.4em;
-  margin-top: .5em;
-  margin-bottom: .5em; }
-
-h4 {
-  color: rgba(55, 55, 55, 0.8);
-  font-weight: 400;
-  font-size: .8em;
-  line-height: 1.4em;
-  margin-top: .5em;
-  margin-bottom: .5em; }
-
-h5 {
-  font-weight: 400;
-  color: rgba(55, 55, 55, 0.8);
-  font-size: .65em;
-  line-height: 1.4em;
-  margin-top: .5em;
-  margin-bottom: .5em; }
-
-p, li {
-  font-weight: 300;
-  font-size: 1.15em;
-  line-height: 1.4em;
-  margin-top: .5em;
-  margin-bottom: .5em;
-  color: rgba(55, 55, 55, 0.8); }
-  p .pie_foto, li .pie_foto {
-    font-size: .65em;
-    font-weight: 400;
-    color: #373737;
-    line-height: 1.4em;
-    margin-top: .5em;
-    margin-bottom: .5em; }
-
-blockquote {
-  font-size: 2em;
-  line-height: 1.0;
-  color: rgba(227, 5, 74, 0.75); }
-
-@media screen and (max-width: 480px) {
-  h1 {
-    color: rgba(55, 55, 55, 0.9);
-    font-weight: 300;
-    font-size: 1.8em;
-    line-height: 1.0em;
-    margin-bottom: 0.1em;
-    margin-top: 0.1em; }
-
-  h2 {
-    color: rgba(55, 55, 55, 0.8);
-    font-weight: 300;
-    font-size: 1.4em;
-    line-height: 1.0em;
-    margin-top: .5em;
-    margin-bottom: .5em; }
-
-  h3 {
-    font-size: 1.2em;
-    line-height: 1.4em;
-    margin-top: .9em;
-    margin-bottom: .5em; }
-
-  h4 {
-    font-size: 1em;
-    line-height: 1.4em;
-    margin-top: .5em;
-    margin-bottom: .5em; }
-
-  h5 {
-    font-size: .8em;
-    line-height: 1.4em;
-    margin-top: .5em;
-    margin-bottom: .5em; }
-
-  h6 {
-    font-size: .65em;
-    line-height: 1.4em;
-    margin-top: .5em;
-    margin-bottom: .5em; }
-
-  p, li {
-    font-weight: 300;
-    font-size: 1.6em;
-    line-height: 1.2em;
-    margin-top: .6em;
-    margin-bottom: 1.5em; }
-
-  .footer p {
-    font-weight: 300;
-    font-size: 1em;
-    line-height: 1.4em;
-    margin-top: .5em;
-    margin-bottom: .5em;
-    color: rgba(55, 55, 55, 0.8); }
-
-  blockquote {
-    font-size: 2em;
-    line-height: 1.0; } }
-h2 p {
-  font-size: 1.4em;
-  line-height: 1.25em; }
-
-h2 p {
-  margin: 0; }
-
-.agenda .header, #agenda .header {
-  border-bottom: 1px solid #121212;
-  margin-right: 15px; }
-  .agenda .header h1, #agenda .header h1 {
-  	position: relative;
+.agenda .header h1 {
+	position: relative;
 	bottom: -7px;
     font-size: 1.9em;
-	font-weight: 500;
+    font-weight: 500;
     padding-right: 20px;
     padding-bottom: 7px;
     text-transform: uppercase;
-    margin-right: 15px; 
-	font-family: "Montserrat", sans-serif; }
+    margin-right: 15px;
+    font-family: "Montserrat", sans-serif;
+	color: rgba(55, 55, 55, 0.9);
 	
-@media only screen and (max-width: 999px) {
-	.agenda .header h1, #agenda .header h1 {
-    font-size: 22px;
-    padding-right: 20px;
-    padding-bottom: 7px;
-    text-transform: uppercase;
-    margin-right: 5px; }
+	line-height: 1.0em;
+    margin-bottom: .1em;
+    margin-top: .1em;
 }
-	
-.agenda .bloque_raya, #agenda .bloque_raya {
-  margin-left: 0;
-  padding-left: 0;
-  border-bottom: 1px solid #121212; }
-  .agenda .bloque_raya .masinformacion, #agenda .bloque_raya .masinformacion {
-  	position: absolute;
-	bottom: -1px;
-    display: inline-block;
+
+.agenda .bloque_raya {
+	margin-left: 0;
+	padding-left: 0;
+	border-bottom: 1px solid #121212;
+}
+
+.agenda .bloque_raya .masinformacion {
 	font-size: 1.15em;
-    padding: 5px 20px;
-    border: 1px solid #121212;
-    text-transform: uppercase; 
-	transition: all 0.2s;}
+	padding: 5px 20px;
+	border: 1px solid #121212;
+	text-transform: uppercase;
+	display: inline-block;
+	margin-bottom: -1px;
+	transition: all 0.5s;
 	
-	.agenda .bloque_raya .masinformacion .flecha, #agenda .bloque_raya .masinformacion .flecha {
-		transition: all 0.5s;
-	}
-	
-@media only screen and (max-width: 999px) {
-	.agenda .bloque_raya .masinformacion, #agenda .bloque_raya .masinformacion {
-		padding: 13px 20px;
-	}
-}
-	
-	.agenda .bloque_raya .masinformacion:hover, #agenda .bloque_raya .masinformacion:hover {
-		background-color: rgba(90, 240, 255, 0.6);
-	}
-	
-	.agenda .bloque_raya .masinformacion:hover .flecha, #agenda .bloque_raya .masinformacion:hover .flecha {
-		transform: translate(5px, 0px);
-		display: inline-block;
-	}
-	
-	
-    .agenda .bloque_raya .masinformacion a, #agenda .bloque_raya .masinformacion a {
-      color: #121212; 
-	  font-size: 16px; }
-      .agenda .bloque_raya .masinformacion a:hover, #agenda .bloque_raya .masinformacion a:hover {
-        color: #121212;
-        text-decoration: none; }
-		
-		
-		
-		
-		
-		
-.agenda #agenda .bloque_agenda, #agenda #agenda .bloque_agenda {
-  height: 100px;
-  overflow: hidden; }
-.agenda .va, #agenda .va {
-  padding: 0.5em;
-  border-radius: 4px;
-  background-color: #5534ae; }
-  .agenda .va h1, .agenda .va p, #agenda .va h1, #agenda .va p {
-    color: white !important; }
-.agenda .se, #agenda .se {
-  padding: 0.5em;
-  border-radius: 4px;
-  background-color: #ff9000; }
-.agenda .pa, #agenda .pa {
-  padding: 0.5em;
-  border-radius: 4px;
-  background-color: #93198f; }
-  .agenda .pa h1, .agenda .pa p, #agenda .pa h1, #agenda .pa p {
-    color: white !important; }
-.agenda .so, #agenda .so {
-  padding: 0.5em;
-  border-radius: 4px;
-  background-color: #aad000; }
-.agenda .uva_azul, #agenda .uva_azul {
-  padding: 0.5em;
-  border-radius: 4px;
-  background-color: #0e3675; }
-  .agenda .uva_azul h1, .agenda .uva_azul p, #agenda .uva_azul h1, #agenda .uva_azul p {
-    color: white !important; }
-.agenda .uva_rosa, #agenda .uva_rosa {
-  padding: 0.5em;
-  border-radius: 4px;
-  background-color: #ff8b92; }
-.agenda .dots .dot, #agenda .dots .dot {
-  margin: 0 0.2em;
-  width: 25px;
-  height: 5px;
-  border: 1px solid black;
-  background-color: white;
-  display: inline-block; }
-  .agenda .dots .dot:hover, #agenda .dots .dot:hover {
-    cursor: pointer; }
-  .agenda .dots .dot.active, #agenda .dots .dot.active {
-    background-color: black; }
-  .agenda .dots .dot.showing, #agenda .dots .dot.showing {
-    background-color: #b3b3b3; }
-	
-.agenda .slide {
-	height: 250px;
+	position: absolute;
+	bottom: 0px;
 }
 
-#agenda .slide:hover {
-	cursor: pointer;
+.agenda .bloque_raya a .masinformacion {
+	color: #121212;
 }
 
-/*# sourceMappingURL=agenda.css.map */
+.agenda .bloque_raya a:hover .masinformacion {
+	color: #121212;
+	text-decoration: none;
+	background-color: #5af9ff;
+}
+
+.agenda .bloque_raya .flecha {
+	transition: all 0.5s;
+}
+
+.agenda .bloque_raya a:hover .flecha {
+	display: inline-block;
+	transform: translateX(10px);
+}

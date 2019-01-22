@@ -33,7 +33,7 @@ class UVANoticias extends HTMLElement {
 @import url("https://use.fontawesome.com/releases/v5.6.3/css/all.css");
 
 h1, h2, h3 {
-	font-family: "Libre Franklin", sans-serif; 
+	font-family: "Montserrat", sans-serif; 
 }
 
 .header {
@@ -42,12 +42,20 @@ h1, h2, h3 {
 }
 
 .header h1 {
-	font-size: 26px;
-	padding-right: 20px;
-	text-transform: uppercase;
-	margin-right: 15px;
 	position: relative;
-	bottom: -10px;
+	bottom: -7px;
+    font-size: 1.9em;
+    font-weight: 500;
+    padding-right: 20px;
+    padding-bottom: 7px;
+    text-transform: uppercase;
+    margin-right: 15px;
+    font-family: "Montserrat", sans-serif;
+	color: rgba(55, 55, 55, 0.9);
+	
+	line-height: 1.0em;
+    margin-bottom: .1em;
+    margin-top: .1em;
 }
 
 .bloque_raya {
@@ -57,13 +65,16 @@ h1, h2, h3 {
 }
 
 .bloque_raya .masinformacion {
-	font-size: 12px;
-	padding: 18px 20px;
+	font-size: 1.15em;
+	padding: 5px 20px;
 	border: 1px solid #121212;
 	text-transform: uppercase;
 	display: inline-block;
 	margin-bottom: -1px;
 	transition: all 0.5s;
+	
+	position: absolute;
+	bottom: 0px;
 }
 
 .bloque_raya a .masinformacion {

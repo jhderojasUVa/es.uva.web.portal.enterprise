@@ -141,17 +141,24 @@
 		</uva-noticias>
 	</div>
 	<!-- AGENDA -->
-	<!--
-	<div class="container">
+	<div class="container agenda" style="margin-top: 10px;">
 		<div class="row">
-			<div class="col-md-3">
-				<uva-eventos-slideshow data="https://comunicacion-des.uva.es/ws/eventos.jsp" num="20" show="4" auto="true">
-					<p>Cargando... espere por favor</p>
-				</uva-eventos-slideshow>
+			<div class="col-12 col-md-2 header">
+				<h1>Agenda</h1>
+			</div>
+			<div class="col bloque_raya d-none d-md-block">
+				<a href="http://eventos.uva.es" target="_blank" role="link" rel="noopener noreferrer">
+					<span class="masinformacion">
+						<span data-i18n-es="más información" data-i18n-en="read more">más información</span> 
+						<span class="flecha"><i class="fas fa-angle-right"></i></span>
+					</span>
+				</a>
 			</div>
 		</div>
+		<uva-eventos-slideshow data="https://comunicacion-des.uva.es/ws/eventos.jsp" num="20" show="4" auto="true">
+			<p>Cargando... espere por favor</p>
+		</uva-eventos-slideshow>
 	</div>
-	-->
 	<%--
 	<!-- OFERTA -->
 	<div class="container oferta_educativa" style="margin-top: 70px;">
