@@ -13,26 +13,26 @@ export class UVaSlideshow extends HTMLElement {
 		// Constructor
 		try {
 			const self = super(...args);
-			//Numero de elementos a mostrar cada vez
-			this._datashow=1;
-			//Numero de elementos en total
-			this._datanum=4;
+			// Numero de elementos a mostrar cada vez
+			this._datashow = 1;
+			// Numero de elementos en total
+			this._datanum = 4;
 
 			this._indice = 0;
 			this._childs = 0;
 			this._objects = [];
 			this._dots = [];
-			this._auto=false;
+			this._auto = false;
 			this._timer = undefined;
 			// Opciones por defecto
-			this._options= {
+			this._options = {
 				slideIndex: 0,
 				timming: 5000,
 				automated: true,
 				num_show: 3,
 				dots: true,
 			};
-			//Funciones
+			// Funciones
 			this._show = this._show.bind(this);
 			this._next = this._next.bind(this);
 			this._onclick = this._onclick.bind(this);
@@ -48,21 +48,31 @@ export class UVaSlideshow extends HTMLElement {
 					
 					
 				}
+				
 				@media screen and (max-width: 1199px) {
-					height: 380px;
+					:host {
+						height: 380px;
+					}
 				}
 
 				@media screen and (max-width: 999px) {
-					height: 300px;
+					:host {
+						height: 300px;
+					}
 				}
 
 				@media screen and (max-width: 769px) {
-					height: 200px;
+					:host {
+						height: 200px;
+					}
 				}
 
 				@media screen and (max-width: 400px) {
-					height: 180px;
+					host {
+						height: 180px;
+					}
 				}
+				
 				#slide-elements, #dots {
 					display: flex;
 					justify-content: center;
@@ -341,6 +351,18 @@ export class UVaSlideshowDot extends HTMLElement {
 					background-color: white;
 					display: inline-block; 
 					text-align: center;
+				}
+
+				@media screen and (max-width: 769px) {
+					:host {
+						width: 20px;
+					}
+				}
+
+				@media screen and (max-width: 400px) {
+					host {
+						width: 18px;
+					}
 				}
 				:host(.active) {
 					background-color: black;

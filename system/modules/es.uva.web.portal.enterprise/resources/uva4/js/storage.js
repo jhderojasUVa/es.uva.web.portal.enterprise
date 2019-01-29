@@ -33,6 +33,7 @@ async function loadJSON(url) {
       return element;
     })
     .catch( (error) =>  {
+		console.error("Request Error URL ",url);
       console.error('Request failed', error)
     });
   }

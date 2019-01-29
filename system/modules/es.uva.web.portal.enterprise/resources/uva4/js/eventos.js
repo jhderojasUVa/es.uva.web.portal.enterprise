@@ -246,6 +246,7 @@ class UVAEventosSlideshow extends UVaSlideshow {
 	adoptedCallback() {
 		// Cuando se mueve en DOM
 	}
+	
 	attributeChangedCallback(name, oldValue, newValue) {
 		// Cuando cambia algun atributo del tag
 	}
@@ -296,18 +297,18 @@ class UVAEventosSlideshow extends UVaSlideshow {
 		});
 	}
 
-  _render() {
-    // Metodo de renderizado
-	// Llamamos al del padre que para eso esta
-    super._render();
-  }
+	_render() {
+		// Metodo de renderizado
+		// Llamamos al del padre que para eso esta
+		super._render();
+	}
 
 	_onclick(event)  {
 		// Metodo del click
-		
+
 		// Sacamos a donde hace click
 		let el = event.composedPath()[0];
-		
+
 		if (el.className === 'historico-element') {
 			// Si es un historico
 			// Cogemos el parametro param
@@ -324,11 +325,9 @@ class UVAEventosSlideshow extends UVaSlideshow {
 			}
 		}
 	}
-
- 
 }
-customElements.define(UVAEventosSlideshow.is, UVAEventosSlideshow);
 
+customElements.define(UVAEventosSlideshow.is, UVAEventosSlideshow);
 
 class EventoTexto extends HTMLElement {
 	// Objeto de un evento pero que solo tiene texto
@@ -395,6 +394,10 @@ class EventoTexto extends HTMLElement {
 
 .uva_general {
 	background-color: #0e3675;
+}
+
+.uva_rosa {
+	background-color: #ff8b92;
 }
 
 a:hover {
@@ -477,19 +480,28 @@ h1:hover, p:hover {
 
 		// Si hay campus cogemos los ID y le añadimos su clase
 		if (this._data.campus_id) {
-			switch (this._data.campus_id) {
+			switch (parseInt(this._data.campus_id)) {
 				case 0:
-					this.shadowRoot.getElementById('evento').classList.add('uva_general');
+					this.shadowRoot.getElementById('evento').classList.add('uva_rosa');
 					break;
-				case 188:
+				case 188: // Valladolid
 					this.shadowRoot.getElementById('evento').classList.add('va');
 					break;
-				case 191:
+				case 189: // Palencia
+					this.shadowRoot.getElementById('evento').classList.add('pa');
+					break;
+				case 190: // Segovia
+					this.shadowRoot.getElementById('evento').classList.add('sg');
+					break;
+				case 191: // Soria
 					this.shadowRoot.getElementById('evento').classList.add('so');
 					break;
 				default:
+					this.shadowRoot.getElementById('evento').classList.add('uva_general');
 					break;
 			}
+		} else {
+			this.shadowRoot.getElementById('evento').classList.add('uva_general');
 		}
 		
 		// Si hay fecha de inicio (que tie que habé)

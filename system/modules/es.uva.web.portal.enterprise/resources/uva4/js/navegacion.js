@@ -492,87 +492,93 @@ customElements.define(UVaNavegacionHorizontal.is, UVaNavegacionHorizontal);
 
 class UVaNavegacionVertical extends UVaNavegacion {
   // Elemento de navegacion vertical
-  static get is() {
-    return 'uva-navegacion-vertical';
-  }
+	static get is() {
+		return 'uva-navegacion-vertical';
+	}
   constructor(...args) {
     // Constructor
-    try {
-      const self = super(...args);
-    } catch(e) {
-	  // Si no somos capaces de cargar al padre, error
-      throw 'Error al crear el elemento de la navegacion vertical ' + e;
-    } finally {
-      this.setAttribute('navegacion', 'vertical');
-      this.shadowRoot.innerHTML  = `
-      <style>
-      /* Menu vertical */
-      :host {
-        all: initial;
-        padding: 0;
-        margin: 0;
+	  try {
+		  const self = super(...args);
+	  } catch(e) {
+		  // Si no somos capaces de cargar al padre, error
+		  throw 'Error al crear el elemento de la navegacion vertical ' + e;
+	  } finally {
+		  this.setAttribute('navegacion', 'vertical');
+		  this.shadowRoot.innerHTML  = `
+<style>
+/* Menu vertical */
+:host {
+all: initial;
+padding: 0;
+margin: 0;
 
-        display: flex-column;
-        border: none;
+display: flex-column;
+border: none;
 
-        text-transform: uppercase;
-      }
-      </style>
-      `;
-    }
+text-transform: uppercase;
+}
+</style>
+`;
+	  }
   }
 
-  set data(val) {
-    // Modificamos los datos de la navegación
-    this._data = val;
-    this._render_tree();
-  }
+	set data(val) {
+		// Modificamos los datos de la navegación
+		this._data = val;
+		this._render_tree();
+	}
 
-  _render_tree_element(element, eldiv, type, first = false, last = true) {
-    // Metodo de renderizado de un elemento
-    // elemento = elemento en concreto del menu
-    // eldiv = a donde pertenece o el padre o como se quiere llamar
-    // type = tipo de elemento
-    // first = si es el primero (false)
-    // last = si es el ultimo (true)
+	_render_tree_element(element, eldiv, type, first = false, last = true) {
+		// Metodo de renderizado de un elemento
+		// elemento = elemento en concreto del menu
+		// eldiv = a donde pertenece o el padre o como se quiere llamar
+		// type = tipo de elemento
+		// first = si es el primero (false)
+		// last = si es el ultimo (true)
 
-    // Sacamos el padre
-    let res = super._render_tree_element(element, eldiv, type, first, last, true);
-    
-    //Comprobamos si tenemos que marcarlo como activo
-    let active=false;
-    if (res && res!=undefined && this._uri && this._uri.length>0) {
-      //Miramos si estamos dentro de la URI
-      let el = element.elements.find(this._find_element);
-      //SI tenemos URI mostramos el elemento
-      if (el ) {
-        res.style.display="block";
-      }
-    }
+		console.log(element);
+		console.log(eldiv);
+		console.log(type);
+		console.log(first);
+		console.log(last);
 
-    // Si tiene padre y tiene hijos
-    if (res && element.navTree <= this._startLevel+this._levels-1) {
+		// Sacamos el padre
+		let res = super._render_tree_element(element, eldiv, type, first, last, true);
 
-      if (first) {
-        // Si es el primero, lo añadimos al primer elemento
-        this.shadowRoot.appendChild(res);
-      } else if (eldiv) {
-        // Si no es el primero y pertenece a uno se lo añadimos a quien pertenece
-        eldiv.shadowRoot.appendChild(res);
-      }
+		//Comprobamos si tenemos que marcarlo como activo
+		let active = false;
+		if (res && res!=undefined && this._uri && this._uri.length>0) {
+			//Miramos si estamos dentro de la URI
+			let el = element.elements.find(this._find_element);
+			//SI tenemos URI mostramos el elemento
+			if (el) {
+				res.style.display = "block";
+			}
+		}
 
-      if (element.elements && element.elements.length > 0) {
-        // Si tiene contenido...
-        element.elements.forEach(subelement => {
-          // Lo recorremos
-          // Leemos el id del subelemento
-          let subdiv = res.shadowRoot.getElementById(subelement.id);
-          // Lo pintamos
-          let tree_childs = this._render_tree_element(subelement, subdiv, type, false, last, true);
-        });
-      }
-    }
-  }
+		// Si tiene padre y tiene hijos
+		if (res && element.navTree <= this._startLevel+this._levels-1) {
+
+			if (first) {
+				// Si es el primero, lo añadimos al primer elemento
+				this.shadowRoot.appendChild(res);
+			} else if (eldiv) {
+				// Si no es el primero y pertenece a uno se lo añadimos a quien pertenece
+				eldiv.shadowRoot.appendChild(res);
+			}
+
+			if (element.elements && element.elements.length > 0) {
+				// Si tiene contenido...
+				element.elements.forEach(subelement => {
+					// Lo recorremos
+					// Leemos el id del subelemento
+					let subdiv = res.shadowRoot.getElementById(subelement.id);
+					// Lo pintamos
+					let tree_childs = this._render_tree_element(subelement, subdiv, type, false, last, true);
+				});
+			}
+		}
+	}
 
   _onclick(event)  {
     // Metodo del evento de click
@@ -600,7 +606,7 @@ class UVaNavegacionVertical extends UVaNavegacion {
     } else {
       // Click en elemento final
       if (element.href && element.href.length>0) {
-        window.location.href=element.href;
+        window.location.href = element.href;
       }
     }
   }
@@ -641,6 +647,8 @@ class UVaNavegacionMenu extends HTMLElement {
         /* Heredamos del padre */
         display: inherit;
         flex-wrap: wrap;
+		/* CUIDADITO CON ESTO */
+		flex-basis: 100%;
       }
       </style>
       `
@@ -760,6 +768,9 @@ class UVaNavegacionElemento extends HTMLElement {
       p {
         margin: 0;
         padding: 0;
+		
+		/* Text */
+		flex-grow: 3;
       }
 
       .green {

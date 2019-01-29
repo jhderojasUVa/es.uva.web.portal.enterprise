@@ -290,6 +290,24 @@ class UVANoticiaTexto extends UVANoticia {
 	margin-bottom: 0.5em;
 }
 
+@media only screen and (min-width: 501px) and (max-width: 992px) {
+	:host {
+		-ms-flex: 0 0 40%;
+		flex: 0 0 40%;
+		max-width: 40%;
+		margin: 1em;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	:host {
+		-ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		max-width: 100%;
+		margin: 1em;
+	}
+}
+
 a:hover {
 	text-decoration: none;
 }
@@ -386,6 +404,24 @@ class UVANoticiaImagen extends UVANoticia {
 	
 }
 
+@media only screen and (max-width: 992px) {
+	:host {
+		-ms-flex: 0 0 40%;
+		flex: 0 0 40%;
+		max-width: 40%;
+		margin: 1em;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	:host {
+		-ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		max-width: 100%;
+		margin: 1em;
+	}
+}
+
 :host(:hover) {
 	cursor: pointer;
 }
@@ -475,7 +511,7 @@ h1 {
 			if (val.image) {
 				// Buscamos la foto, el elemento y le cambiamos el estilo poniendole el fondo
 				let elementPhoto = this.shadowRoot.getElementById('photo');
-				elementPhoto.style.backgroundImage = 'url(' + val.image.replace("/sites/comunicacion","http://comunicacion.uva.es") + ')';
+				elementPhoto.style.backgroundImage = 'url(' + val.image.replace("/sites/comunicacion","https://comunicacion-des.uva.es") + ')';
 			}
 		} else {
 			// Trincamos el shadow

@@ -69,10 +69,10 @@ class UVaHeader extends HTMLElement {
               <a href="http://www.uva.es" role="link" alt="Inicio" aria-label="Inicio"><i class="fas fa-home"></i></a>
             </div>
             <div class="col-md-4 text-center">
-      				<img alt="Universidad de Valladolid" src="./img/uva_logo.svg" srcset="./img/uva_logo.svg" />
+      				<img alt="Universidad de Valladolid" src="https://www-des.uva.es/resources/uva4/img/logo_uva.svg" srcset="https://www-des.uva.es/resources/uva4/img/logo_uva.svg" />
       			</div>
             <div class="col-md-7 text-right">
-              <span class="separador_left"><a href="http://directorio.uva.es/inicio"><span class="text-menu">Directorio</span><img alt="Seleccionar idioma" src="./img/address-book.svg" srcset="./img/address-book.svg" width="20" style="margin-left: 0.3em;"/></a></span>
+              <span class="separador_left"><a href="http://directorio.uva.es/inicio"><span class="text-menu">Directorio</span><img alt="Seleccionar idioma" src="https://www-des.uva.es/resources/uva4/img/address-book.svg" srcset="https://www-des.uva.es/resources/uva4/img/address-book.svg" width="20" style="margin-left: 0.3em;"/></a></span>
       			  <span class="separador_left"><a href="http://miportal.uva.es"><span class="text-menu" style="display: inline-block; width: 60px; margin-top: 5px;">Comunidad</span> <i class="fas fa-lock"></i></a></span>
               <span class="separador_left"><a alt="Buscador" aria-label="Buscador" href="#" role="link"><i class="fas fa-search"></i></a></span>
             </div>

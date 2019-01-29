@@ -84,6 +84,7 @@
 	<script type="module" src="<cms:link>/system/modules/es.uva.web.portal.enterprise/resources/uva4/js/slideshow.js</cms:link>" defer></script>
    	<script type="module" src="<cms:link>/system/modules/es.uva.web.portal.enterprise/resources/uva4/js/noticias.js</cms:link>" defer></script>
 	<script type="module" src="<cms:link>/system/modules/es.uva.web.portal.enterprise/resources/uva4/js/eventos.js</cms:link>" defer></script>
+	<script type="module" src="<cms:link>/system/modules/es.uva.web.portal.enterprise/resources/uva4/js/oferta.js</cms:link>" defer></script>
   </head>
   <body>
 	<c:if test="${cms.isEditMode}">
@@ -113,20 +114,19 @@
             <div class="col-md-12 d-none d-sm-block ">
               <!-- Tablet/PC -->
               <nav>
-				  <uva-navegacion-horizontal id="navegacion" data="<cms:link>/sites/uva/ws/menu.jsp</cms:link>" uri="/" startLevel="0" levels=2 onlyone="true" locale="es">
+				  <uva-navegacion-horizontal id="navegacion" data="<cms:link>/sites/uva/ws/menu.json</cms:link>" uri="/" startLevel="0" levels=2 onlyone="true" locale="es">
 					  <p>Cargando... espere por favor</p>
 				  </uva-navegacion-horizontal>
               </nav>
             </div>
             <div class="col-md-12 d-block d-sm-none">
               <!-- Mobile -->
-              <!--
               <nav>
-                <uva-navegacion-vertical id="navegacion" data="./ws/menu.json" uri="/" startLevel="0" levels=2 onlyone="true" locale="es" />
+                <uva-navegacion-vertical id="navegacion" data="<cms:link>/sites/uva/ws/menu.json</cms:link>" uri="/" startLevel="0" levels=2 onlyone="true" locale="es" >
+					<p>Cargando... espere por favor</p>
+				</uva-navegacion-vertical>
               </nav>
-            -->
             </div>
-
         </div>
     </div>
 	
@@ -136,7 +136,7 @@
 
 	<!-- NOTICIAS -->
 	<div class="container noticias" style="margin-top: 10px;">
-		<uva-noticias title="Noticias" data="https://comunicacion-des.uva.es/ws/noticias.jsp" num="8" locale="es">
+		<uva-noticias title="Noticias" data="https://comunicacion-des.uva.es/ws/noticias.jsp" num="4" locale="es">
 			<p>Cargando... espere por favor</p>
 		</uva-noticias>
 	</div>
@@ -158,6 +158,16 @@
 		<uva-eventos-slideshow data="https://comunicacion-des.uva.es/ws/eventos.jsp" num="20" show="4" auto="true">
 			<p>Cargando... espere por favor</p>
 		</uva-eventos-slideshow>
+	</div>
+	<!-- OFERTA -->
+	<div class="container" style="margin-top: 10px;">
+		<div class="row">
+			<div class="col-md-12">
+				<uva-oferta>
+					<p>Cargando información</p>
+				</uva-oferta>
+			</div>
+		</div>
 	</div>
 	<%--
 	<!-- OFERTA -->

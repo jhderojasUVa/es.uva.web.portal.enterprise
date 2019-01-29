@@ -150,6 +150,14 @@
 				</uva-navegacion-horizontal>
               </nav>
             </div>
+            <div class="col-md-12 d-block d-sm-none">
+              <!-- Mobile -->
+              <!--
+              <nav>
+                <uva-navegacion-vertical id="navegacion" data="<cms:link>/sites/uva/ws/menu.json</cms:link>" uri="/" startLevel="0" levels=2 onlyone="true" locale="es" />
+              </nav>
+            -->
+            </div>
 
         </div>
     </div>
@@ -165,8 +173,8 @@
 	</div>
 	<!-- cuerpo -->
 	<div class="container" style="margin-bottom: 20px;">
-		<div class="row">
-			<aside class="col-md-3">
+		<div class="row" class="parche_tuti">
+			<aside id="navegacion_lateral" class="col-md-3 hidden-xs hidden-sm">
 				<uva-navegacion-vertical id="navegacion" data="<cms:link>/sites/uva/ws/menu.json</cms:link>" uri="${cms.requestContext.uri}" startLevel="2" onlyone="true" locale="es" >
 					<p>Cargando... espere por favor</p>
 				</uva-navegacion-vertical>
