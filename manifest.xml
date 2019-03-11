@@ -4,7 +4,7 @@
 	<info>
 		<creator>e09338789f</creator>
 		<opencms_version>10.5.3</opencms_version>
-		<createdate>Tue, 29 Jan 2019 12:49:24 GMT</createdate>
+		<createdate>Mon, 11 Mar 2019 06:57:04 GMT</createdate>
 		<infoproject>Offline</infoproject>
 		<export_version>10</export_version>
 	</info>
@@ -2773,6 +2773,26 @@
 			<accesscontrol/>
 		</file>
 		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/resources/uva4/css/_fonts.css</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/resources/uva4/css/_fonts.css</destination>
+			<type>plain</type>
+			<uuidstructure>febd91c4-2e92-11e9-8a88-0050568213af</uuidstructure>
+			<uuidresource>febd91c5-2e92-11e9-8a88-0050568213af</uuidresource>
+			<datelastmodified>Tue, 12 Feb 2019 06:54:08 GMT</datelastmodified>
+			<userlastmodified>e09338789f</userlastmodified>
+			<datecreated>Tue, 12 Feb 2019 06:54:08 GMT</datecreated>
+			<usercreated>e09338789f</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property>
+					<name>Title</name>
+					<value><![CDATA[_fonts]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
 			<source>system/modules/es.uva.web.portal.enterprise/resources/uva4/css/agenda-copy.css</source>
 			<destination>system/modules/es.uva.web.portal.enterprise/resources/uva4/css/agenda-copy.css</destination>
 			<type>plain</type>
@@ -2898,7 +2918,7 @@
 			<type>plain</type>
 			<uuidstructure>772a8819-7eb0-11e8-bc66-0242ac11002b</uuidstructure>
 			<uuidresource>772a881a-7eb0-11e8-bc66-0242ac11002b</uuidresource>
-			<datelastmodified>Wed, 19 Sep 2018 06:28:48 GMT</datelastmodified>
+			<datelastmodified>Tue, 12 Feb 2019 09:53:50 GMT</datelastmodified>
 			<userlastmodified>e09338789f</userlastmodified>
 			<datecreated>Tue, 03 Jul 2018 11:01:41 GMT</datecreated>
 			<usercreated>Admin</usercreated>
@@ -3133,12 +3153,32 @@
 			<accesscontrol/>
 		</file>
 		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/resources/uva4/css/oferta_educativa-copy.css</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/resources/uva4/css/oferta_educativa-copy.css</destination>
+			<type>plain</type>
+			<uuidstructure>910604c6-2dfc-11e9-8a88-0050568213af</uuidstructure>
+			<uuidresource>910604c7-2dfc-11e9-8a88-0050568213af</uuidresource>
+			<datelastmodified>Wed, 19 Sep 2018 08:19:57 GMT</datelastmodified>
+			<userlastmodified>e09338789f</userlastmodified>
+			<datecreated>Mon, 11 Feb 2019 12:57:19 GMT</datecreated>
+			<usercreated>e09338789f</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property>
+					<name>Title</name>
+					<value><![CDATA[oferta_educativa]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
 			<source>system/modules/es.uva.web.portal.enterprise/resources/uva4/css/oferta_educativa.css</source>
 			<destination>system/modules/es.uva.web.portal.enterprise/resources/uva4/css/oferta_educativa.css</destination>
 			<type>plain</type>
 			<uuidstructure>31434f6b-8025-11e8-bafc-0050568213af</uuidstructure>
 			<uuidresource>31434f6c-8025-11e8-bafc-0050568213af</uuidresource>
-			<datelastmodified>Wed, 19 Sep 2018 08:19:57 GMT</datelastmodified>
+			<datelastmodified>Tue, 12 Feb 2019 09:12:59 GMT</datelastmodified>
 			<userlastmodified>e09338789f</userlastmodified>
 			<datecreated>Thu, 05 Jul 2018 07:29:46 GMT</datecreated>
 			<usercreated>e09338789f</usercreated>
@@ -3984,7 +4024,7 @@
 			<type>plain</type>
 			<uuidstructure>d2555131-157e-11e9-bc72-0050568213af</uuidstructure>
 			<uuidresource>d2555132-157e-11e9-bc72-0050568213af</uuidresource>
-			<datelastmodified>Thu, 24 Jan 2019 12:02:54 GMT</datelastmodified>
+			<datelastmodified>Thu, 21 Feb 2019 11:40:03 GMT</datelastmodified>
 			<userlastmodified>e09338789f</userlastmodified>
 			<datecreated>Fri, 11 Jan 2019 08:56:45 GMT</datecreated>
 			<usercreated>Admin</usercreated>
@@ -4099,6 +4139,26 @@
 			<accesscontrol/>
 		</file>
 		<file>
+			<source>system/modules/es.uva.web.portal.enterprise/resources/uva4/js/oferta-copy-00003.js</source>
+			<destination>system/modules/es.uva.web.portal.enterprise/resources/uva4/js/oferta-copy-00003.js</destination>
+			<type>plain</type>
+			<uuidstructure>dd15d106-2df6-11e9-8a88-0050568213af</uuidstructure>
+			<uuidresource>dd15d107-2df6-11e9-8a88-0050568213af</uuidresource>
+			<datelastmodified>Tue, 12 Feb 2019 08:28:39 GMT</datelastmodified>
+			<userlastmodified>e09338789f</userlastmodified>
+			<datecreated>Mon, 11 Feb 2019 12:16:30 GMT</datecreated>
+			<usercreated>e09338789f</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property>
+					<name>Title</name>
+					<value><![CDATA[oferta]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
 			<source>system/modules/es.uva.web.portal.enterprise/resources/uva4/js/oferta-copy.js</source>
 			<destination>system/modules/es.uva.web.portal.enterprise/resources/uva4/js/oferta-copy.js</destination>
 			<type>plain</type>
@@ -4144,8 +4204,8 @@
 			<type>plain</type>
 			<uuidstructure>9b48f6ea-7e9f-11e8-bc66-0242ac11002b</uuidstructure>
 			<uuidresource>9b48f6eb-7e9f-11e8-bc66-0242ac11002b</uuidresource>
-			<datelastmodified>Wed, 23 Jan 2019 18:01:04 GMT</datelastmodified>
-			<userlastmodified>Admin</userlastmodified>
+			<datelastmodified>Tue, 12 Feb 2019 13:09:50 GMT</datelastmodified>
+			<userlastmodified>e09338789f</userlastmodified>
 			<datecreated>Tue, 03 Jul 2018 09:01:00 GMT</datecreated>
 			<usercreated>Admin</usercreated>
 			<flags>0</flags>
@@ -4788,7 +4848,7 @@
 			<type>jsp</type>
 			<uuidstructure>ce9bb66d-cc63-11e8-b7c2-0050568213af</uuidstructure>
 			<uuidresource>b4e12483-d8ee-11e8-b7c2-0050568213af</uuidresource>
-			<datelastmodified>Fri, 25 Jan 2019 09:24:42 GMT</datelastmodified>
+			<datelastmodified>Tue, 26 Feb 2019 08:14:38 GMT</datelastmodified>
 			<userlastmodified>Admin</userlastmodified>
 			<datecreated>Fri, 26 Oct 2018 07:13:58 GMT</datecreated>
 			<usercreated>Admin</usercreated>

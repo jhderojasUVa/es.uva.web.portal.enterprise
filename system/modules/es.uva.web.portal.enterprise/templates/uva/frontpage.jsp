@@ -101,7 +101,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-3">
-          <img alt="Universidad de Valladolid" src="<cms:link>/system/modules/es.uva.web.portal.enterprise/resources/uva4/img/logo_uva.png</cms:link>" />
+          <img alt="Universidad de Valladolid" src="<cms:link>/system/modules/es.uva.web.portal.enterprise/resources/uva4/img/logoUVa.png</cms:link>" />
         </div>
         <div class="col-md-9">
           <h1 style="position: absolute; bottom: 0; right: 0; color: #0b1f4a;"><strong>Universidad</strong>de<strong>Valladolid</strong></h1>
@@ -162,6 +162,14 @@
 	<!-- OFERTA -->
 	<div class="container" style="margin-top: 10px;">
 		<div class="row">
+			<div class="col-12 col-md-4 header">
+				<h1>Oferta educativa</h1>
+			</div>
+			<div class="col bloque_raya d-none d-md-block">
+				&nbsp;
+			</div>
+		</div>
+		<div class="row">
 			<div class="col-md-12">
 				<uva-oferta>
 					<p>Cargando información</p>
@@ -169,6 +177,46 @@
 			</div>
 		</div>
 	</div>
+	
+	<!-- CONTACTO -->
+	  <div class="container contacto" style="margin-top: 70px;">
+		  <div class="row">
+			  <div class="cell-12 col-md-12">
+				  <!--<h1 data-i18n="contacto:contacto.title">Con&eacute;ctate a la UVa</h1>-->
+				  <h1 data-i18n-es="Conéctate a la UVa" data-i18n-en="Contact us">Conéctate a la UVa</h1>
+				  <!--<p data-i18n="contacto:contacto.subtitle">¿Quieres estudiar en la UVa pero tienes alguna duda? D&eacute;janos tus datos y nos pondremos en contcto contigo</p>-->
+				  <p data-i18n-es="¿Quieres estudiar en la UVa pero tienes alguna duda? D&eacute;janos tus datos y nos pondremos en contcto contigo" data-i18n-en="Do you want to study with us but you have dubs? Send us your question and we will be in touch with you">¿Quieres estudiar en la UVa pero tienes alguna duda? D&eacute;janos tus datos y nos pondremos en contcto contigo
+				  </p>
+				  <form method="post" id="formulario_contacto">
+					  <div class="form-row align-items-center">
+
+						  <div class="col-md-4">
+						  	<label for="formulario_contacto_name" style="display: none;" data-i18n-en="Name">Nombre</label>
+							<input type="text" class="form-control mb-2"  id="formulario_contacto_name" name="formulario_contacto_name" placeholder="Nombre" />
+						  </div>
+						  <div class="col-md-4">
+						  	<label for="formulario_contacto_mail" style="display: none;" data-i18n-en="email">Correo electronico</label>
+							<input type="text" class="form-control mb-2"  id="formulario_contacto_mail" name="formulario_contacto_mail" placeholder="Escriba su email aqui" />
+						  </div>
+						  <div class="col-md-3">
+						  	<label for="formulario_contacto_phone" style="display: none;" data-i18n-en="Phone number">Teléfono</label>
+							<input type="text" class="form-control mb-2"  id="formulario_contacto_phone" name="formulario_contacto_phone" placeholder="Telefono" />
+						  </div>
+						  <div class="col-auto">
+							  <button tyoe="submit" id="formulario_contacto_enviar" class="btn btn-primary mb-2 contacto" data-i18n-es="enviar" data-i18n-en="send">enviar</button>
+						  </div>
+
+					  </div>
+				  </form>
+			  </div>
+		  </div>
+	  </div>
+	<script src="https://smtpjs.com/v2/smtp.js"></script>
+    <script src="/resources/uva4/js/contacto.js"></script>
+	
+	<!-- ELEMENTOS -->
+	
+	<cms:container name="contenedor2" type="contenedor" detailview="true" maxElements="20"/>
 	<%--
 	<!-- OFERTA -->
 	<div class="container oferta_educativa" style="margin-top: 70px;">

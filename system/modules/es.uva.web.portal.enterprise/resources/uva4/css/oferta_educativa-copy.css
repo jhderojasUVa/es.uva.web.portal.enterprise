@@ -1,9 +1,9 @@
-.header {
+.oferta_educativa .header {
 	border-bottom: 1px solid #121212;
 	margin-right: 15px;
 }
 
-.header h1 {
+.oferta_educativa .header h1 {
 	position: relative;
 	bottom: -7px;
     font-size: 1.9em;
@@ -16,23 +16,23 @@
 }
 
 /* Don't needed but who knows */
-.bloque_raya {
+.oferta_educativa .bloque_raya {
 	margin-left: 0;
 	padding-left: 0;
 	border-bottom: 1px solid #121212;
 }
 
-a.nav-link {
+.oferta_educativa a.nav-link {
 	font-family: "Lato",sans-serif;
 	font-size: 1.25rem;
 	border-bottom: 1px dotted #dfe3e9;
 }
 
-.nav-link.tab:hover {
+.oferta_educativa .nav-link.tab:hover {
 	cursor: pointer;
 }
 
-h2 {
+.oferta_educativa h2 {
 	font-size: 2em;
 	margin-bottom: 10px;
 	font-family: "Lato", sans-serif;
@@ -40,17 +40,12 @@ h2 {
 	letter-spacing: 1px;
 }
 
-button {
-	font-size: 0.9rem !important;
+.oferta_educativa button {
+	font-size: 0.8rem !important;
 	font-family: "Lato", sans-serif;
-	padding: 0.2em 1em;
 }
 
-button:hover {
-	cursor: pointer;
-}
-
-button.azul_blanco {
+.oferta_educativa button.azul_blanco {
   border-radius: 0;
   background-color: white;
   margin-bottom: 5px;
@@ -58,19 +53,26 @@ button.azul_blanco {
   border: 1px solid #004682;
 }
 
-button.azul_blanco:hover, button.azul_blanco.active {
+.oferta_educativa button.azul_blanco:hover, .oferta_educativa button.azul_blanco.active {
   border: 1px solid #004682;
   background-color: rgba(90, 240, 255, 0.6);
 }
 
-button.azul_blanco.disabled {
+/*.oferta_educativa button.azul_blanco.active {
+  border-radius: 0;
+  border: 1px solid #004682;
+  background-color: #004682;
+  color: white;
+  border: 1px solid #004682; }*/
+
+.oferta_educativa button.azul_blanco.disabled {
   border-radius: 0;
   border: 1px solid #004682;
   background-color: #e8f4ff;
   border: 1px solid #1c96ff;
   color: #004682 !important; }
 
-.tab.azul_blanco {
+.oferta_educativa .tab.azul_blanco {
   text-align: left;
   text-transform: uppercase;
   background-color: white;
@@ -81,7 +83,7 @@ button.azul_blanco.disabled {
   transition: all 0.25s;
 }
 
-.tab.azul_blanco:hover {
+.oferta_educativa .tab.azul_blanco:hover {
 	text-align: left;
 	text-transform: uppercase;
 	color: rgba(12, 12, 12, 0.7);
@@ -90,12 +92,12 @@ button.azul_blanco.disabled {
 	margin-bottom: 2px;
  }
 
-.tab.azul_blanco.disabled {
+.oferta_educativa .tab.azul_blanco.disabled {
   text-align: left;
   text-transform: uppercase;
   color: #0061b5; }
 
-.tab.azul_blanco.active {
+.oferta_educativa .tab.azul_blanco.active {
   text-align: left;
   text-transform: uppercase;
   background-color: white;
@@ -103,7 +105,7 @@ button.azul_blanco.disabled {
   border-bottom: 3px solid #5af0ff;
   box-shadow: 0 0 0 0 #fff, 0 1px 0 #888;}
 
-.tab.azul_blanco.active:hover {
+.oferta_educativa .tab.azul_blanco.active:hover {
   text-align: left;
   text-transform: uppercase;
   color: #0061b5;
@@ -111,7 +113,7 @@ button.azul_blanco.disabled {
   border-bottom: 3px solid #004682;
   color: #82c5ff !important; }
   
-#estudios_contenido {
+.oferta_educativa #estudios_contenido {
 	//column-count: 3;
 	overflow: hidden;
 }

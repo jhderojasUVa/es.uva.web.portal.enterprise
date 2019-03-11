@@ -34,7 +34,7 @@ class UVaOferta extends HTMLElement {
 				{'id':'42','desc': 'Soria'},
 			];
 
-			// Funciones/Metodos
+			//Funciones
 			this._processAnswer = this._processAnswer.bind(this);
 			this._onmenuclick = this._onmenuclick.bind(this);
 			this._onfiltroramasclick = this._onfiltroramasclick.bind(this);
@@ -50,23 +50,22 @@ class UVaOferta extends HTMLElement {
 @import url("https://fonts.googleapis.com/css?family=Alegreya:300, 400, 500|Arvo:300, 400, 500|IM+Fell+English+SC:300, 400, 500|Lato:300, 400, 500|Libre+Franklin:300, 400, 500|Montserrat:300, 400, 500|Open+Sans:300, 400, 500|Raleway:300, 400, 500");
 @import url('https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css');
 @import url('https://use.fontawesome.com/releases/v5.6.3/css/all.css');
-
-@import url('/system/modules/es.uva.web.portal.enterprise/resources/uva4/css/oferta_educativa.css');
-
-uva-oferta-header {
-	margin-top: 0.5em;
-}
 </style>
-<div style="width: 100%; padding-top: 0.5em;">
-	<uva-oferta-header id="filtro"></uva-oferta-header>
-	<div id="estudios_content" class="row no-gutters" style="border: 1px solid #dfe3e9;">
-		<div class="col-md-3" style="background-color: #dfe3e9;">
-			<uva-oferta-menu></uva-oferta-menu>
-		</div>
-		<div class="col-md-9" id="estudios_contenido">
-			<img alt="Oferta Educativa" src="./resources/uva4/img/oferta.png" class="img-fluid" style=""/>
-		</div>
-	</div>
+<div style="width: 100%">
+<div class="col-12 col-md-4 header">
+<h1 data-i18n-es="oferta educativa" data-i18n-en="educative offer">oferta educativa</h1>
+</div>
+<div class="col bloque_raya d-none d-md-block">
+</div>
+<uva-oferta-header id="filtro"></uva-oferta-header>
+<div id="estudios_content" class="row no-gutters" style="border: 1px solid #dfe3e9;">
+<div class="col-md-3" style="background-color: #dfe3e9;">
+<uva-oferta-menu></uva-oferta-menu>
+</div>
+<div class="col-md-9" id="estudios_contenido">
+<img alt="Oferta Educativa" src="./resources/uva4/img/oferta.png" class="img-fluid" style=""/>
+</div>
+</div>
 </div>
 `;
 
@@ -111,17 +110,15 @@ uva-oferta-header {
 			'https://www-des.uva.es/ws/cursos.jsp',
 		];
 		
-		let tmp = urls.map((url) => loadJSON(url));
-		
 		//Hacemos el fetch de todas las URLs
-		let data = Promise.all(tmp)
-		.then((respuestas) => {
+		let data = Promise.all(
+			urls.map((url) => loadJSON(url))
+		).then(respuestas => {
 			// Todas
 			respuestas.forEach((element) => {
-				// "Procesamos" el contenido de la respuesta
 				this._processAnswer(element);
 			});
-		}).then((respuesta) => {
+		}).then(respuesta => {
 			// Renderizamos para cada una de ellas
 			this._render();
 		}).catch(function(error) {
@@ -181,10 +178,9 @@ uva-oferta-header {
     } else {
       // No tenemos estudios que cumplan el filtro
 	  // Creamos un elemento P
-      let texto = document.createElement('div');
-	  texto.style.margin = '0.5em';
+      let texto = document.createElement('p');
 	  // Le metemos un contenido al P
-      texto.innerHTML = '<h2>Lo sentimos</h2><p>No hay estudios que cumplan el criterio de búsqueda.</p>';
+      texto.innerHTML = 'No hay estudios que cumplan el criterio de búsqueda';
 	  // Lo añadimos
       this.shadowRoot.getElementById('estudios_contenido').appendChild(texto);
     }
@@ -239,6 +235,7 @@ uva-oferta-header {
 
 		return true;
 	}
+
 
 	_onmenuclick(event) {
 		// Evento del click a un elemento del menu
@@ -336,7 +333,7 @@ uva-oferta-header {
 							break;
 								   }
 				}
-				// Y los añadimos
+				// Y los añaadimos
 				this._data.push(doc);
 			});
 		} else {
@@ -374,9 +371,6 @@ class UVaOfertaHeader extends HTMLElement {
 @import url("https://fonts.googleapis.com/css?family=Alegreya:300, 400, 500|Arvo:300, 400, 500|IM+Fell+English+SC:300, 400, 500|Lato:300, 400, 500|Libre+Franklin:300, 400, 500|Montserrat:300, 400, 500|Open+Sans:300, 400, 500|Raleway:300, 400, 500");
 @import url('https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css');
 @import url('https://use.fontawesome.com/releases/v5.6.3/css/all.css');
-
-@import url('/system/modules/es.uva.web.portal.enterprise/resources/uva4/css/_fonts.css');
-@import url('/system/modules/es.uva.web.portal.enterprise/resources/uva4/css/oferta_educativa.css');
 </style>
 <div class="row" id="filtro" style=" margin-top: -5px; margin-left: 0; margin-right: 0;border-left: 1px solid #dfe3e9; border-top: 1px solid #dfe3e9; border-right: 1px solid #dfe3e9; transition: all 0.25s;">
 <!-- campus -->
@@ -430,9 +424,6 @@ class UVaOfertaFiltro extends HTMLElement {
 @import url("https://fonts.googleapis.com/css?family=Alegreya:300, 400, 500|Arvo:300, 400, 500|IM+Fell+English+SC:300, 400, 500|Lato:300, 400, 500|Libre+Franklin:300, 400, 500|Montserrat:300, 400, 500|Open+Sans:300, 400, 500|Raleway:300, 400, 500");
 @import url('https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css');
 @import url('https://use.fontawesome.com/releases/v5.6.3/css/all.css');
-
-@import url('/system/modules/es.uva.web.portal.enterprise/resources/uva4/css/_fonts.css');
-@import url('/system/modules/es.uva.web.portal.enterprise/resources/uva4/css/oferta_educativa.css');
 
 .active {
 background-color: #ff0;
@@ -502,7 +493,7 @@ background-color: #ff0;
 }
 customElements.define(UVaOfertaFiltro.is, UVaOfertaFiltro);
 
-class UVaOfertaMenu extends UVaOfertaFiltro {
+class UVaOfertaMenu extends UVaOfertaFiltro 
 	// Objeto hijo de filtro que es el menu y por eso su padre es filtro
 	static get is() {
 		return 'uva-oferta-menu';
@@ -519,38 +510,11 @@ class UVaOfertaMenu extends UVaOfertaFiltro {
 			this._event_name = 'menu_click';
 			this.shadowRoot.innerHTML = `
 <style>
-
-:host {
-}
-
 .active {
-	border-bottom: 2px solid #5af0ff;
-}
-
-:host nav {
-	background-color: white;
-	padding: 0.5em 0em;
-}
-
-:host nav a {
-	display: block;
-	font-family: 'Lato', sans-serif;
-	font-size: 1.25em;
-	border-bottom: 2px solid white;
-	margin-left: 0.2em;
-}
-
-:host nav a:hover {
-	border-bottom: 2px solid #5af0ff;
-	box-shadow: 0 1px 0 #121212;
-}
-
-
-:host a:hover {
-	cursor: pointer;
+background-color: #ff0;
 }
 </style>
-<nav>
+<nav class="nav flex-column" style="/*margin: 1em 0;*/">
 	<a class="nav-link tab azul_blanco" data-i18n-es="GRADOS" data-i18n-en="UNDERGRADUATE" id="1" dataid="1">GRADOS</a>
 	<a class="nav-link tab azul_blanco" data-i18n-es="MÁSTERES" data-i18n-en="GRADUATE" id="2" dataid="2">MÁSTERES</a>
 	<a class="nav-link tab azul_blanco" data-i18n-es="DOCTORADO" data-i18n-en="PhD" id="3" dataid="3">DOCTORADO</a>
@@ -584,23 +548,20 @@ class UVaOfertaFiltroRamas extends UVaOfertaFiltro {
 
 			this.shadowRoot.innerHTML = `
 <style>
-@import url('/system/modules/es.uva.web.portal.enterprise/resources/uva4/css/_fonts.css');
-@import url('/system/modules/es.uva.web.portal.enterprise/resources/uva4/css/oferta_educativa.css');
-
 .active {
-	background-color: #ff0;
+background-color: #ff0;
 }
 </style>
 <h2 class="text-center" data-i18n-es="RAMAS" data-i18n-en="BRANCHES" style="font-size: 1em; font-weight: 500;">RAMAS</h2>
 <div class="text-left" style="margin-left: 15%">
-	<button class="btn azul_blanco active" data-i18n-es="Todos" data-i18n-en="All" id="0" dataid="0">Todos</button>
-	<button class="btn azul_blanco" data-i18n-es="Artes y Humanidades" data-i18n-en="Arts and Humanities" id="1" dataid="1">Artes y Humanidades</button>
-	<br />
-	<button class="btn azul_blanco" data-i18n-es="Ciencias" data-i18n-en="Science" id="2" dataid="2">Ciencias</button>
-	<button class="btn azul_blanco" data-i18n-es="Ciencias de la salud" data-i18n-en="Health sciences" id="3" dataid="3">Ciencias de la salud</button>
-	<br />
-	<button class="btn azul_blanco" data-i18n-es="Ciencias Sociales y Juridicas" data-i18n-en="Social and Legal sciences" id="4" dataid="4">Ciencias Sociales y Juridicas</button>
-	<button class="btn azul_blanco" data-i18n-es="Ingeniería y Arquitectura" data-i18n-en="Engineering and architecture" id="5" dataid="5">Ingeniería y Arquitectura</button>
+<button class="btn azul_blanco active" data-i18n-es="Todos" data-i18n-en="All" id="0" dataid="0">Todos</button>
+<button class="btn azul_blanco" data-i18n-es="Artes y Humanidades" data-i18n-en="Arts and Humanities" id="1" dataid="1">Artes y Humanidades</button>
+<br />
+<button class="btn azul_blanco" data-i18n-es="Ciencias" data-i18n-en="Science" id="2" dataid="2">Ciencias</button>
+<button class="btn azul_blanco" data-i18n-es="Ciencias de la salud" data-i18n-en="Health sciences" id="3" dataid="3">Ciencias de la salud</button>
+<br />
+<button class="btn azul_blanco" data-i18n-es="Ciencias Sociales y Juridicas" data-i18n-en="Social and Legal sciences" id="4" dataid="4">Ciencias Sociales y Juridicas</button>
+<button class="btn azul_blanco" data-i18n-es="Ingeniería y Arquitectura" data-i18n-en="Engineering and architecture" id="5" dataid="5">Ingeniería y Arquitectura</button>
 </div>
 `;
 		}
@@ -627,20 +588,20 @@ class UVaOfertaFiltroTipoEstudio extends UVaOfertaFiltro {
 
 			this.shadowRoot.innerHTML = `
 <style>
-@import url('/system/modules/es.uva.web.portal.enterprise/resources/uva4/css/_fonts.css');
-@import url('/system/modules/es.uva.web.portal.enterprise/resources/uva4/css/oferta_educativa.css');
-
 .active {
 background-color: #ff0;
 }
 </style>
 <h2 class="text-center" data-i18n-es="TIPOS DE ESTUDIO" data-i18n-en="TYPES OF STUDY" style="font-size: 1em; font-weight: 500;">TIPO DE ESTUDIO</h2>
 <div class="text-left" style="margin-left: 15%">
-	<button class="btn azul_blanco active" data-i18n-es="Todos" style="width: 90%" data-i18n-en="All" id="0" dataid="0">Todos</button>
-	<br />
-	<button class="btn azul_blanco" data-i18n-es="Presencial" style="width: 90%" data-i18n-en="On-site" id="1" dataid="1">Presencial</button>
-	<br />
-	<button class="btn azul_blanco" data-i18n-es="Semipresencial" style="width: 90%" data-i18n-en="Blended" id="2" dataid="2">Semipresencial</button>
+<button class="btn azul_blanco active" data-i18n-es="Todos" style="width: 90%" data-i18n-en="All" id="0" dataid="0">Todos</button>
+<br />
+<button class="btn azul_blanco" data-i18n-es="Presencial" style="width: 90%" data-i18n-en="On-site" id="1" dataid="1">Presencial</button>
+<br />
+<button class="btn azul_blanco" data-i18n-es="Semipresencial" style="width: 90%" data-i18n-en="Blended" id="2" dataid="2">Semipresencial</button>
+<!--
+<button class="btn azul_blanco" data-i18n-es="Online" data-i18n-en="Online" id="3" dataid="3">Online</button>
+-->
 </div>
 `;
 		}
@@ -673,16 +634,8 @@ class UVaOfertaCampus extends HTMLElement {
 			// Creamos el shadow del elemento
 			let shadowRoot = this.attachShadow({ mode: 'open' });
 			this.shadowRoot.innerHTML = `
-<style>
-@import url('https://use.fontawesome.com/releases/v5.6.3/css/all.css');
-@import url('/system/modules/es.uva.web.portal.enterprise/resources/uva4/css/_fonts.css');
-
-h2 {
-	padding: 0em 0.2em;
-}
-</style>
 <h2 id="title" class="campus">
-<a id="bntCampus" class="btnCampus" campus=""></a> <i class="fas fa-angle-down" style="float: right; margin-right: 1em;"></i>
+<a id="bntCampus" class="btnCampus" campus=""></a> <i class="fas fa-angle-down" style="float: right"></i>
 </h2>
 `;
 		}
@@ -778,11 +731,8 @@ class UVaOfertaEstudio extends HTMLElement {
 			let shadowRoot = this.attachShadow({ mode: 'open' });
 			this.shadowRoot.innerHTML = `
 <style>
-@import url('/system/modules/es.uva.web.portal.enterprise/resources/uva4/css/_fonts.css');
-@import url('/system/modules/es.uva.web.portal.enterprise/resources/uva4/css/oferta_educativa.css');
-
 :host { }
-:host p { font-size: 0.9rem; line-height: 1; margin-left: 1em; }
+:host p { font-size: 0.9rem; line-height: 1; margin-left: 0.5em; }
 :host p a { text-decoration: none; color: rgba(55, 55, 55, 0.8);}
 :host p a:hover { text-decoration: underline; }
 </style>
@@ -821,7 +771,7 @@ class UVaOfertaEstudio extends HTMLElement {
 			// Buscamos dentro el elemento
 			let element_link = this.shadowRoot.getElementById('enlace');
 			// Se podria "switchcasear"?
-			if ((this._data['campo.tipo_prop'] == 1) || (this._data['campo.tipo_prop'] == 2) || (this._data['campo.tipo_prop'] == 5)) {
+			if ((this._data['campo.tipo_prop'] == 1) || (this._data['campo.tipo_prop'] == 2) || (this._data['campo.tipo_prop'] == 5) {
 				// Si son cosas de la web de la UVa
 				element_link.setAttribute('href', 'http://www.uva.es' + this._data.link);
 				let title = this._data.title;

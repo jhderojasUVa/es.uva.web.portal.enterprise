@@ -133,7 +133,7 @@ class UVaNavegacion extends HTMLElement {
 
     //Establecemos el locale
     if (this._data!==undefined && this._localedata!==undefined) {
-      actual=this._data.find(function(element) {
+      actual = this._data.find(function(element) {
         return element.locale===locale;
       });
       this._data_locale=actual.elements;
@@ -252,6 +252,10 @@ class UVaNavegacion extends HTMLElement {
   _onclick(event)  {
     // Evento de si hace click devolvemos a que hace click
     let el = event.composedPath()[0];
+	
+	//let activeme = event.detail.activeme;
+	//console.log(activeme);
+	
     return el;
   }
 
@@ -324,10 +328,10 @@ class UVaNavegacion extends HTMLElement {
           //console.log("--- _find_element --- Igual i ",i," elements.length ",elements.length," uris.length ",uris.length);
           //continue;
         } else {
-          console.log("--- _find_element OTRO ",uris[i],elements[i]);
-          console.log("--- _find_element OTRO requri test ",requri.test(elements[i]));
-          console.log("--- _find_element OTRO requri test ",requri.test(uris[i]));
-          console.log("--- _find_element OTRO IGUAL ",uris[i]===elements[i]);
+          //console.log("--- _find_element OTRO ",uris[i],elements[i]);
+          //console.log("--- _find_element OTRO requri test ",requri.test(elements[i]));
+          //console.log("--- _find_element OTRO requri test ",requri.test(uris[i]));
+          //console.log("--- _find_element OTRO IGUAL ",uris[i]===elements[i]);
         }
       } 
     }
@@ -427,6 +431,9 @@ class UVaNavegacionHorizontal extends UVaNavegacion {
 
     // Quien o donde se ha hecho el click
     let htmlel = event.composedPath()[0];
+	
+	//let activeme = event.detail.activeme;
+	//console.log(activeme);
 
     // Datos del contenido
     let elementData = event.detail.data;
@@ -460,14 +467,14 @@ class UVaNavegacionHorizontal extends UVaNavegacion {
           }
         } else {
           //Es un elemento final. Hacemos click
-          if (elementData.href && elementData.href.length>0) {
+          if (elementData.href && elementData.href.length > 0) {
             window.location.href=elementData.href;
           }
         }
       }
     } else {
       // Click en elemento final
-      if (elementData.href && elementData.href.length>0) {
+      if (elementData.href && elementData.href.length > 0) {
         window.location.href=elementData.href;
       }
     }
@@ -536,11 +543,11 @@ text-transform: uppercase;
 		// first = si es el primero (false)
 		// last = si es el ultimo (true)
 
-		console.log(element);
-		console.log(eldiv);
-		console.log(type);
-		console.log(first);
-		console.log(last);
+		//console.log(element);
+		//console.log(eldiv);
+		//console.log(type);
+		//console.log(first);
+		//console.log(last);
 
 		// Sacamos el padre
 		let res = super._render_tree_element(element, eldiv, type, first, last, true);
@@ -708,7 +715,7 @@ class UVaNavegacionMenu extends HTMLElement {
     // Ponemos el class
     this.className = "navigation-menu";
     // Para todos los elementos que contiene
-    this._data.elements.forEach(element => {
+    this._data.elements.forEach((element) => {
       // Creamos el objeto elemento de navegacion
       let el = new UVaNavegacionElemento();
       // Le damos de comer
@@ -827,6 +834,11 @@ class UVaNavegacionElemento extends HTMLElement {
         text-decoration: underline;
       }
 
+	  .active {
+	  	color: white;
+		background-color: black;
+	  }
+
       </style>
       <p id="content"></p>
       `;
@@ -909,6 +921,9 @@ class UVaNavegacionElemento extends HTMLElement {
 
     // Luego, a donde hacemos click
     let element = event.detail.data;
+	
+	//let activeme = event.detail.activeme;
+	//console.log(activeme);
 
     // Si estamos haciendo click en uno "de los nuestros"
     if (htmlel.nodeName === "P") {
@@ -924,7 +939,8 @@ class UVaNavegacionElemento extends HTMLElement {
     // Buscamos el padre, el contenedor de navegacion padre, esto funciona para el vertical por como lo estamos pintando, obviamente
     let elementsnav = this.shadowRoot.querySelectorAll(':scope uva-navegacion-menu');
 
-    elementsnav.forEach(elnav => {
+    elementsnav.forEach((elnav) => {
+		console.log(elnav);
       if (this._expanded) {
         // Si esta expandido o visible (usamos visible para las transiciones)
         // Tenemos que jugar mas con las transiciones, para que negarlo
@@ -942,7 +958,7 @@ class UVaNavegacionElemento extends HTMLElement {
       bubbles: true,
       cancelable: false,
       composed: true,
-      detail: { data: this._data}
+      detail: { data: this._data, activeme: true }
     });
 
     this.dispatchEvent(ev);
